@@ -1,6 +1,7 @@
 <?php
 	require_once("includes/sesion.php");
 	require_once("includes/connection.php");
+	require_once("../utils/phpfunctions.php");
 	require_once("includes/functions.php");
 
 	encontrar_seccion_y_contenido_seleccionados();
@@ -39,10 +40,10 @@
 				<?php $grupo_noticias = todas_las_noticias(); ?>
 
 				<ul>
-					<?php while($not = mysql_fetch_array($grupo_noticias)): ?>
+					<?php while($noticia = phpMethods('fetch-array', $grupo_noticias)): ?>
 						<li>
-							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($not["id"]); ?> ">
-								<?php echo $not["fecha"] . '<br /> <strong>' . $not["titulo"] . '</strong>'; ?>
+							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($noticia["id"]); ?> ">
+								<?php echo $noticia["fecha"] . '<br /> <strong>' . $noticia["titulo"] . '</strong>'; ?>
 							</a>
 						</li>
 					<?php endwhile; ?>

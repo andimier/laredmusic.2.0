@@ -18,7 +18,7 @@
 
 	function updateContent($post) {
 
-		if (!empty(checkErrors())) {
+		if (!empty(checkErrors($post))) {
 			throw new Exception('Campos requeridos no pasados');
 		}
 
@@ -42,7 +42,7 @@
 	}
 
 	try {
-		updateContent($post);
+		updateContent($_POST);
 		// return to contet with success query param
 	} catch (Exception $e) {
 		// return to content with fail query param

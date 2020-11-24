@@ -1,5 +1,6 @@
 <?php
 	require_once("includes/requeridos.php");
+	require_once("../utils/phpfunctions.php");
 
 	$mensaje = "";
 	$mensaje2 = "";
@@ -8,29 +9,20 @@
 
 	if(intval($_GET['noticia_id']) == 0){
 		header("Location: noticias.php");
-
-	}else{
-		$id = $_GET['noticia_id'];
-		//$grupo_imagenes = traer_imagenes_publicacion_por_id($id);
 	}
 
+	$id = $_GET['noticia_id'];
 	require_once('edicion/edc_imagenes/img_cambio.php');
 	require_once("edicion/act_contenidos.php");
-
 	traer_noticia_seleccionada();
-	//S� esto se pone al inicio del documento, al actualizar no se ven los cambios, pero s� se hacen
 
-	//========== PARAMETROS FORMULARIO ACTUALIZACION DE CONTENIDOS =================//
-
-	$tabla      = "noticias";
-	$id        	= $noticia_seleccionada['id'];
-	$fecha     	= $noticia_seleccionada['fecha'];
-	$titulo    	= $noticia_seleccionada['titulo'];
-	$alt    	= $noticia_seleccionada['alt'];
+	$tabla = "noticias";
+	$id = $noticia_seleccionada['id'];
+	$fecha = $noticia_seleccionada['fecha'];
+	$titulo = $noticia_seleccionada['titulo'];
+	$alt = $noticia_seleccionada['alt'];
 	$contenido 	= $noticia_seleccionada['contenido'];
-
 	$imagenprincipal = $noticia_seleccionada['imagen1'];
-
 	$tituloboton = "Eliminar";
 ?>
 
@@ -71,7 +63,7 @@
 <html>
 
 <?php
-	if(isset($connection)){
-		mysql_close($connection);
+	if (isset($connection)) {
+		phpMethods('close', $connection);
 	}
 ?>
