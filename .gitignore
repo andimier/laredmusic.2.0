@@ -5,3 +5,4 @@ cms/imagenes
 includes/constants.php
 media
 gifs
+*.swp
