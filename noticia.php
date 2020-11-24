@@ -1,13 +1,7 @@
 <?php
-
 	require_once('includes/connection.php');
-
-	if (isset($_GET['noticia'])) {
-		$id = $_GET['noticia'];
-		$query = "SELECT * FROM noticias WHERE id = " . $id;
-		$noticias = mysql_query($query, $connection);
-	}
-
+	require_once('utils/phpfunctions.php');
+	require_once('modules/noticias.php');
 	require_once('contacto.php');
 ?>
 
@@ -32,13 +26,20 @@
 
 			<div class="titulo_noticia">NOTICIAS</div>
 
-			<?php while($noticia = mysql_fetch_array($noticias)): ?>
+			<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
 				<div class="contenedor_noticia">
-					<div class="titulonoticias"><h1><?php echo $noticia['titulo']; ?></h1></div>
-					<div class="fechanoticia2"><?php echo $noticia['fecha']; ?></div>
+					<div class="titulonoticias">
+						<h1>
+							<?php echo $noticia['titulo']; ?>
+						</h1>
+					</div>
+
+					<div class="fechanoticia2">
+						<?php echo $noticia['fecha']; ?>
+					</div>
 
 					<div class="noticia">
-						<div class="imagennoticia">
+						<div class="imagennoticia">ß
 							<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
 						</div>
 						<?php echo $noticia['contenido']; ?>

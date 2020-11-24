@@ -6,3 +6,4 @@ includes/constants.php
 media
 gifs
 *.swp
+.vscode

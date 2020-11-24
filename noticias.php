@@ -44,7 +44,7 @@
 					</div>
 				</div>
 			<?php endwhile; ?>
-		</div><!--CIERRRE CONTENEDOR-->
+		</div>
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
