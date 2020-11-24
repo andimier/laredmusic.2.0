@@ -7,13 +7,12 @@
 	$mensaje_img = "";
 	$mensajeimagen = "";
 
-	if(intval($_GET['noticia_id']) == 0){
+	if (intval($_GET['noticia_id']) == 0) {
 		header("Location: noticias.php");
 	}
 
 	$id = $_GET['noticia_id'];
 	require_once('edicion/edc_imagenes/img_cambio.php');
-	require_once("edicion/act_contenidos.php");
 	traer_noticia_seleccionada();
 
 	$tabla = "noticias";
@@ -43,7 +42,7 @@
 				<?php echo $mensaje; ?>
 				<?php $archivo_eliminar = 'edicion/eliminarnoticia.php'; ?>
 				<?php require_once('edicion/edc_imagenes/img_principal.php'); ?>
-				<?php require_once("edicion/formularioedicion1.php");	?>
+				<?php require_once("components/content-edit-form.php");	?>
 				<br />
 				<br />
 

@@ -1,10 +1,13 @@
 <?php
+	require_once('../../utils/phpfunctions.php');
+
 	function checkErrors($post) {
 		$errors = array();
 		$required_fields = [
 			'titulo',
 			'fecha',
-			'contenido'
+			'contenido',
+			'music-masters-tag'
 		];
 
 		foreach($required_fields as $fieldname){
@@ -25,12 +28,14 @@
 		$tabla = $post['tabla'];
 		$id = mysql_prep($post['id']);
 		$fecha = $post['fecha'];
+
 		$titulo = trim(mysql_prep($post['titulo']));
 		$alt = trim(mysql_prep($post['alt']));
 		$contenido = mysql_prep($post['areadetexto']);
 
-		$query = "UPDATE $tabla SET  titulo = '{$titulo}', alt = '{$alt}', contenido = '{$contenido}', fecha = '{$fecha}' WHERE id = {$id}";
-		$result = mysql_query($query, $connection);
+		$q = "UPDATE $tabla SET  titulo = '{$titulo}', alt = '{$alt}', contenido = '{$contenido}', fecha = '{$fecha}' WHERE id = {$id}";
+		$r = mysql_query($query, $connection);
+		$r = phpMethods('query', $q);
 
 		if (mysql_affected_rows() < 1) {
 			throw new Exception('No se actualizó pla base de datos');

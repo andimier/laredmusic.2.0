@@ -1,9 +1,16 @@
-<form style="clear:both;" enctype="multipart/form-data" name="formularioedicion1" id="formularioedicion1" method="post">
-	<input type="hidden" name="id"     value="<?php echo $id;?>"/>
-	<input type="hidden" name="tabla"  value="<?php echo $tabla;?>"/>
-	<input name="titulo" type="text" id="titulo" value="<?php echo $titulo ?>" />
-	<input name="fecha"  type="text" id="fecha"  value="<?php echo $fecha ?>"  size="50" maxlength="50" />
+<form
+	style="clear:both;"
+	enctype="multipart/form-data"
+	name="formularioedicion1"
+	id="formularioedicion1"
+	action="crud/content-update.php"
+	method="post"
+	>
+	<input type="hidden" name="id" value="<?php echo $id;?>"/>
+    <input type="hidden" name="tabla" value="<?php echo $tabla;?>"/>
 
+	<input name="titulo" type="text" id="titulo" value="<?php echo $titulo ?>" />
+	<input name="fecha" type="text" id="fecha"  value="<?php echo $fecha ?>"  size="50" maxlength="50" />
 	<br />
 	<br />
 
@@ -16,7 +23,7 @@
 	<br />
 
 	<label>
-		<input class="checkbox" name="music-masters" type="checkbox"/>Music Masters
+		<input class="checkbox" name="music-masters-tag" type="checkbox"/>Music Masters
 	</label>
 
 	<div id="cnt_botonesedicion">
@@ -32,10 +39,24 @@
 	<p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onChange="setDocMode(this.checked);" /> <label for="switchBox">ver en HTML</label></p>
 	-->
 
-	<textarea style="display:none;" name="areadetexto" id="areadetexto" cols="100" rows="14"></textarea>
+    <textarea
+        style="display:none;"
+        name="areadetexto"
+        id="areadetexto"
+        cols="100"
+        rows="14">
+    </textarea>
+
 	<div id="caja1" contenteditable="true"><?php echo $contenido; ?></div>
 	<br />
 
-	<input type="submit" name="boton1" id="boton1" class="boton1" value="Guardar" onClick="javascript:submit_form();"/>
+    <input
+        type="submit"
+        name="submit-content"
+        id="boton1"
+        class="boton1"
+        value="Guardar"
+        onClick="javascript:submit_form();"
+    />
 </form>
 
