@@ -1,0 +1,145 @@
+
+/*====================================== NOTICIAS ====================================================*/
+
+
+.cnt_noticias{
+	clear:both;
+	width:100%;
+	height:160px;
+	margin:0px 0 0 0;
+	padding:30px 0 30px 0;
+	border-bottom:1px dotted #999;
+	/*background-color:#f00;*/
+}
+
+.cnt_imgnoticia{
+	width:150px;
+	height:150px;
+	float:left;
+	overflow:hidden;
+	/*border:1px solid #000;*/
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	
+	behavior: url(PIE.htc);
+}
+
+.cnt_imgnoticia img{
+	width:100%;
+	
+
+}
+
+.cnt_noticia{
+	float:left;
+	width:70%;
+}
+
+
+.cnt_noticia h2  {
+	clear:both;  
+	font-family:'BebasNeueRegular',AgencyFB, Arial; 
+	font-size:35px; 
+	font-weight:300;
+	margin:20px 0 0 0;
+	padding:0 0 0 30px;
+
+}
+
+.cnt_noticia h1  {
+	clear:both;  
+	font-family:'BebasNeueRegular',AgencyFB, Arial; 
+	font-weight:300;
+	font-size:35px; 
+	margin:0px 0 0 0;
+	padding:0 0 0 30px;
+
+}
+
+.cnt_noticia h1 a{
+	color:#999;
+}
+
+.cnt_noticia h1 a:hover{
+	color:#000;
+}
+
+
+div.fechanoticia2  {
+	clear:both;  
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-weight:300;
+	font-size:40px; 
+	
+	margin:0 0 15px 0; 
+	
+}
+
+
+div.titulonoticias h1 {
+	clear:both;  
+	padding-left:0px; 
+	width: 930px; 
+	
+	margin:0 0 20px 0; 
+	
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:65px; 
+	font-weight:300;
+	color:#000; 
+	text-transform:uppercase;
+	
+}
+	
+div.titulo_noticia {
+	
+	clear:both; 
+	width:100%;
+	height:70px;
+	margin:0px 0 15px 0;
+	
+	padding:100px 0 15px 0; 
+	border-bottom:3px solid #000;
+	
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:70px;
+	color:#000;
+	
+}
+
+
+.noticia {
+	min-height:250px;
+	padding:0 0 25px 0;
+	margin:0px 0 40px 0; 
+	
+	font-family: 'Arial', sans-serif; 
+	font-size:17px; 
+	line-height:20px;
+	text-align:justify;
+	color:#666;
+
+}
+
+.imagennoticia {
+	float:left;
+	max-width:960px;
+	padding:10px;
+	
+	margin:0 20px 20px 0;
+	overflow:hidden;
+	border:8px solid #000000;
+}
+
+
+.imagennoticia img{
+	width:100%;
+}
+
+
+.contenedor_noticia{
+	width:100%;
+	height:auto;
+}

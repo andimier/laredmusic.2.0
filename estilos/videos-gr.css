@@ -1,0 +1,17 @@
+
+
+#cnt_videos{
+	clear:both;
+	width:95%;
+	height:auto;
+	padding:0 5% 50px 5% 0;
+	/*background-color:#ff0;*/
+}
+
+.videoV{
+	float:left;
+	width:46%;
+	
+	padding:25px 2% 0 2%;
+	/*background-color:#f00;*/
+}

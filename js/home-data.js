@@ -1,0 +1,6 @@
+var homeData = [
+    'La Red Music es una compañía Colombo-Americana basada en Bogotá, Colombia y con afiliados en Estados Unidos, Puerto Rico y Sur América.'	,
+    'Sus fundadores tienen más de 17 años de experiencia en la industria del entretenimiento/música . Esto incluye áreas  como Gerencia de Proyectos, Marketing, Booking, Distribución, Publishing, Prensa & Publicidad (radio, prensa y TV) RRSS, Asesorías en Industrias Musicales, planeación de conciertos y eventos a gran escala, además de docencia en MUSIC BUSINESS.',
+    'Hemos trabajado con más de 30 artistas de la talla de Romeo Santos, Ricardo Arjona, Maná, JulietaVenegas, Diego Torres, Don Omar, Luis Enrique, Yuri, Noel Schajris, Carlos Rivera, Illya Kuryaki & the Valderramas, Espinoza Paz, Bebe, Ricardo Montaner, Gustavo Cerati, Reykon, Diamante Eléctrico, Mauricio&PalodeAgua, Ilona, Bako, Adriana Bottina, Caravanchela, Duina del Mar, Uschi, Andee Zeta, entre otros.',
+    'Además de marcas como Pontificia Universidad Javeriana, Teatro Colsubsidio, Sony / ATV, EMI Publishing, Cámara de Comercio de Bogotá, Casa Editorial El Tiempo, Bogotá Music Market, Bogotá Audiovisual Market, Universidad San Buenaventura, Thomas Gregg & Sons, Armando Records, Lipstick, entre muchos otros.'
+];

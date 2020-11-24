@@ -1,0 +1,59 @@
+
+/*============================== SERVICIOS ========================================*/
+
+.menu_servicios    {
+	clear:both; 
+	width:430px; 
+	height:30px; 
+	margin-top:20px; 
+}
+
+div.submenus2 {
+	max-width:920px; 
+	height:190px; 
+	margin-left:0px;
+	margin-top:0px;
+	padding:40px 0 0 0;
+	/*background-color:#ff0*/
+}
+
+.noticias2 {
+	max-width: 300px; 
+	height:170px;
+}
+
+
+#screenshot{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	}
+	
+.triangulo {width:30px; height:30px;}
+
+
+
+.separador {clear:both; height:5px;  width:925px; margin-left: 70px; margin-bottom:20px; margin-top:20px; background-color: #999;}
+.separador2{clear:both; height:60px; width:925px; margin-left: 70px; margin-bottom:50px; background-color: #000;}
+
+
+
+
+
+.videoembed {float:left; margin-right:15px;}
+
+
+#muneco {
+	position:absolute;
+	width:70px;
+	height:70px;
+	top:35px;
+	right:35px;
+	background-image:url(../diseno/inicio/muneco.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+

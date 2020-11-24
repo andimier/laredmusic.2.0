@@ -1,0 +1,15 @@
+
+.cuadrologo 	 {
+	float:left; 
+	
+	width:31.3%; 
+	height:auto;
+	
+	padding:0.5%; 
+	margin:1% 1% 0 0; 
+
+	border-radius:0px;
+	
+	box-shadow:4px 4px 10px #666666;
+	overflow:hidden;
+}

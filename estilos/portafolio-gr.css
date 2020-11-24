@@ -1,0 +1,39 @@
+
+.clientes{
+	
+}
+.contenedorlogos {
+	clear:both; 
+	max-width:930px; 
+	min-height:200px; 
+	margin-left:0px; 
+	padding-bottom:0px;
+	/*background-color:#0ff;*/
+	
+}
+
+.cuadrologo1{
+	float:left; 
+	width: 217px; 
+	height: 217px; 
+	padding:5px; 
+	margin-right:5px; 
+	margin-bottom:10px; 
+	background-color: #666;
+}
+
+
+.cuadrologo 	 {
+	float:left; 
+	width: 18%; 
+	height:auto;
+	padding:.5%; 
+	margin:1% 1% 0 0; 
+	border-radius:0px;
+	box-shadow:4px 4px 10px #666666;
+	overflow:hidden;
+}
+
+.cuadrologo img{
+	width:100%;
+}

@@ -1,0 +1,695 @@
+.inicio  {
+	position:absolute;
+	width:500px;
+	height:300px;
+	top:50%;
+	left:50%;
+	margin-top:-200px;
+	margin-left:-250px;
+}
+
+
+.logo {
+	margin-left:0px;
+	margin-top:50px;
+
+}
+
+ul{
+	list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.idioma1 {
+	width:500px;
+	height:70px;
+	background:#000;
+	margin-bottom:10px;
+	padding-left:10px;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:60px;
+	color:#FFF;
+}
+.idioma1 a {color:#FFF;}
+.idioma1 a:hover {color:#999;}
+
+.idioma2 {
+	width:500px; height:70px; background:#F00; padding-left:10px;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:60px; color:#FFF;
+	}
+.idioma2 a {color:#FFF;}
+.idioma2 a:hover {color:#000;}
+a {text-decoration:none;}
+
+
+
+
+
+#playlist{
+	clear:both;
+	width:100%;
+	height:100px;
+	border-bottom:1px solid #999;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-weight:300;
+}
+
+#playlist h2{
+	float:left;
+
+	margin:30px 30px 0 0;
+	font-size:40px;
+	font-weight:300;
+}
+
+#btn_mando{
+	float:left;
+	width:40px;
+	height:40px;
+	/*background-color:#f00;*/
+	margin:30px 0 0 0;
+	cursor:pointer;
+}
+
+#ff{
+	float:left;
+	width:40px;
+	height:40px;
+	margin:30px 0 0 10px;
+	background-color:#000;
+	cursor:pointer;
+	background-image:url(../diseno/ff.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+#ff:hover{
+	background-color:#f00;
+}
+
+#btn_mando:hover{
+	/*background-color:#f00;*/
+}
+
+.play{
+	width:40px;
+	height:40px;
+	background-color:#f00;
+	background-image:url(../diseno/play.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+
+.pausa{
+	width:40px;
+	height:40px;
+	background-color:#0ff;
+	background-image:url(../diseno/pausa.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+}
+
+#output{
+	float:left;
+	width:70%;
+	height:40px;
+	margin:30px 0 0 30px;
+	padding:0 0 0 0;
+	/*background-color:#ff0;*/
+
+	font-size:30px;
+	font-weight:300;
+	color:#999;
+
+	overflow:hidden;
+}
+
+#cancion{
+	font-size:21px;
+	color:#000;
+}
+
+#artista{
+	font-size:18px;
+}
+
+.grid-display {
+	display: flex;
+}
+
+.grid-item {
+	width: 50%;
+}
+
+#cnt_quienes{
+	height:auto;
+	padding: 30px 0 30px 0px;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+.textoquienessomos  {
+	float:left;
+	width:85%;
+	height:auto;
+	padding:30px 20px 30px 20px;
+	margin:10px 0 0 0;
+	overflow:hidden;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:300;
+	line-height:17px;
+	text-align:justify;
+	color:#bbb;
+	background-color:#000;
+	-webkit-border-radius: 15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+	behavior: url(PIE.htc);
+}
+
+.noticias_inicio {
+	border-bottom:1px solid #999;
+	height:auto;
+	padding:45px 0 0 2%;
+	width:49%;
+}
+
+#noticia1 {
+	width:100%;
+	height:150px;
+	margin:0 0 20px 0;
+}
+
+#th_noticia{
+	float:left;
+	width:128px;
+	height:128px;
+}
+
+#th_noticia img{
+	width:100%;
+}
+
+#cnt_noticia{
+	float:left;
+	width:285px;
+	height:150px;
+}
+
+#cnt_noticia h2{
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:35px;
+	font-weight:300;
+	margin:0 0px 10px 20px;
+}
+
+#cnt_noticia h2 a{
+	color:#000;
+}
+
+#cnt_noticia h2 a:hover{
+	color:#666;
+}
+
+#cnt_noticia h1{
+	margin:0 0 0 20px;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:25px;
+	color:#666;
+	font-weight:300;
+}
+
+#cnt_noticia h1 a{
+	color:#666;
+}
+
+#cnt_noticia h1 a:hover{
+	color:#000;
+}
+
+#cnt_noticia h3{
+	margin-left:20px;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:25px;
+	color:#666;
+	font-weight:300
+}
+
+#cnt_noticia h3 a{
+	color:#666;
+}
+
+#cnt_noticia h3 a:hover{
+	color:#000;
+}
+
+#videoinicio {
+	border-bottom:1px solid #999;
+	clear:both;
+	float:none;
+	margin:0;
+	min-height: 450px;
+	padding:30px 0 0 0;
+	width:100%;
+}
+
+#cnt_videos1{
+	width:100%;
+	height:auto;
+	margin:auto;
+	/*background-color:#f00;*/
+}
+
+#cnt_videos2{
+	clear:both;
+	width:100%;
+	height:auto;
+	margin:auto;
+	padding:0px 0 20px 0;
+	/*background-color:#ff0;*/
+}
+
+.cuadrovideo {
+	float:left;
+	width:442px;
+	height:261;
+	margin:0 5px 30px 5px;
+	border:6px solid #000;
+	background-color:#000
+}
+
+.videos{
+	float:left;
+	width:222px;
+	height:131px;
+	margin:20px 5px 0 5px;
+}
+
+.ultimasnoticias_inicio {
+	background-color:#000000;
+	color:#FFF;
+	height:25px;
+	font-family: 'SteelfishBold',AgencyFB, Arial;
+	font-weight: 300;
+	font-size: 30px;
+	margin-bottom: 23px;
+	padding: 10px 20px 20px;
+	width: 135px;
+}
+
+.ultimasnoticias_inicioingles {
+	background-color: #000;
+	color:#FFF;
+	float:right;
+	font-family:'SteelfishBold',AgencyFB, Arial;
+	font-size:30px;
+	height:40px;
+	margin-bottom:23px;
+	padding-left:30px;
+	width:130px;
+}
+
+.titulonoticia_inicio h1 {
+	width: 320px;
+	padding: 0 0 5px 0;
+	margin: 0 0 0 0px;
+	font-weight: 100;
+	font-size: 20px;
+	text-transform: capitalize;
+	color: #666;
+	text-align: left;
+}
+
+.titulonoticia_inicio a {
+	color:#666;
+}
+
+.titulonoticia_inicio a:hover {
+	color:#000;
+}
+
+.masnoticias_inicio {
+	float:left;
+	color:#000;
+	width:130px;
+	height:20px;
+	padding-left: 10px;
+	margin-top: 12px;
+	font-family: 'SteelfishBold', 'AgencyFB', 'Arial';
+	font-size:18px;
+	letter-spacing:1px;
+}
+
+.masnoticias_inicio a {
+	color:#000;
+}
+
+.masnoticias_inicio a:hover{
+	color:#ff0000;
+}
+
+.cnt-noticia-inicio {
+	clear:both;
+	font-family: 'BebasNeueRegular', AgencyFB, Arial;
+	font-weight: 100;
+	height: 60px;
+	margin-bottom: 8px;
+}
+
+.cnt-noticia-inicio img {
+	width: 100%;
+}
+
+.thumb-noticia-inicio {
+	behavior: url(PIE.htc);
+	border: 1px solid #000000;
+	background: #000000;
+	border-radius:5px;
+	float:left;
+	height:40px;
+	margin-right:10px;
+	margin-bottom:5px;
+	padding:2px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:5px;
+	width: 40px;
+}
+
+
+.noticia_inicio {
+	float:left;
+}
+
+.cnt-noticia-inicio.main-item .noticia_inicio {
+	float: left;
+	width: calc(100% - 114px);
+}
+
+.fechanoticia_inicio {
+	clear:both;
+	font-family: 'BebasNeueRegular',AgencyFB, Arial;
+	font-size: 20px;
+	margin-top: 0px;
+	text-align: left;
+}
+
+.titulonoticia_inicio {
+	color: #666;
+	font-size: 18px;
+	font-weight: 100;
+	text-transform: capitalize;
+}
+
+.cnt-noticia-inicio.main-item .thumb-noticia-inicio {
+	background: none;
+	border: none;
+	border-radius: 0;
+	float: left;
+	height: 100px;
+	margin-bottom: 40px;
+	width: 100px;
+}
+
+.cnt-noticia-inicio.main-item .fechanoticia_inicio {
+	font-size: 35px;
+}
+
+.cnt-noticia-inicio.main-item .titulonoticia_inicio {
+	font-size: 25px;
+}
+
+#cnt_portafolio{
+	float:left;
+	width:100%;
+	padding:30px 0% 50px 0%;
+}
+
+.cnt_logos {
+	height:380px;
+	margin:20px auto 0 auto;
+	padding:0px;
+	width:100%;
+}
+
+.cnt_logos ul li {
+	display: inline;
+	width: 18%;
+	height:auto;
+	overflow:hidden;
+}
+
+.logo{
+	float:left;
+	height:auto;
+	padding:0.5%;
+	margin:1% 1% 0 0;
+	box-shadow:4px 4px 10px #666666;
+	background-color:white;
+}
+
+.logo img {width:100%;}
+
+
+.logo ul li img {width:100%;}
+
+.logo:hover{opacity:.7}
+
+
+
+
+#cnt_servicios{
+	float:left;
+	width:54%;
+	height:530px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #999999;
+	/*background-color:#ff0;*/
+}
+
+.servicio{
+	width:80%;
+	height:auto;
+	padding:10px 15px 15px 30px;
+	margin:20px 0 0 0;
+	background-color:#000;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:25px;
+	font-weight:300;
+	text-align:left;
+	color:#fff;
+}
+
+.masservicio{
+	width:80%;
+	height:30px;
+	padding:10px 15px 15px 30px;
+	margin:20px 0 0 0;
+	background-color:#fff;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:25px;
+	font-weight:300;
+	text-align:left;
+	color:#f00;
+}
+
+.masservicio a {color:#f00; text-decoration:none}
+.masservicio  a:hover{color:#000; }
+
+/*=====================================  FORMULARIO  =============================================*/
+
+input[type=text]{
+	margin:none;
+	display:block;
+	padding:5px 10px 5px 20px;
+	border:none;
+}
+
+input[type=checkbox]{
+	margin:none;
+	padding:5px;
+	width:20px;
+	height:20px;
+}
+
+input[type=submit]{
+	margin:none;
+	padding:5px 10px 5px 20px;
+	border:none;
+}
+
+textarea{
+	margin:none;
+	padding:10px;
+	resize:none;
+}
+
+
+#registro {
+	float:left;
+	width:43%;
+	height:450px;
+	padding:30px 0 50px 2%;
+	border-top: 1px solid #999999;
+	/*background-color:#00f;*/
+}
+.tituloregistro {
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:80px;
+}
+
+#cnt_campos1 {
+	float:none;
+	width:100%;
+	height:205px;
+	font-family: 'BebasNeueRegular';
+	font-weight:300;
+	font-size:20px;
+	color:#666;
+
+	/*background-color:#666;*/
+}
+
+#cnt_campos2 {
+	float:none;
+	width:100%;
+	height:150px;
+	font-family: 'BebasNeueRegular';
+	font-weight:300;
+	font-size:20px;
+	color:#666;
+
+	/*background-color:#ccc;*/
+}
+
+div#formulario {
+	float:left; /*flota al lado de la guia*/
+	position:relative;
+	margin-left:0px;
+	margin-top:20px;
+	padding:0px;
+	font-family: 'BebasNeueRegular';
+	color:#666;
+	font-size:30px;
+
+
+}
+
+.frm-nombrecampo {
+	clear:both;
+	float:left;
+	width:100px;
+}
+.frm-campo {
+	float:left;
+	width:100%;
+	margin-bottom:5px;
+}
+.frm-campofijo {
+	clear:both;
+}
+
+#frm-sexo {
+	position:absolute; /*realtivo al formulario*/
+	width:100px;
+	top:143px;
+	left:570px;
+	padding:6px;
+	z-index:200;
+	background:#FFFFFF;
+	font-size:50px;
+}
+.f_sexocampo1 {
+	clear:both;
+	font-size:32px;
+	color:#000;
+}
+
+
+.f_comocampo  {
+	clear:both;
+	float:left;
+	width:100%;
+	margin-top:10px;
+
+}
+
+
+.f_comotitulo {}
+
+.f_boton {
+	clear:both;
+	padding-top:0px;
+	padding-left: 2px;
+}
+
+/*====casillas formulario=======*/
+
+
+.form_nombre {
+	height:30px;
+	width:85%;
+
+	background-color:#000;
+	color:#FFF
+}
+.form_asunto {
+	height:30px;
+	width:85%;
+
+	background-color:#000;
+	color:#FFF
+}
+
+
+.form_mail{
+	height:30px;
+	width:85%;
+
+	background-color:#000;
+	color:#FFF
+}
+
+
+.form_mensaje{
+	width:85%;
+	height:45px;
+	border:none;
+	background-color:#000;
+	color:#FFF
+}
+
+
+
+
+#boton {
+	clear:both;
+	width:150px;
+
+	padding:10px 5px 10px 5px;
+	font-family: 'BebasNeueRegular';
+	font-size:18px;
+	font-weight:300;
+	color: #FFF;
+
+	background-color:#666;
+	border-color:#069;
+	cursor: pointer;
+}
+
+#boton:hover{
+	background-color:#f00
+}
+
+
+
+.select {height:30px; border:none; color:#FFF}
+
+.mensaje {font-family: 'BebasNeueRegular'; color:#666; font-size:15px;}
+
+
+

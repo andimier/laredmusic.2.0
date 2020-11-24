@@ -1,0 +1,697 @@
+
+body {
+	border:0px; 
+	margin:0px;
+}
+img {
+	border:none
+}
+
+a {
+	text-decoration: none;
+	border:none;
+}
+
+h2,h3 {
+	padding:0;
+	margin:0;
+}
+
+
+ul{
+	list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li{
+	padding:0
+}
+
+div.lineasuperior  {
+	width:100%;  
+	height:5px; 
+	background-color:#000;
+}
+
+#cabezote {
+	
+	width:100%;  
+	height:140px; 
+	border-bottom:5px solid #000;
+	border-top:5px solid #000;
+
+}
+
+#contenido-cabezote{
+	position:relative;
+	margin:auto;
+	width:960px;
+	height:140px;
+	
+}
+
+#logo{
+	float:left;
+	width:300px;
+	height:69px;
+	margin:30px 0 0 0;
+	
+}
+
+#logo img{width:100%;}
+
+#contenedormenu {
+	
+	float:left;
+	
+	margin:55px 0 0 20px;	
+	width:500px; 
+	height:auto;
+}
+
+.enlaces {
+	float:left;
+	font-family:'SteelfishBold', AgencyFB, Arial; 
+	margin-left:0px;
+	margin-top:0px; 
+	font-size:23px; 
+	letter-spacing:1px;
+	
+}
+.enlaces a {color:#999; text-decoration:none;}
+.enlaces a:hover {color:#F00; text-decoration:none;}
+
+div.separador-rojo{
+	float:left;
+	width:2px;
+	height:25px;
+	margin-top:0px;
+	margin-left:10px;
+	margin-right:10px;
+	background:#FF0000;
+}
+
+div.separador-blanco{
+	float:left;
+	width:2px;
+	height:25px;
+	margin-top:34px;
+	margin-left:10px;
+	margin-right:10px;
+	background:#FFFFFF;
+}
+	
+.titulomenu {
+	width:500px;  height:69px; margin-top:5px; margin-left:85px; margin-bottom:-10px;
+	font-family:'SteelfishBold', AgencyFB, Arial; font-size: 40px; color:#F00;
+	
+}
+
+.logosredes 	{
+	position:absolute; 
+	width:141px;  
+	height:40px; 
+	right:0; 
+	top:30px;
+	background:#fff;
+}
+
+.logored{
+	float:left; 
+	width:42px;
+	height:42px;
+	margin-right:5px;
+}
+
+.logored img{
+	width:100%;
+}
+
+div.google{
+	position:absolute; 
+	width:auto;
+	height:auto;
+	top:104px;
+	right:0;
+}
+
+.menuelementos  {width:100px; height:141px; position:absolute;}
+
+.guia    {float:left; width:24px; height:131px; margin-top:-5px; background-image:url(../../../../../../Users/catalina/diseno/inicio/guia.jpg)}
+
+.lineadivisoria {clear:both; width:1000px; height:10px; padding-top:10px; padding-bottom:10px;  }
+
+
+
+/*===================== CAMBIO DE IDIOMA ====================================*/
+
+.cambioidioma   {
+	position:fixed; top:0%; left:100%; margin-top:0px; margin-left:-160px; 
+	width:140px; height:30px; padding-left:20px;
+	background-color: #000; color:#FFF;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; font-size:25px;
+	z-index:101;
+	}
+	
+.cambioidioma a {text-decoration: none; color:#FFF;}
+.cambioidioma a:hover { color:#999;}
+	
+/*========================================================*/
+
+
+.contenedor {
+	position:relative;
+	clear:both; 
+	width:930px; 
+	height:auto;
+	margin:0 auto 0 auto;
+	padding-bottom:30px;
+	
+}
+
+div.pagina  {
+	margin-left:0px; 
+	height:auto;
+}
+
+div.submenus {
+	width:960px; 
+	height:90px; 
+	margin-left:0px;
+	margin-bottom:0px;
+	border-bottom:1px solid #000000;
+}
+
+div.menuinicio {
+position:relative;
+	float:left; 
+	width:620px; 
+	height:50px; 
+	margin-left:0px; 
+	margin-top:30px;
+}
+
+.titulo2  {
+	float:left;
+	width:75px; 
+	height:auto; 
+	margin-right:20px; 
+	margin-top:3px;
+	color:#000000; 
+	text-align:left; 
+	font-family:'SteelfishBold', AgencyFB, Arial; 
+	font-size:40px; 
+}
+
+.menu2  {
+	float:left; 
+	width:310px; 
+	height:30px; 
+	margin-top:15px; 
+	padding-top:8px; 
+	padding-left:0px;   
+}
+
+.enlaces2 {
+	float:left; 
+	margin-right:10px; 
+	margin-top:0px; 
+	font-family:'SteelfishBold', AgencyFB, Arial; 
+	font-size:20px; 
+	color:#999; 
+}
+
+.enlaces2 a {color:#999; text-decoration:none;}
+.enlaces2 a:hover {color:#333; text-decoration:none;}
+
+
+.guia2 {float:left; width:24px; height:131px; margin-top:-8px; background-image:url(../../../../../../Users/catalina/Downloads/diseno/inicio/guia.jpg)}
+
+.lineamenu2 {
+	clear:both; 
+	width:385px; 
+	height:9px; 
+	margin-left:0px;
+	background-image: url(../../../../../../Users/catalina/diseno/inicio/lineamenu4.png); 
+	background-repeat: no-repeat;
+}
+
+
+/*==================== NOTICIAS ==============================================*/
+
+.noticias {
+	float:left; 
+	width:400px; 
+	height:auto; 
+	padding:15px;
+	margin-left:0px;
+	margin-top:0px;
+	
+}
+.noticias a {text-decoration: none;}
+
+.ultimasnoticias{
+	float:left; 
+	color:#FFFFFF; 
+	width:150px; 
+	height:40px; 
+	padding-left:10px; 
+	margin-bottom:10px;
+	font-family:'SteelfishBold',AgencyFB, Arial; 
+	font-size:30px; 
+	background-color: #000;
+}
+
+.masnoticias{
+	float:left; 
+	color:#000; 
+	width:100px; 
+	height:20px; 
+	padding-left:10px; 
+	margin-top:12px;
+	font-family:'SteelfishBold',AgencyFB, Arial; font-size:18px; 
+}
+.masnoticias a {color:#000;}
+
+.fechanoticia  {clear:both;  font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:17px; margin-top: 0px;}
+.fechanoticia2  {clear:both;  font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:22px; margin-top: -20px; margin-left:90px; margin-bottom:15px;}
+.titulonoticia {
+	width:300px; font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:17px; 
+	text-transform:capitalize; color: #666
+}
+
+.titulonoticia a {color:#666;}
+.titulonoticia a:hover {color:#000;}
+
+
+
+
+
+
+/*==================================== QUIENES SOMOS ==========================================*/
+
+div#quienessomos {
+	float:left;
+	width:510px;
+	clear:both;
+
+	padding-top:40px;
+	padding-bottom:30px;
+	border-right: 1px solid #999999;
+	
+	background-color:#ff0
+	
+	
+}
+.numero1  {
+	position:relative;
+	float:left; 
+	width:65px; 
+	height:65px; 
+	margin-right:20px; 
+	margin-top:15px;
+	background-color: #F00; 
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:80px; 
+	color:#FFF
+}
+.caja_numero {
+	position:absolute;  
+	margin-left:25px; 
+	margin-top:-5px;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:60px; 
+	color:#FFF
+}
+.tituloquienessomos {
+	float:left; 
+	margin-top:2px;
+	font-family:'SteelfishEbRegular'; 
+	font-size:70px;
+	color:#ff0000;
+	
+}
+
+.cuadronegro {
+	clear:both;
+	float:left;
+	width:460px; 
+	height:auto; 
+	margin-left:0px; 
+	margin-top:20px;
+	
+	padding-top:20px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:35px;
+	
+	background-color: #000; 
+}
+.foto {
+float:left; 
+width:250px; 
+height:350px; padding:10px; margin-right:20px; background-color:#FFF;}
+
+
+
+/*==========================*/
+.video       {margin-top: 0px; margin-bottom:30px; margin-top: 50px;}
+.imagenesvideo {margin-left: 85px; height: auto; margin-bottom: 15px;}
+.contnumtitvideo {height:90px;}
+.titulovideo {float:right; font-family:'SteelfishEbRegular', AgencyFB, Arial; font-size:70px;}
+.numero2     {float:right; margin-left:20px; width:65px; height:65px; margin-right:0px; margin-top:10px; margin-bottom:10px; background-color: #F00; }
+.textovideo  {float: left; width:440px; margin-left:85px; margin-top:220px; text-align:right; font-family: 'BebasNeueRegular'; color:#666; font-size:20px;}
+.titulovideo2 {float:left; margin-top: 77px;}
+.reel {float:left; margin-top:5px; margin-bottom:8px; margin-right:15px;}
+
+
+
+/*=====================================  Microfono   Muneco  =============================================*/
+
+div#micro{
+	clear:both;
+	margin-left:140px;
+	width:197px;
+	height:199px;
+
+}
+
+div.masnoticias_inicio2{
+	
+	width:150px; 
+	height:20px; 
+	margin-top:-70px;
+	margin-left:130px;
+	margin-bottom:20px;
+	font-family:'SteelfishBold',AgencyFB, Arial; 
+	font-size:24px; 
+	color:#000; 
+	letter-spacing:1px;
+}
+div.masnoticias_inicio2 a {color:#000;}
+div.masnoticias_inicio2 a:hover {color:#ff0000;}
+
+
+
+
+
+
+
+
+
+
+/*============================== PORTAFOLIO =====================================================*/
+
+
+.numero4  {
+	float:left; 
+	width:65px; 
+	height:65px; 
+	margin-right:20px; 
+	margin-top:30px; 
+	color:#000000; 
+	background-color: #ff0000; 
+}
+
+.tituloportafolio {
+	position:relative;
+	float:left; 
+	width: 850px; 
+	height:auto; 
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:80px; 
+	color:#ff0000;
+	margin-top:13px;
+	/*background-image: url(../diseno/inicio/fondoportafolio.png);*/
+}
+
+
+#portafolio {
+	
+	clear:both; 
+	margin-bottom: 30px;
+	color:#ff0000;
+}
+
+
+#fondorojotituloportafolio {
+	position:absolute;
+	width:855px;
+	height:65px;
+	top:17px;
+	left:-15px;
+	background:#fff;
+	z-index:-1;
+}
+
+.contenedorimagenes {clear:both; width:1000px; margin-left:0px; margin-bottom: 30px;}
+.cuadroimagen 	{float:left; width:155px; height: 255px; padding: 5px;  margin-right:3px; margin-top: 3px; background-color:#000;}
+.imagen			{width:160px; height:255px; }
+.cuadrotextoimagen 	{width:160px; height:15px;  background-color:#000;}
+.textoimagen 		{color:#FFF; padding:5px; font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:10px;}
+
+#preview{
+	position:absolute;
+	border:0px solid #ccc;
+	background:#000;
+	padding:10px;
+	display:none;
+	color:#fff;
+	}
+	
+#preview2{
+	float:left;
+	position:absolute;
+	border:0px solid #ccc;
+	background:#FFF;
+	padding:10px;
+	display:none;
+	color:#fff;
+	}
+
+
+/*===================== FOOTER ==========================*/
+
+div.corte{
+	clear:both;
+	height:20px;
+	max-width:960px;
+}
+
+div.corte2{
+	clear:both;
+	height:1px;
+	width:960px;
+	border-top:1px solid #999999;
+}
+
+
+div#footer {
+	clear:both; 
+	width:100%; 
+	height:100px; 
+	padding-top:0px;
+	border:none; 
+	background:#000000;
+}
+
+#menufooter{
+	margin:auto;
+	width:960px;
+	height:100px;
+	/*background-color:#666*/
+}
+
+div.linksfooter {
+	float:left;
+	padding:20px;
+	margin-top:15px;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:20px;
+	font-weight:300;
+	color:#FFFFFF;
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+
+div.linksfooter a {
+	color:#ffffff;
+}
+
+div.linksfooter a:hover {
+	color:#ff0000;
+}
+
+div#logofooter {
+	float:left;
+	margin-top:25px;
+}
+
+/*============= guias rojas secciones =================*/
+
+div#guiamenuinicio{
+	position:absolute;
+	width:30px;
+	height:4px;
+	background:#ff0000;
+	top:60px;
+	left:0px;
+}
+
+div#guiavideo{
+	position:absolute;
+	width:30px;
+	height:4px;
+	background:#ff0000;
+	top:-2px;
+	left:0px;
+}
+
+div#guiaportafolio{
+	position:absolute; /*esta relativo a clientes, pero la linea de arriba es del video*/
+	width:30px;
+	height:4px;
+	background:#ff0000;
+	top:-22px;
+	left:0px;
+}
+
+
+
+.tt1 {
+	width:100%;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:70px;
+	text-transform:uppercase;
+}
+
+
+.negro {color:#000}
+.negro a {color:#000}
+.negro a:hover {color:#f00}
+
+.rojo {color:#f00}
+.rojo a{color:#f00}
+.rojo a:hover{color:#000}
+
+
+.rec_rojo{
+	position:absolute;
+	width:50px;
+	height:5px;
+	top:0;
+	left:0;
+	background-color:#f00;
+}
+
+.padd{
+	padding:0 0 20px 30px;
+}
+
+.padd2{
+	padding:30px 0 0 0;
+}
+
+
+/*//////////////// MENU MOVIL /////////////////////*/
+
+
+#menu_mv{
+	position:fixed;
+	display:none;
+	width:100%;
+	height:auto;
+	padding:25px 0 0 0;
+	top:0;
+	left:0;
+	background-color:rgba(255,255,255,0.9);
+	background-color:#fff;
+}
+
+#cnt_enlacesmv{
+	
+	width:100%;
+	height:auto;
+	
+	
+}
+
+.enlaces_mv{
+	display:block;
+	width:20%;
+	height:auto;
+	margin:0 auto 0 auto;
+	padding:15px 0 15px 0;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:30px;
+	text-align:center;
+	color:#999;
+	
+	border-bottom:2px solid #f00;
+	
+	/*background-color:#0ff;*/
+}
+
+
+.enlaces_mv:hover{
+	color:#000;
+}
+
+
+
+
+#boton_mv{
+	position:fixed;
+	display:none;
+	width:40px;
+	height:40px;
+	
+	top:50px;
+	right:30px;
+	/*background-color:#f00;*/
+	
+	background-image:url(../diseno/btn-mv1.png);
+	background-repeat:no-repeat;
+	background-size:100%;
+	
+	cursor:pointer;
+}
+
+
+
+.remate{
+	clear:both;
+	width:100%;
+	height:40px;
+}
+
+
+
+.tt_servicios {
+	float:left; 
+	height:100px; 
+	margin-left:opx; 
+	font-family:'SteelfishEbRegular', AgencyFB, Arial; 
+	font-size:80px; 
+	
+}
+
+
+
+.vacio{
+	clear:both;
+	width:100%;
+	height:1px;
+}
+
+
+
+
+
+
+
+
+
+
+

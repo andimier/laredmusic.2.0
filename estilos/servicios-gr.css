@@ -1,0 +1,113 @@
+#contenidoservicios {
+	clear:both;
+	height:auto;
+	max-width: 960px;
+
+}
+
+.tt_serviciosen{
+	float:left;
+	margin:30px 0 40px 20px;
+
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:50px;
+	color:#666
+}
+
+.serviciosenIng	 {
+	clear:both;
+	margin-left:85px;
+	margin-top:-20px;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:50px;
+	color:#666
+}
+
+.servicio1 {
+	clear:both;
+	width:100%;
+	height:auto;
+	margin:10px 0 10px 0;
+
+}
+
+.tt_servicio  {
+
+	clear:both;
+	margin-left:0px;
+	padding:15px 0 15px 30px;
+
+
+	background-color:#000;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:50px;
+	font-weight:300;
+	color:#FFF;
+	cursor:pointer;
+}
+
+.tt_servicio:hover{
+	color:#666
+}
+
+.tituloservicio1 a {color:#FFF; }
+.tituloservicio1 a:hover {color:#F00;}
+
+div.descripcionservicio1 {
+	display:none;
+	height:auto;
+
+	margin:2px 0 0 0;
+	padding:20px 20px 20px 20px;
+	background-color:#000;
+	font-family:Arial;
+	font-size:15px;
+	line-height:20px;
+	color:#ccc;
+
+
+}
+
+/*================================= CLIENTES =====================================================*/
+
+.clientes {
+	position:relative;
+	clear:both;
+	min-height:500px;
+	margin-top: 20px;
+	margin-bottom:20px;
+	padding-bottom:50px;
+
+
+}
+div#tituloclientes {
+	clear:both;
+	padding-left:0px;
+	width: 865px;
+	margin-left:0px;
+	margin-top:20px;
+	margin-bottom:30px;
+	color:#FF0000;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:85px;
+}
+div#tituloaliados {
+	clear:both;
+	padding-left:20px;
+	width: 865px;
+	margin-left:0px;
+	margin-top:30px;
+	margin-bottom:40px;
+	color:#FFFFFF;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:65px;
+	background-color:#000;
+}
+
+.logo-wrapper {
+	max-width: 200px;
+}
+
+.logo-wrapper img {
+	width: 100%;
+}
