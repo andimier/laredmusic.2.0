@@ -23,27 +23,25 @@
 		<div class="contenedor">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
-			<div class="titulo_noticia">NOTICIAS</div>
+			<h1 class="titulo_noticia">NOTICIAS</h1>
 
-			<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
-				<div class="cnt_noticias">
-					<div class="cnt_imgnoticia">
-						<img src="cms/<?php echo $noticia['imagen1']; ?>"  />
-					</div>
+			<ul>
+				<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
+					<li class="cnt_noticias">
+						<a href="noticia.php?noticia=<?php echo $noticia['id']; ?>">
+							<div class="cnt_imgnoticia">
+								<img src="cms/<?php echo $noticia['imagen1']; ?>"  />
+							</div>
 
-					<div class="cnt_noticia">
-						<h2>
-							<?php echo $noticia['fecha']; ?>
-						</h2>
-
-						<h1>
-							<a href="noticia.php?noticia=<?php echo $noticia['id']; ?>">
-								<?php echo $noticia['titulo']; ?>
-							</a>
-						</h1>
-					</div>
-				</div>
-			<?php endwhile; ?>
+							<div class="cnt_noticia">
+								<p><?php echo $noticia['fecha']; ?></p>
+								<h2><?php echo $noticia['titulo']; ?></h2>
+								<p><?php echo $noticia['music_masters_tag'] == 1 ? 'Music Masters' : ''; ?></p>
+							</div>
+						</a>
+					</li>
+				<?php endwhile; ?>
+			</ul>
 		</div>
 
 		<?php require_once('footer.php'); ?>
