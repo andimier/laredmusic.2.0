@@ -23,7 +23,12 @@
 	<br />
 
 	<label>
-		<input class="checkbox" name="music-masters-tag" type="checkbox"/>Music Masters
+        <input class="checkbox"
+            name="music-masters-tag"
+            type="checkbox"
+            <?php echo $music_masters_tag == 1 ? 'checked' : '' ?>
+        />
+        Music Masters
 	</label>
 
 	<div id="cnt_botonesedicion">
@@ -47,7 +52,9 @@
         rows="14">
     </textarea>
 
-	<div id="caja1" contenteditable="true"><?php echo $contenido; ?></div>
+	<div id="caja1" contenteditable="true">
+        <?php echo $contenido; ?>
+    </div>
 	<br />
 
     <input

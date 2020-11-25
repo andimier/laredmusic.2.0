@@ -7,27 +7,31 @@
 		}
 	}
 
-	function mysql_prep($value){
+	// function mysql_prep($value){
 
-		$magic_quotes_active = get_magic_quotes_gpc();
-		$new_enough_php = function_exists("mysql_real_scape_string");
+	// 	$magic_quotes_active = get_magic_quotes_gpc();
+	// 	$new_enough_php = function_exists("mysql_real_scape_string");
 
-		if($new_enough_php){
-			if($magic_quotes_active){$value = stripslashes($value);}
-			$value = mysql_real_scape_string($value);
-		}else{
-			if(!$magic_quotes_active){$value = addslashes($value);}
-		}
-		return $value;
-	}
+	// 	if ($new_enough_php) {
+	// 		if ($magic_quotes_active) {
+	// 			$value = stripslashes($value);
+	// 		}
+
+	// 		$value = mysql_real_scape_string($value);
+	// 	} else {
+	// 		if (!$magic_quotes_active) {
+	// 			$value = addslashes($value);
+	// 		}
+	// 	}
+
+	// 	return $value;
+	// }
 
 	function confirm_query($result_set){
-		if(!$result_set){
-			die("La busqueda en la Base de Datos fallo: " . mysql_error());
+		if (!$result_set) {
+			die("La busqueda en la Base de Datos fallo: " . phpMethods('error', null));
 		}
 	}
-
-	//======================= SECCIONES ==============================//
 
 	function todas_las_secciones(){
 		global $connection;

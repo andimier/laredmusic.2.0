@@ -1,11 +1,11 @@
-<br />
-<br />
-</div>
-<div id="footer"></div>
-</body>
+	<br />
+	<br />
+	</div>
+	<div id="footer"></div>
+	</body>
 </html>
-<?php 
-if(isset($connection)){
-	mysql_close($connection);
-}
+<?php
+	if (isset($connection)) {
+		phpMethods('close', $connection);
+	}
 ?>

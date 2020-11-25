@@ -17,9 +17,7 @@
 		$q = "SELECT id, username FROM usuarios WHERE username = '{$username}' AND hashed_password = '{$hashed_password}'";
 		$r = phpMethods('query', $q);
 
-		confirm_query($r);
-
-		if ($r == null || phpMethods('num-rows', $r) == 0) {
+		if ($r == null || $r == false || phpMethods('num-rows', $r) == 0) {
 			return null;
 		}
 
@@ -37,7 +35,12 @@
 		//$errors = array_merge($errors, check_required_fields($required_fields, $_POST));
 
 		foreach($required_fields as $fieldname){
-			if(!isset($_POST[$fieldname]) || (empty($_POST[$fieldname])  && !is_numeric($_POST[$fieldname]))){
+			if (!isset($_POST[$fieldname]) ||
+				(
+					empty($_POST[$fieldname])  &&
+					!is_numeric($_POST[$fieldname])
+				)
+			) {
 				$errors[] = $fieldname;
 			}
 		}

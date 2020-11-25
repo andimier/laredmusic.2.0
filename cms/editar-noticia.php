@@ -1,4 +1,5 @@
 <?php
+	require_once("cnx/session.php");
 	require_once("includes/requeridos.php");
 	require_once("../utils/phpfunctions.php");
 
@@ -7,8 +8,19 @@
 	$mensaje_img = "";
 	$mensajeimagen = "";
 
+	$content_update_message = null;
+	$content_update_message_class = "";
+
 	if (intval($_GET['noticia_id']) == 0) {
 		header("Location: noticias.php");
+	}
+
+	if (isset($_GET['contentUpdated'])) {
+		$content_update_message = $_GET['contentUpdated'] == 'true' ?
+			"¡El contenido fue actualizado correctamente!" :
+			"No hiciste ningún cambio.";
+
+		$content_update_message_class = $_GET['contentUpdated'] == 'true' ? "mensaje1" : "mensaje";
 	}
 
 	$id = $_GET['noticia_id'];
@@ -22,6 +34,7 @@
 	$alt = $noticia_seleccionada['alt'];
 	$contenido 	= $noticia_seleccionada['contenido'];
 	$imagenprincipal = $noticia_seleccionada['imagen1'];
+	$music_masters_tag = $noticia_seleccionada['music_masters_tag'];
 	$tituloboton = "Eliminar";
 ?>
 
@@ -39,7 +52,14 @@
 				</h3>
 				<br />
 
-				<?php echo $mensaje; ?>
+				<?php if ($content_update_message != null): ?>
+					<br />
+					<div class="<?php echo $content_update_message_class; ?>">
+						<?php echo $content_update_message; ?>
+					</div>
+					<br />
+				<?php endif; ?>
+
 				<?php $archivo_eliminar = 'edicion/eliminarnoticia.php'; ?>
 				<?php require_once('edicion/edc_imagenes/img_principal.php'); ?>
 				<?php require_once("components/content-edit-form.php");	?>

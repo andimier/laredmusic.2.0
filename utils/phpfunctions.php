@@ -19,6 +19,9 @@
 				case 'close':
 					return mysql_close($connection);
 					break;
+				case 'affected-rows':
+					return mysql_affected_rows();
+					break;
 			}
 		}
 		else {
@@ -38,7 +41,20 @@
 				case 'close':
 					return mysqli_close($connection);
 					break;
+				case 'affected-rows':
+					return mysqli_affected_rows($connection);
+					break;
 			}
 		}
-    }
+	}
+
+	function mysql_prep($value){
+		global $connection;
+
+		if (phpversion() < 6) {
+			return mysql_real_escape_string($value);
+		}
+
+		return mysqli_real_escape_string($connection, $value);
+	}
 ?>
