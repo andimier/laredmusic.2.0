@@ -1,8 +1,4 @@
 <?php
-    require_once("cnx/session.php");
-	require_once("includes/requeridos.php");
-	require_once("../utils/phpfunctions.php");
-
 	function getTags($current_new) {
 		$tags = explode(',', $current_new['tags']);
 

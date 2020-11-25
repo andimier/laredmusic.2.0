@@ -3,9 +3,13 @@
 	require_once("cnx/connection.php");
 	require_once("../utils/phpfunctions.php");
 	require_once("includes/functions.php");
+	require_once("components/nav.php");
 
 	encontrar_seccion_y_contenido_seleccionados();
 	require_once("edicion/noticias.php");
+
+	$nav = new Nav;
+	$sections = $nav->getSections();
 ?>
 
 <!DOCTYPE html>

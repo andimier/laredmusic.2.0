@@ -1,4 +1,13 @@
-<?php require_once('components/news.php'); ?>
+<?php
+	require_once("cnx/session.php");
+	require_once("includes/requeridos.php");
+	require_once("../utils/phpfunctions.php");
+	require_once('components/nav.php');
+	require_once('components/news.php');
+
+	$nav = new Nav;
+	$sections = $nav->getSections();
+?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
