@@ -27,21 +27,24 @@
 
 		$tabla = $post['tabla'];
 		$fecha = $post['fecha'];
-		$music_masters_tag = 0;
 		$titulo = trim(mysql_prep($post['titulo']));
 		$alt = trim(mysql_prep($post['alt']));
 		$contenido = mysql_prep($post['areadetexto']);
 
+		// A string e.g. music-masters,news,cars...
+		// TODO: in the future, many more tags couls be added to news
+		$tags = "";
+
 		if (isset($post['music-masters-tag'])) {
-			$music_masters_tag = 1;
+			$tags .= "music-masters";
 		}
 
 		$q = "UPDATE $tabla SET";
+		$q .= " fecha = '{$fecha}',";
 		$q .= " titulo = '{$titulo}',";
 		$q .= " alt = '{$alt}',";
-		$q .= " contenido = '{$contenido}',";
-		$q .= " fecha = '{$fecha}',";
-		$q .= " music_masters_tag = " . $music_masters_tag;
+		$q .= " tags = '{$tags}',";
+		$q .= " contenido = '{$contenido}'";
 		$q .= " WHERE id = " . $post['id'];
 
 		$r = phpMethods('query', $q);

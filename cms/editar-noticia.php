@@ -3,6 +3,12 @@
 	require_once("includes/requeridos.php");
 	require_once("../utils/phpfunctions.php");
 
+	function getTags($current_new) {
+		$tags = explode(',', $current_new['tags']);
+
+		return $tags;
+	}
+
 	$mensaje = "";
 	$mensaje2 = "";
 	$mensaje_img = "";
@@ -34,7 +40,10 @@
 	$alt = $noticia_seleccionada['alt'];
 	$contenido 	= $noticia_seleccionada['contenido'];
 	$imagenprincipal = $noticia_seleccionada['imagen1'];
-	$music_masters_tag = $noticia_seleccionada['music_masters_tag'];
+
+	$active_tags = ['music-masters'];
+	$selected_tags = getTags($noticia_seleccionada);
+
 	$tituloboton = "Eliminar";
 ?>
 

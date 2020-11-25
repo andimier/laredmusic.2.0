@@ -22,14 +22,16 @@
 	<br />
 	<br />
 
-	<label>
-        <input class="checkbox"
-            name="music-masters-tag"
-            type="checkbox"
-            <?php echo $music_masters_tag == 1 ? 'checked' : '' ?>
-        />
-        Music Masters
-	</label>
+	<?php for ($i = 0; $i < count($active_tags); $i++): ?>
+		<label>
+			<input class="checkbox"
+				name="<?php echo $active_tags[$i]; ?>-tag"
+				type="checkbox"
+				<?php echo in_array($active_tags[$i], $selected_tags) ? 'checked' : '' ?>
+			/>
+			<?php echo $active_tags[$i]; ?>
+		</label>
+	<?php endfor; ?>
 
 	<div id="cnt_botonesedicion">
 		<img class="intLink" title="Quitar Formato" onClick="qFormato('removeFormat');" src="edicion/iconos/formato1.png">
