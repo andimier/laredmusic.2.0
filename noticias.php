@@ -1,14 +1,17 @@
 <?php
 	require_once('includes/connection.php');
 	require_once('utils/phpfunctions.php');
-	require_once('modules/noticias.php');
+	require_once('components/news.php');
 	require_once('contacto.php');
+
+	$news_group = new News;
+    $noticias = $news_group->getAllNews(null);
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=>UTF-8" />
 		<title>Noticias - La Red Music</title>
 		<?php require_once('includes/requeridos.php'); ?>
 
@@ -25,23 +28,7 @@
 
 			<h1 class="titulo_noticia">NOTICIAS</h1>
 
-			<ul>
-				<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
-					<li class="cnt_noticias">
-						<a href="noticia.php?noticia=<?php echo $noticia['id']; ?>">
-							<div class="cnt_imgnoticia">
-								<img src="cms/<?php echo $noticia['imagen1']; ?>"  />
-							</div>
-
-							<div class="cnt_noticia">
-								<p><?php echo $noticia['fecha']; ?></p>
-								<h2><?php echo $noticia['titulo']; ?></h2>
-								<p><?php echo $noticia['music_masters_tag'] == 1 ? 'Music Masters' : ''; ?></p>
-							</div>
-						</a>
-					</li>
-				<?php endwhile; ?>
-			</ul>
+			<?php require_once('templates/news.php'); ?>
 		</div>
 
 		<?php require_once('footer.php'); ?>
