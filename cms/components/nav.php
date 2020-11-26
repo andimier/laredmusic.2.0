@@ -17,7 +17,7 @@
 
         public function getSections() {
             $this->sections = [
-                'music masters',
+                'music masters - videos tik tok',
                 'noticias'
             ];
 
