@@ -1,5 +1,5 @@
 <?php
-	require_once("includes/login.php");
+	require_once("components/login.php");
 	require_once("../utils/phpfunctions.php");
 	require_once("includes/functions.php");
 ?>
