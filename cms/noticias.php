@@ -6,10 +6,28 @@
 	require_once("components/nav.php");
 
 	encontrar_seccion_y_contenido_seleccionados();
-	require_once("edicion/noticias.php");
+
+	$content_update_message = null;
+	$content_update_message_class = "";
+
+	if (isset($_GET['contentCreated'])) {
+		$content_update_message = $_GET['contentCreated'] == 'true' ?
+			"¡El contenido fue creado correctamente!" :
+			"No hiciste ningún cambio.";
+
+		$content_update_message_class = $_GET['contentCreated'] == 'true' ? "mensaje1" : "mensaje";
+	}
+
+	$content_creation_form_props = [
+		'tabla' => 'noticias',
+		'required-fields' => ['titulo'],
+		'input-text' => 'Crear nueva noticia',
+	];
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
+
+	$grupo_noticias = todas_las_noticias()
 ?>
 
 <!DOCTYPE html>
@@ -24,24 +42,15 @@
 				<h3>Noticias</h3>
 				<h4>Insertar nueva noticia</h4>
 
-				Título:
-				<form enctype="multipart/form-data" method="post">
-					<input type="hidden" name="tabla"   value="imagenes_publicaciones" />
-					<input type="text"   name="titulo"  value="" size="50" maxlength="50" />
-					<br>
-					<input type="submit" name="insertar_contenido" id="insertar_contenido" class="fondo_azul" value="Insertar Noticia"/>
-				</form>
+				<?php require('templates/create-content-form.php'); ?>
 				<br>
 
-				<div class="mensaje" style="color:#F00"> <?php echo $mensaje; ?></div>
-				<br>
+				<?php require_once('templates/create-content-message.php') ?>
 
 				<strong>Haz click sobre el titulo del contenido para editarlo.</strong>
 				<br />
 				<br />
 				<br />
-
-				<?php $grupo_noticias = todas_las_noticias(); ?>
 
 				<ul>
 					<?php while($noticia = phpMethods('fetch-array', $grupo_noticias)): ?>

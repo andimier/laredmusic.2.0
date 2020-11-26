@@ -13,7 +13,7 @@
 			'fecha',
 		];
 
-		foreach($required_fields as $fieldname){
+		foreach($required_fields as $fieldname) {
 			if (!isset($post[$fieldname]) || (empty($post[$fieldname]) && is_numeric($post[$fieldname]))){
 				$errors[] = $fieldname;
 			}

@@ -1,85 +1,73 @@
 <?php
-	require_once("includes/requeridos.php");
-	
-	$mensaje = "";
-			
-	if(intval($_GET['contenido_id']) == 0){
-		header("Location: content.php");	
-		exit;
-		
-	}else{
-		
+	require_once("cnx/session.php");
+	require_once("cnx/connection.php");
+	require_once("../utils/phpfunctions.php");
+	require_once("includes/functions.php");
+	require_once("components/nav.php");
+
+	encontrar_seccion_y_contenido_seleccionados();
+
+	$content_update_message = null;
+	$content_update_message_class = "";
+
+	if (isset($_GET['contentCreated'])) {
+		$content_update_message = $_GET['contentCreated'] == 'true' ?
+			"Â¡El contenido fue creado correctamente!" :
+			"No hiciste ningÃºn cambio.";
+
+		$content_update_message_class = $_GET['contentCreated'] == 'true' ? "mensaje1" : "mensaje";
 	}
 
-	require_once('edicion/cambioimagen1.php');	
-	require_once("edicion/actualizaciondecontenidos.php");
-	
-	encontrar_seccion_y_contenido_seleccionados(); //Sí esto se pone al inicio del documento, al actualizar no se ven los cambios, pero sí se hacen 
+	$content_creation_form_props = [
+		'tabla' => 'contenidos',
+		'required-fields' => ['titulo'],
+		'input-text' => 'Inserta nuevo video',
+	];
 
-	//========== PARAMETROS FORMULARIO ACTUALIZACION DE CONTENIDOS =================//
-	
-	$tabla 	   = "contenidos";
-	$id        = $contenido_seleccionado['id'];
-	$posicion   = $contenido_seleccionado['posicion'];
-		
-	$titulo    = $contenido_seleccionado['titulo']; 
-	$contenido = $contenido_seleccionado['contenido'];
-	$seccion   = $contenido_seleccionado['seccion_id'];
-
-	$imagenprincipal = $contenido_seleccionado['imagen1'];
-	$img = $contenido_seleccionado['imagen2'];
-	
-	
-	//================= PARÁMETROS PARA EL ARCHIVO DE ELIMINAR =======================//
-	
-	$indice   = $contenido_seleccionado['indice'];
-	$borrable  = $contenido_seleccionado['borrable'];
-	
-	$tituloboton = "Eliminar";
-	$archivo_eliminar = 'edicion/eliminar-contenidos.php';
-	
-	require_once("cabeza.php");
-
+	$nav = new Nav;
+	$sections = $nav->getSections();
 ?>
 
-<div class="col2">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<?php include_once('includes/tags.php'); ?>
+	</head>
 
-    <div class="titulos1"><?php echo $contenido_seleccionado['titulo'];?></div>
-	<br />
-	
-	
-	<?php if( $indice > 1 && $posicion == 1): ?>
-	
-	<?php else: ?>
-		<div class="titulo-rojo">Editar en:
-			<a href="puente.php?contenido_id=<?php echo $id; ?>&seccion=<?php echo $seccion; ?>&indice=<?php echo $indice; ?>"> Inglés</a> - 
-			<a href="puente2.php?contenido_id=<?php echo $id; ?>&seccion=<?php echo $seccion; ?>&indice=<?php echo $indice; ?>"> Portugués</a>
+	<body>
+		<div id="col2">
+			<div id='cnt_edicion'>
+				<h3>Noticias</h3>
+				<h4>Insertar nueva noticia</h4>
+
+				<?php require('templates/create-content-form.php'); ?>
+				<br>
+
+				<?php require_once('templates/create-content-message.php') ?>
+
+				<strong>Haz click sobre el titulo del contenido para editarlo.</strong>
+				<br />
+				<br />
+				<br />
+
+				<?php $grupo_noticias = todas_las_noticias(); ?>
+
+				<ul>
+					<?php while($noticia = phpMethods('fetch-array', $grupo_noticias)): ?>
+						<li>
+							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($noticia["id"]); ?> ">
+								<?php echo $noticia["fecha"] . '<br /> <strong>' . $noticia["titulo"] . '</strong>'; ?>
+							</a>
+						</li>
+					<?php endwhile; ?>
+			    </ul>
+			</div>
 		</div>
-		
-	<?php endif; ?>
-	
-	
-    <div class="mensaje"> <?php echo $mensaje; ?></div>
-	<br />	
-	
-	<div id="formulario">
-    <?php require_once("edicion/formularioedicion1.php"); ?>
-	<?php 
-		
-		if( $borrable == 1){
-			require_once("edicion/formularioeliminar1.php"); 
-		}else{
-		
-		}
-		
-		
-	?>   
-    </div>
-</div>
 
-<div class="col3" >
-	<!-- ============================= IMAGEN PRINCIPAL DEL CONTENIDO =============================-->
-	<?php require_once('edicion/imagenprincipal.php'); ?>
-</div>
+		<?php require("includes/footer.php");?>
+		<?php include_once('includes/cabezote.php'); ?>
+		<?php include_once('includes/navegacion.php'); ?>
 
-<?php require("includes/footer.php");?>
+		<script src="js/general.js" type="text/javascript"></script>
+	</body>
+</html>
