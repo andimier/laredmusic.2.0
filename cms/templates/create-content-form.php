@@ -4,6 +4,11 @@
         value="<?php echo $content_creation_form_props['table']; ?>"
     />
 
+    <input type="hidden"
+        name="redirect-page"
+        value="<?php echo $content_creation_form_props['redirect-page']; ?>"
+    />
+
     <?php foreach($content_creation_form_props['required-fields'] as $field): ?>
         <label>
             <div><?php echo $field; ?></div>

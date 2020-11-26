@@ -20,12 +20,13 @@
 	}
 
 	$content_creation_form_props = [
-		'table' => 'entries',
+		'input-text' => 'Inserta nuevo video',
+		'redirect-page' => 'editar-contenido.php',
 		'required-fields' => [
 			'title',
 			'video'
 		],
-		'input-text' => 'Inserta nuevo video',
+		'table' => 'entries',
 	];
 
 	$nav = new Nav;
@@ -59,7 +60,11 @@
 					<?php while($entry = phpMethods('fetch-array', $entries_list)): ?>
 						<li>
 							<a href="editar-entry.php?noticia_id=<?php echo urlencode($entry["id"]); ?> ">
-								<?php echo $entry["creation_date"] . '<br /> <strong>' . $entry["title"] . '</strong>'; ?>
+								<p><?php echo $entry["creation_date"]; ?></p>
+								<h3>
+									<strong>Título:<?php echo $entry["title"]; ?></strong>
+								</h3>
+								<p>Video: <?php echo $entry['video']; ?></p>
 							</a>
 						</li>
 					<?php endwhile; ?>

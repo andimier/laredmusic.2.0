@@ -20,9 +20,10 @@
 	}
 
 	$content_creation_form_props = [
-		'table' => 'noticias',
-		'required-fields' => ['titulo'],
 		'input-text' => 'Crear nueva noticia',
+		'redirect-page' => 'noticias.php',
+		'required-fields' => ['titulo'],
+		'table' => 'noticias',
 	];
 
 	$nav = new Nav;

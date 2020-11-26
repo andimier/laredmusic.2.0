@@ -58,6 +58,7 @@
 
 		private function insertContent($post) {
 			global $contentCreated;
+
 			$table = $post['table'];
 			$default_settings =  null;
 
@@ -87,15 +88,16 @@
         }
 
         public function tryCreateContent($post) {
+			global $contentCreated;
+
             $this->insertContent($post);
-		    header('Location: ../noticias.php?contentCreated=' . $contentCreated);
+		    header('Location: ../' . $post['redirect-page'] . '?contentCreated=' . $contentCreated);
         }
 	}
 
 	try {
         $new_content = new Content;
 		$new_content->tryCreateContent($_POST);
-		header('Location: ../noticias.php?contentCreated=' . $contentCreated);
 	} catch (Exception $e) {
 		echo $e;
 	}
