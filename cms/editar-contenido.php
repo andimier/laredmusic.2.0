@@ -1,11 +1,12 @@
 <?php
 	require_once("cnx/session.php");
 	require_once("cnx/connection.php");
-	require_once("../utils/phpfunctions.php");
-	require_once("includes/functions.php");
-	require_once("components/nav.php");
 
-	encontrar_seccion_y_contenido_seleccionados();
+	require_once("crud/entries-reader.php");
+
+	require_once("../utils/phpfunctions.php");
+
+	require_once("components/nav.php");
 
 	$content_update_message = null;
 	$content_update_message_class = "";
@@ -19,13 +20,17 @@
 	}
 
 	$content_creation_form_props = [
-		'tabla' => 'contenidos',
-		'required-fields' => ['titulo'],
+		'table' => 'entries',
+		'required-fields' => [
+			'title',
+			'video'
+		],
 		'input-text' => 'Inserta nuevo video',
 	];
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
+	$entries_list = EntriesReader::get_all_entries();
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +43,7 @@
 		<div id="col2">
 			<div id='cnt_edicion'>
 				<h3>Noticias</h3>
-				<h4>Insertar nueva noticia</h4>
+				<h4>Insertar nueva entry</h4>
 
 				<?php require('templates/create-content-form.php'); ?>
 				<br>
@@ -50,13 +55,11 @@
 				<br />
 				<br />
 
-				<?php $grupo_noticias = todas_las_noticias(); ?>
-
 				<ul>
-					<?php while($noticia = phpMethods('fetch-array', $grupo_noticias)): ?>
+					<?php while($entry = phpMethods('fetch-array', $entries_list)): ?>
 						<li>
-							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($noticia["id"]); ?> ">
-								<?php echo $noticia["fecha"] . '<br /> <strong>' . $noticia["titulo"] . '</strong>'; ?>
+							<a href="editar-entry.php?noticia_id=<?php echo urlencode($entry["id"]); ?> ">
+								<?php echo $entry["creation_date"] . '<br /> <strong>' . $entry["title"] . '</strong>'; ?>
 							</a>
 						</li>
 					<?php endwhile; ?>

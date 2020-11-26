@@ -28,24 +28,49 @@
 			return " INSERT INTO " . $table . " (" . $columns . ") VALUES (" . $values . ")";
 		}
 
-		private function insertContent($post) {
-            global $contentCreated;
+		private function getNewsDefaultSettings($post) {
+			date_default_timezone_set('America/Bogota');
+			$date = date("Y-m-d");
 
-            date_default_timezone_set('America/Bogota');
-            $date = date("Y-m-d");
-
-            $q = $this->getQuery($post['tabla'], [
+			return [
                 'fecha' => "'" . $date . "'",
                 'titulo' => "'" . $post['titulo'] . "'",
-                'alt' => "'undefined'",
-                'tags' => "'undefined'",
-                'contenido' => "'undefined'",
+                'alt' => "''",
+                'tags' => "''",
+                'contenido' => "''",
                 'imagen1' => "'../iconos/photo2.png'",
                 'imagen2' => "'../iconos/photo2.png'",
                 'imagen3' => "'../iconos/photo2.png'",
-                'video' => "'undefined'",
-            ]);
+                'video' => "''",
+            ];
+		}
 
+		private function getNewsEntrieSettings($post) {
+			date_default_timezone_set('America/Bogota');
+			$date = date("Y-m-d");
+
+			return [
+                'creation_date' => "'" . $date . "'",
+                'title' => "'" . $post['title'] . "'",
+                'video' => "'" . $post['video'] . "'",
+            ];
+		}
+
+		private function insertContent($post) {
+			global $contentCreated;
+			$table = $post['table'];
+			$default_settings =  null;
+
+			switch ($table) {
+				case 'noticias':
+					$default_settings = $this->getNewsDefaultSettings($post);
+					break;
+				case 'entries':
+					$default_settings = $this->getNewsEntrieSettings($post);
+					break;
+			}
+
+            $q = $this->getQuery($table, $default_settings);
 			$r = phpMethods('query', $q);
 
 			if ($r == false) {
@@ -62,10 +87,6 @@
         }
 
         public function tryCreateContent($post) {
-            if ($this->hasMissingData($post) == true) {
-                throw new Exception('Hubo un error al actualizar la base de datos. '. phpMethods('error', null));
-            }
-
             $this->insertContent($post);
 		    header('Location: ../noticias.php?contentCreated=' . $contentCreated);
         }

@@ -1,13 +1,19 @@
-Título:
 <form enctype="multipart/form-data" action="crud/create-content.php" method="post">
-    <input type="hidden" name="tabla" value="<?php echo $content_creation_form_props['tabla']; ?>" />
+    <input type="hidden"
+        name="table"
+        value="<?php echo $content_creation_form_props['table']; ?>"
+    />
 
     <?php foreach($content_creation_form_props['required-fields'] as $field): ?>
-        <input type="text"
-            name="<?php echo $field; ?>"
-            value="" size="50"
-            maxlength="50"
-        />
+        <label>
+            <div><?php echo $field; ?></div>
+            <input type="text"
+                name="<?php echo $field; ?>"
+                value="" size="50"
+                maxlength="50"
+                required
+            />
+        </label>
     <?php endforeach; ?>
     <br>
 

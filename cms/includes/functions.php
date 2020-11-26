@@ -45,6 +45,15 @@
 		return $r;
 	}
 
+	function get_all_entries(){
+		global $connection;
+		$q = "SELECT * FROM entries ORDER BY fecha DESC";
+		$r = phpMethods('query', $q);
+
+		confirm_query($r);
+		return $r;
+	}
+
 	function traer_noticia_por_id($noticia_id){
 		global $connection;
 		$q = "SELECT * FROM noticias WHERE id =" . $noticia_id ." LIMIT 1";

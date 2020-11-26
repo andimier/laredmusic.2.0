@@ -1,11 +1,12 @@
 <?php
 	require_once("cnx/session.php");
 	require_once("cnx/connection.php");
-	require_once("../utils/phpfunctions.php");
-	require_once("includes/functions.php");
-	require_once("components/nav.php");
 
-	encontrar_seccion_y_contenido_seleccionados();
+	require_once("crud/entries-reader.php");
+
+	require_once("../utils/phpfunctions.php");
+
+	require_once("components/nav.php");
 
 	$content_update_message = null;
 	$content_update_message_class = "";
@@ -19,15 +20,14 @@
 	}
 
 	$content_creation_form_props = [
-		'tabla' => 'noticias',
+		'table' => 'noticias',
 		'required-fields' => ['titulo'],
 		'input-text' => 'Crear nueva noticia',
 	];
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
-
-	$grupo_noticias = todas_las_noticias()
+	$news_list = EntriesReader::get_all_news_entries();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
 				<br />
 
 				<ul>
-					<?php while($noticia = phpMethods('fetch-array', $grupo_noticias)): ?>
+					<?php while($noticia = phpMethods('fetch-array', $news_list)): ?>
 						<li>
 							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($noticia["id"]); ?> ">
 								<?php echo $noticia["fecha"] . '<br /> <strong>' . $noticia["titulo"] . '</strong>'; ?>
