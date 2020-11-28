@@ -7,7 +7,7 @@
                 if ($this->sections[$i] == 'noticias') {
                     $html .= '<li><a href="noticias.php">' . $this->sections[$i] . '</a></li>';
                 } else {
-                    $html .= '<li><a href="editar-contenido.php">' . $this->sections[$i] . '</a></li>';
+                    $html .= '<li><a href="edit-section.php">' . $this->sections[$i] . '</a></li>';
                 }
             }
             // <a href=\"editar-seccion.php?seccion=" . urlencode($seccion["id"]) . "\">{$seccion["titulo"]}</a></li><br />
@@ -17,7 +17,7 @@
 
         public function getSections() {
             $this->sections = [
-                'music masters - videos tik tok',
+                'MM - videos tik tok',
                 'noticias'
             ];
 

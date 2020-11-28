@@ -45,18 +45,20 @@
 	<p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onChange="setDocMode(this.checked);" /> <label for="switchBox">ver en HTML</label></p>
 	-->
 
-    <textarea
-        style="display:none;"
-        name="areadetexto"
-        id="areadetexto"
-        cols="100"
-        rows="14">
-    </textarea>
+	<?php if(isset($content_update_form_fields['text-area'])): ?>
+		<textarea
+			style="display:none;"
+			name="areadetexto"
+			id="areadetexto"
+			cols="100"
+			rows="14">
+		</textarea>
 
-	<div id="caja1" contenteditable="true">
-        <?php echo $content_update_form_fields['text-area']; ?>
-    </div>
-	<br />
+		<div id="caja1" contenteditable="true">
+			<?php echo $content_update_form_fields['text-area']; ?>
+		</div>
+		<br />
+	<?php endif; ?>
 
     <input
         type="submit"

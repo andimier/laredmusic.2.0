@@ -59,7 +59,7 @@
 				<ul>
 					<?php while($entry = phpMethods('fetch-array', $entries_list)): ?>
 						<li>
-							<a href="editar-entry.php?noticia_id=<?php echo urlencode($entry["id"]); ?> ">
+							<a href="edit-entry.php?entry_id=<?php echo urlencode($entry["id"]); ?> ">
 								<p><?php echo $entry["creation_date"]; ?></p>
 								<h3>
 									<strong>Título:<?php echo $entry["title"]; ?></strong>

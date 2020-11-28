@@ -29,7 +29,7 @@
 
             $q = "SELECT * FROM $table WHERE id =" . $entry_id ." LIMIT 1";
             $r = phpMethods('query', $q);
-            confirm_query($r);
+            self::confirm_query($r);
 
             if ($contenido = phpMethods('fetch-array', $r)) {
                 return $contenido;

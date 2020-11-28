@@ -22,9 +22,7 @@
 		return $errors;
 	}
 
-	function updateContent($post) {
-		global $contentUpdated;
-
+	function getNewsUpdateQuery($post) {
 		$table = $post['table'];
 		$fecha = $post['creation-date'];
 		$titulo = trim(mysql_prep($post['title']));
@@ -47,15 +45,41 @@
 		$q .= " contenido = '{$contenido}'";
 		$q .= " WHERE id = " . $post['id'];
 
+		return $q;
+	}
+
+	function getEntryUpdateQuery($post) {
+		$table = $post['table'];
+		$title = trim(mysql_prep($post['title']));
+		$video = trim(mysql_prep($post['video']));
+
+		$q = "UPDATE $table SET";
+		$q .= " title = '{$title}',";
+		$q .= " video = '{$video}'";
+		$q .= " WHERE id = " . $post['id'];
+
+		return $q;
+	}
+
+	function updateContent($post) {
+		global $contentUpdated;
+
+		$table = $post['table'];
+
+		switch ($table) {
+			case 'noticias':
+				$q = getNewsUpdateQuery($post);
+				break;
+			case 'entries':
+				$q = getEntryUpdateQuery($post);
+				break;
+		}
+
 		$r = phpMethods('query', $q);
 
 		if ($r == false) {
 			throw new Exception('Hubo un error al actualizar la base de datos. '. phpMethods('error', null));
 		}
-
-		// if (phpMethods('affected-rows', null) == 1) {
-		// 	throw new Exception('No se actualizó la base de datos, los datos son iguales. '. phpMethods('error', null));
-		// }
 
 		if (phpMethods('affected-rows', null) == 1) {
 			$contentUpdated = 'true';
@@ -68,8 +92,21 @@
 
 	try {
 		updateContent($_POST);
-		header('Location: ../editar-noticia.php?noticia_id=' . $_POST['id'] . '&contentUpdated=' . $contentUpdated);
 	} catch (Exception $e) {
 		echo $e;
 	}
+
+	$location = 'Location: ../';
+
+	switch ($_POST['table']) {
+		case 'noticias':
+			$location .= 'editar-noticia.php?noticia_id=';
+			break;
+		case 'entries':
+			$location .= 'edit-entry.php?entry_id=';
+			break;
+	}
+
+	$location .= $_POST['id'] . '&contentUpdated=' . $contentUpdated;
+	header($location);
 ?>
