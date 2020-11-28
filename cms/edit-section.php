@@ -21,7 +21,7 @@
 
 	$content_creation_form_props = [
 		'input-text' => 'Inserta nuevo video',
-		'redirect-page' => 'editar-contenido.php',
+		'redirect-page' => 'edit-section.php',
 		'required-fields' => [
 			'title',
 			'video'
