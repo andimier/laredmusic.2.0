@@ -32,15 +32,17 @@
 			date_default_timezone_set('America/Bogota');
 			$date = date("Y-m-d");
 
+			$default_image = './iconos/default-image.png';
+
 			return [
                 'fecha' => "'" . $date . "'",
                 'titulo' => "'" . $post['titulo'] . "'",
                 'alt' => "''",
                 'tags' => "''",
                 'contenido' => "''",
-                'imagen1' => "'../iconos/photo2.png'",
-                'imagen2' => "'../iconos/photo2.png'",
-                'imagen3' => "'../iconos/photo2.png'",
+                'imagen1' => "'{$default_image}'",
+                'imagen2' => "'{$default_image}'",
+                'imagen3' => "'{$default_image}'",
                 'video' => "''",
             ];
 		}

@@ -6,32 +6,31 @@
 	action="crud/content-update.php"
 	method="post"
 	>
-	<input type="hidden" name="id" value="<?php echo $id;?>"/>
-    <input type="hidden" name="tabla" value="<?php echo $tabla;?>"/>
 
-	<input name="titulo" type="text" id="titulo" value="<?php echo $titulo ?>" />
-	<input name="fecha" type="text" id="fecha"  value="<?php echo $fecha ?>"  size="50" maxlength="50" />
-	<br />
-	<br />
+	<?php foreach($content_update_form_fields['hidden-fields'] as $key => $val): ?>
+    	<input type="hidden" name="<?php echo $key; ?>" value="<?php echo $val; ?>"/>
+	<?php endforeach; ?>
 
-	Descripcion Imagen:
-	<br />
-	<br />
-	<input name="alt" type="text" id="titulo"  value="<?php echo $alt; ?>" size="50" maxlength="50"/>
-	<br />
-	<br />
-	<br />
+	<?php foreach($content_update_form_fields['inputs'] as $key => $val): ?>
+		<input name="<?php echo $key; ?>" type="text" id="titulo" value="<?php echo $val; ?>" />
+	<?php endforeach; ?>
 
-	<?php for ($i = 0; $i < count($active_tags); $i++): ?>
-		<label>
-			<input class="checkbox"
-				name="<?php echo $active_tags[$i]; ?>-tag"
-				type="checkbox"
-				<?php echo in_array($active_tags[$i], $selected_tags) ? 'checked' : '' ?>
-			/>
-			<?php echo $active_tags[$i]; ?>
-		</label>
-	<?php endfor; ?>
+	<?php if (isset($content_update_form_fields['active_tags'])): ?>
+		<div class="tags-wrapper">
+			<?php for ($i = 0; $i < count($content_update_form_fields['active_tags']); $i++): ?>
+				<label>
+					<input class="checkbox"
+						name="<?php echo $content_update_form_fields['active_tags'][$i]; ?>-tag"
+						type="checkbox"
+						<?php echo in_array(
+							$content_update_form_fields['active_tags'][$i],
+							$content_update_form_fields['selected_tags']) ? 'checked' : '' ?>
+					/>
+					<?php echo $content_update_form_fields['active_tags'][$i]; ?>
+				</label>
+			<?php endfor; ?>
+		</div>
+	<?php endif; ?>
 
 	<div id="cnt_botonesedicion">
 		<img class="intLink" title="Quitar Formato" onClick="qFormato('removeFormat');" src="edicion/iconos/formato1.png">
@@ -55,7 +54,7 @@
     </textarea>
 
 	<div id="caja1" contenteditable="true">
-        <?php echo $contenido; ?>
+        <?php echo $content_update_form_fields['text-area']; ?>
     </div>
 	<br />
 

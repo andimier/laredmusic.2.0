@@ -5,40 +5,64 @@
 		return $tags;
 	}
 
+	function get_content_update_form_fields($selected_entry) {
+		return [
+			'id' => $selected_entry['id'],
+			'table' => 'noticias',
+			'hidden-fields' => [
+				'id' => $selected_entry['id'],
+				'table' => 'noticias',
+			],
+			'inputs' => [
+				'creation-date' => $selected_entry['fecha'],
+				'title' => $selected_entry['titulo'],
+				'alt' => $selected_entry['alt'],
+			],
+			'text-area' => $selected_entry['contenido'],
+			'image' => $selected_entry['imagen1'],
+			'active_tags' => [
+				'music-masters'
+			],
+			'selected_tags' => getTags($selected_entry),
+			'delete-entry-button-text' => "Eliminar",
+		];
+	}
+
+	function get_content_update_message() {
+		$message = null;
+
+		if (isset($_GET['contentUpdated'])) {
+			$message = $_GET['contentUpdated'] == 'true' ?
+				"¡El contenido fue actualizado correctamente!" :
+				"No hiciste ningún cambio.";
+		}
+
+		return $message;
+	}
+
+	function get_content_update_message_class() {
+		$class = "";
+
+		if (isset($_GET['contentUpdated'])) {
+			$class = $_GET['contentUpdated'] == 'true' ? "mensaje1" : "mensaje";
+		}
+
+		return $class;
+	}
+
 	$mensaje = "";
 	$mensaje2 = "";
 	$mensaje_img = "";
 	$mensajeimagen = "";
 
-	$content_update_message = null;
-	$content_update_message_class = "";
+	$content_update_message = get_content_update_message();
+	$content_update_message_class = get_content_update_message_class();
 
 	if (intval($_GET['noticia_id']) == 0) {
 		header("Location: noticias.php");
 	}
 
-	if (isset($_GET['contentUpdated'])) {
-		$content_update_message = $_GET['contentUpdated'] == 'true' ?
-			"¡El contenido fue actualizado correctamente!" :
-			"No hiciste ningún cambio.";
-
-		$content_update_message_class = $_GET['contentUpdated'] == 'true' ? "mensaje1" : "mensaje";
-	}
-
 	$id = $_GET['noticia_id'];
-	require_once('edicion/edc_imagenes/img_cambio.php');
-	traer_noticia_seleccionada();
-
-	$tabla = "noticias";
-	$id = $noticia_seleccionada['id'];
-	$fecha = $noticia_seleccionada['fecha'];
-	$titulo = $noticia_seleccionada['titulo'];
-	$alt = $noticia_seleccionada['alt'];
-	$contenido 	= $noticia_seleccionada['contenido'];
-	$imagenprincipal = $noticia_seleccionada['imagen1'];
-
-	$active_tags = ['music-masters'];
-	$selected_tags = getTags($noticia_seleccionada);
-
-    $tituloboton = "Eliminar";
+	$selected_entry = EntriesReader::get_selected_entry('noticias', $_GET['noticia_id']);
+	$content_update_form_fields = get_content_update_form_fields($selected_entry);
 ?>

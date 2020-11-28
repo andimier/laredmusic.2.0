@@ -1,7 +1,13 @@
 <?php
 	require_once("cnx/session.php");
-	require_once("includes/requeridos.php");
+	require_once("cnx/connection.php");
+
+	require_once("crud/entries-reader.php");
+
+	require_once("includes/functions.php");
+
 	require_once("../utils/phpfunctions.php");
+
 	require_once('components/nav.php');
 	require_once('components/news.php');
 
@@ -19,7 +25,7 @@
 		<div id="col2">
 			<div id="cnt_edicion">
 				<h3>
-					<?php echo $noticia_seleccionada['titulo'];?>
+					<?php echo $selected_entry['titulo'];?>
 				</h3>
 				<br />
 
@@ -31,14 +37,13 @@
 					<br />
 				<?php endif; ?>
 
-				<?php $archivo_eliminar = 'edicion/eliminarnoticia.php'; ?>
-				<?php require_once('edicion/edc_imagenes/img_principal.php'); ?>
+				<?php require_once('templates/entry-image-form.php'); ?>
 				<?php require_once("templates/content-edit-form.php"); ?>
 				<br />
 				<br />
 
 				<div id="col4" >
-					<?php require_once("edicion/formularioeliminar1.php"); ?>
+					<?php require_once("templates/delete-entry-form.php"); ?>
 				</div>
 			</div>
 		</div>

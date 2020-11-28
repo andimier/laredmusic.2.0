@@ -25,11 +25,11 @@
 	function updateContent($post) {
 		global $contentUpdated;
 
-		$tabla = $post['tabla'];
-		$fecha = $post['fecha'];
-		$titulo = trim(mysql_prep($post['titulo']));
+		$table = $post['table'];
+		$fecha = $post['creation-date'];
+		$titulo = trim(mysql_prep($post['title']));
 		$alt = trim(mysql_prep($post['alt']));
-		$contenido = mysql_prep($post['areadetexto']);
+		$contenido = mysql_prep($post['text-area']);
 
 		// A string e.g. music-masters,news,cars...
 		// TODO: in the future, many more tags couls be added to news
@@ -39,7 +39,7 @@
 			$tags .= "music-masters";
 		}
 
-		$q = "UPDATE $tabla SET";
+		$q = "UPDATE $table SET";
 		$q .= " fecha = '{$fecha}',";
 		$q .= " titulo = '{$titulo}',";
 		$q .= " alt = '{$alt}',";
