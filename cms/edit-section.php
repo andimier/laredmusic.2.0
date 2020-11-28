@@ -72,10 +72,15 @@
 			</div>
 		</div>
 
-		<?php require("includes/footer.php");?>
 		<?php include_once('includes/cabezote.php'); ?>
 		<?php include_once('includes/navegacion.php'); ?>
 
 		<script src="js/general.js" type="text/javascript"></script>
 	</body>
 </html>
+
+<?php
+	if (isset($connection)) {
+		phpMethods('close', $connection);
+	}
+?>

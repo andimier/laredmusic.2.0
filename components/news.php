@@ -24,7 +24,7 @@
             return $filtered_news;
         }
 
-        private function parseNews($news) {
+        private function parsedNews($news) {
             $output = [];
             $apply_filter = $this->filter != null;
 
@@ -69,7 +69,7 @@
                 return 'error, no se pudieron recuperar las noticias';
             }
 
-            return $this->parseNews($news);
+            return $this->parsedNews($news);
 
         }
 
