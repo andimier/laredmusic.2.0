@@ -1,0 +1,17 @@
+.music-masters {
+
+}
+
+.music-masters .video-entries-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.music-masters .video-entry {
+    width: 32%;
+}
+
+.music-masters .video-entry img {
+    width: 100%;
+}
