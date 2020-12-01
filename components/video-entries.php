@@ -14,7 +14,10 @@
         }
 
         private function getVideoData($id) {
-            $videoUrl = 'https://www.tiktok.com/oembed?url=https://www.tiktok.com/@green.rabbit';
+            $tiktok_user = '@maisadelosrios';
+
+            $videoUrl = 'https://www.tiktok.com/oembed?url=https://www.tiktok.com/';
+            $videoUrl .= $tiktok_user;
             $videoUrl .= '/video/' . $id;
 
             return $this->getCurl($videoUrl);
