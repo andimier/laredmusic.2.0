@@ -46,5 +46,8 @@
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
+		<div id="fbox-display-container"></div>
 	</body>
+
+	<script async src="js/f-box.js"></script>
 </html>

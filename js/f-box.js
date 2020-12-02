@@ -1,16 +1,19 @@
 /*
-    1. The image or video elements must have the "f-box" class to properly launch the gallery.
-    2. The main image of the project will not attach the controllers. (f-box-main-image)
+    1. The container of all the gallery elements must have th ef-box-gallery class name.
+    2. Each image or video element must have the "f-box" class to properly launch the gallery.
+    3. The main image of the project will not attach the controllers. (f-box-main-image).
+    4. Define a gallery container to append the gallery to.
+    5. Set type (image or video) to each item.
 */
 
-var fboxElHandlers = {
+var fboxConfig = {
     "buildElementContainer": function(clickedElementID) {
-        var elementContainer = document.getElementById('fbox-element-container')
+        var display = document.getElementById('fbox-display-container')
 
-        elementContainer.style.position = 'fixed';
-        elementContainer.height = 'auto';
-        elementContainer.style.opacity = 0;
-        elementContainer.setAttribute('fbox-element-id', clickedElementID);
+        display.style.position = 'fixed';
+        display.height = 'auto';
+        display.style.opacity = 0;
+        display.setAttribute('fbox-element-id', clickedElementID);
     },
 
     "manageListeners": function(removeListener) {
@@ -21,12 +24,14 @@ var fboxElHandlers = {
         }
     },
 
-    "galleryContainer": function() {
-        return document.getElementById('footer1');
+    "fboxGalleryWrapper": function() {
+        return document.getElementById('footer');
     },
 
-    "elementContainer": function() {
-        return document.getElementById('fbox-element-container');
+    // The element to contain the element once clicked on
+    // This has to be created somewhere in the DOM
+    "display": function() {
+        return document.getElementById('fbox-display-container');
     },
 
     "screen": function() {
@@ -44,7 +49,7 @@ var FBox = function(fboxClickedElement) {
     this.setElements();
 
     if (!this.isVideo) {
-        this.elements.fboxElement.addEventListener('load', function() {
+        this.config.fboxElement.addEventListener('load', function() {
             self.setImageDimensions();
         }, false);
     } else {
@@ -62,29 +67,32 @@ var FBox = function(fboxClickedElement) {
 FBox.prototype.setElements = function() {
     var self = this,
         clickedElement = this.fboxClickedElement,
-        elementId = fboxElHandlers["elementId"];
+        elementId = fboxConfig["elementId"];
 
     this["baseMobileDeviceHeight"] = 420;
 
-    this.elements = {};
-    this.elements["elementContainer"] = fboxElHandlers.elementContainer();
-    this.elements["fboxElement"] = !this.isVideo ?
-        self.buildfboxClickedElement(clickedElement.href, elementId) :
-        self.buildVideoElement(clickedElement.getAttribute('video-src'), elementId);
+    this.config = {};
+    this.config["display"] = fboxConfig.display();
 
-    this.elements["bkScreen"] = self.buildWindowScreen();
-    this.elements["closeButton"] = self.buidCloseElement();
-    this.elements["imageFootnoteText"] = clickedElement.getAttribute('texto');
-    this.elements["animationDuration"] = fboxElHandlers.animationDuration;
-    this.elements["galleryContainer"] = fboxElHandlers.galleryContainer();
-    this.elements["callBack"] = function() {
-        self.closeAndRemoveFBox(self.elements);
+    this.config["fboxElement"] = !this.isVideo ?
+        self.buildfboxClickedElement(clickedElement.href, elementId) :
+        // Enable for Vimeo
+        // self.buildVideoElement(clickedElement.getAttribute('video-src'), elementId);
+        self.buildTikTokVideoElement(clickedElement.getAttribute('video-src'), elementId);
+
+    this.config["bkScreen"] = self.buildWindowScreen();
+    this.config["closeButton"] = self.buidCloseElement();
+    this.config["imageFootnoteText"] = clickedElement.getAttribute('texto');
+    this.config["animationDuration"] = fboxConfig.animationDuration;
+    this.config["fboxGalleryWrapper"] = fboxConfig.fboxGalleryWrapper();
+    this.config["callBack"] = function() {
+        self.closeAndRemoveFBox(self.config);
     }
 };
 
 FBox.prototype.setImageDimensions = function() {
-    var el = this.elements,
-        imageContainer = el.elementContainer,
+    var el = this.config,
+        imageContainer = el.display,
         image = el.fboxElement;
 
     imageContainer.style.height = this.getElementDimension()['height'] + 'px';
@@ -99,7 +107,7 @@ FBox.prototype.setImageDimensions = function() {
 };
 
 FBox.prototype.getElementDimension = function() {
-    var image = this.elements && this.elements.fboxElement || this.fboxClickedElement,
+    var image = this.config && this.config.fboxElement || this.fboxClickedElement,
         ratio = !this.isVideo ? (image.height / image.width) : (720 / 1280),
         height = this.getImageHeight(!this.isVideo ? image.height : 720),
         width = height / ratio,
@@ -114,29 +122,31 @@ FBox.prototype.getElementDimension = function() {
 };
 
 FBox.prototype.appendFBoxElementsToDOM = function() {
-    var el = this.elements,
-        closeButton = el.closeButton,
-        elementContainer = el.elementContainer,
-        screen = el.bkScreen,
-        element = el.fboxElement,
-        galleryContainer = el.galleryContainer;
 
-    galleryContainer.appendChild(screen);
-    elementContainer.appendChild(element);
-    elementContainer.appendChild(closeButton);
+    this.config.fboxGalleryWrapper.appendChild(this.config.bkScreen);
+    this.config.display.appendChild(this.config.fboxElement);
+    // this.config.display.appendChild(this.config.closeButton);
 
-    if (el.imageFootnoteText) {
-        fbox_texto = this.buildFotoTextElementContainer(imageFootnoteText);
-        elementContainer.appendChild(fbox_texto);
+    if (this.config.imageFootnoteText) {
+        fbox_texto = this.buildFotoTextElementContainer(this.config.imageFootnoteText);
+        this.config.display.appendChild(fbox_texto);
     }
+
+    setTimeout(function() {
+        var tiktokScript = document.createElement('SCRIPT');
+        tiktokScript.id = 'tiktok-script';
+        tiktokScript.src = 'js/tiktok.js';
+        document.body.appendChild(tiktokScript)
+
+    }, 1000);
 };
 
 FBox.prototype.openFBox = function() {
-    var el = this.elements,
+    var el = this.config,
         options = {opacity: 1},
         callBack = el.callBack;
 
-    $(el.elementContainer).animate(options, el.animationDuration, function(){
+    $(el.display).animate(options, el.animationDuration, function(){
         el.closeButton.addEventListener('click', callBack, false);
         el.bkScreen.addEventListener('click', callBack, false);
     });
@@ -159,18 +169,21 @@ FBox.prototype.fBoxKeyControllerPress = function(event) {
 };
 
 FBox.prototype.closeAndRemoveFBox = function() {
-    var galleryContainer = fboxElHandlers.galleryContainer(),
-        elementContainer = fboxElHandlers.elementContainer(),
-        screen = fboxElHandlers.screen(),
-        duration = fboxElHandlers.animationDuration;
+    var fboxGalleryWrapper = fboxConfig.fboxGalleryWrapper(),
+        display = fboxConfig.display(),
+        screen = fboxConfig.screen(),
+        duration = fboxConfig.animationDuration;
 
-    $(elementContainer).animate({opacity: 0}, duration, function() {
-        elementContainer.innerHTML = '';
-        elementContainer.removeAttribute('style');
-        galleryContainer.removeChild(screen);
+    $(display).animate({opacity: 0}, duration, function() {
+        display.innerHTML = '';
+        display.removeAttribute('style');
+        fboxGalleryWrapper.removeChild(screen);
+
+        document.body.removeChild(document.getElementById('tiktok-script'));
+        document.body.removeChild(document.getElementById('ttEmbedLibScript'));
     });
 
-    fboxElHandlers.manageListeners('removeListener');
+    fboxConfig.manageListeners('removeListener');
 };
 
 FBox.prototype.getIsMobileDisplay = function() {
@@ -272,26 +285,26 @@ FBox.prototype.attachControllers = function() {
     var i = 0,
         self = this;
 
-    while (i < 2) {
-        var controller = document.createElement('DIV');
+    // while (i < 2) {
+    //     var controller = document.createElement('DIV');
 
-        controller.id = i === 0 ? 'fbox-right-controller' : 'fbox-left-controller';
-        controller.style.backgroundColor = 'black';
-        controller.style.cursor = 'pointer';
-        controller.style.position = 'absolute';
-        controller.style.left = i === 0 ? '100%' : 0;
-        controller.style.backgroundImage = i === 0 ? 'url("imagenes/flecha-siguiente.png")' : 'url("imagenes/flecha-anterior.png")';
-        controller.style.backgroundSize = '100%';
-        controller.style.zIndex = i === 0 ? 2 : 3;
-        controller.style.opacity = 0.8;
+    //     controller.id = i === 0 ? 'fbox-right-controller' : 'fbox-left-controller';
+    //     controller.style.backgroundColor = 'black';
+    //     controller.style.cursor = 'pointer';
+    //     controller.style.position = 'absolute';
+    //     controller.style.left = i === 0 ? '100%' : 0;
+    //     controller.style.backgroundImage = i === 0 ? 'url("imagenes/flecha-siguiente.png")' : 'url("imagenes/flecha-anterior.png")';
+    //     controller.style.backgroundSize = '100%';
+    //     controller.style.zIndex = i === 0 ? 2 : 3;
+    //     controller.style.opacity = 0.8;
 
-        self.setControllersDimensions(i, controller);
-        controller.addEventListener('click', self.changeElementSRC.bind(self));
+    //     self.setControllersDimensions(i, controller);
+    //     controller.addEventListener('click', self.changeElementSRC.bind(self));
 
-        self.elements.elementContainer.appendChild(controller);
+    //     self.config.display.appendChild(controller);
 
-        i++;
-    }
+    //     i++;
+    // }
 };
 
 FBox.prototype.setControllersDimensions = function(i, controller) {
@@ -310,8 +323,8 @@ FBox.prototype.setControllersDimensions = function(i, controller) {
 
 FBox.prototype.changeElementSRC = function(event, controller) {
     var clickedController = controller || event.target.id,
-        collectionLastElementID = fboxElHandlers.collection.length - 1,
-        currentElemetID = fboxElHandlers['clickedElementID'],
+        collectionLastElementID = fboxConfig.collection.length - 1,
+        currentElemetID = fboxConfig['clickedElementID'],
         nextElementId;
 
     nextElementId = currentElemetID === 0 ? collectionLastElementID : currentElemetID - 1;
@@ -320,8 +333,8 @@ FBox.prototype.changeElementSRC = function(event, controller) {
         nextElementId = currentElemetID === collectionLastElementID ? 0 : currentElemetID + 1;
     }
 
-    fboxElHandlers['clickedElementID'] = nextElementId;
-    document.getElementById('fbox-img').src = fboxElHandlers.collection[nextElementId].getAttribute('video-src');
+    fboxConfig['clickedElementID'] = nextElementId;
+    document.getElementById('fbox-img').src = fboxConfig.collection[nextElementId].getAttribute('video-src');
 };
 
 FBox.prototype.buildFotoTextElementContainer = function(textNode) {
@@ -359,6 +372,21 @@ FBox.prototype.buildVideoElement = function(videoSRC, elementId) {
     return fboxElement;
 };
 
+FBox.prototype.buildTikTokVideoElement = function(videoSRC, elementId) {
+    var fboxElement = document.createElement("BLOCKQUOTE");
+    var section = document.createElement('SECTION');
+    var tiktokUser = '@maisadelosrios';
+    var cite = "https://www.tiktok.com/" + tiktokUser + "/video/" + videoSRC;
+
+    fboxElement.className = 'tiktok-embed';
+    fboxElement.setAttribute('cite', cite);
+    fboxElement.setAttribute('data-video-id', videoSRC);
+    fboxElement.style = "max-width: 605px;min-width: 325px;";
+    fboxElement.appendChild(section);
+
+    return fboxElement;
+}
+
 FBox.prototype.buildfboxClickedElement = function(imageSource) {
     var fboxElement = document.createElement("img");
 
@@ -395,15 +423,15 @@ function buildFBox(event) {
 
     var clickedElementID = Number(fbox.getAttribute('fbox-element-id'));
 
-    fboxElHandlers.collection = event.currentTarget.querySelectorAll('.f-box');
+    fboxConfig.collection = event.currentTarget.querySelectorAll('.f-box');
 
     event.preventDefault();
-    fboxElHandlers.buildElementContainer(clickedElementID);
-    fboxElHandlers['clickedElementID'] = clickedElementID;
-    fboxElHandlers.itemsLength = '';
+    fboxConfig.buildElementContainer(clickedElementID);
+    fboxConfig['clickedElementID'] = clickedElementID;
+    fboxConfig.itemsLength = '';
 
     new FBox(fbox);
-    fboxElHandlers.manageListeners();
+    fboxConfig.manageListeners();
 }
 
 (function loadFBox() {
@@ -418,11 +446,11 @@ window.addEventListener('resize', function(){
     var screen = document.getElementById('fbox-screen');
 
     if (screen) {
-        var elementContainer = document.getElementById('fbox-element-container');
-        var galleryContainer = fboxElHandlers.galleryContainer();
+        var display = document.getElementById('fbox-element-container');
+        var fboxGalleryWrapper = fboxConfig.fboxGalleryWrapper();
 
-        document.removeChild(elementContainer);
-        galleryContainer.removeChild(screen);
+        // document.removeChild(display);
+        // fboxGalleryWrapper.removeChild(screen);
     }
 }, false);
 

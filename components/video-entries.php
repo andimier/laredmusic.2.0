@@ -27,6 +27,7 @@
             $q = "SELECT * FROM entries";
             $r = phpMethods('query', $q);
             $video_entries = [];
+            $video_element_id = 0;
 
             forEach ($r as $video_entry) {
                 $video_data = $this->getVideoData($video_entry['video']);
@@ -35,8 +36,12 @@
                 if (!isset($data->{'status_msg'})) {
                     array_push($video_entries, [
                         'thumbnail_url' => $data->thumbnail_url,
-                        'title' => $data->title
+                        'title' => $data->title,
+                        'video_element_id' => $video_element_id,
+                        'video_id' => $video_entry['video']
                     ]);
+
+                    $video_element_id += 1;
                 }
             }
 
