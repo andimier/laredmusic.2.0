@@ -4,18 +4,17 @@
     3. The main image of the project will not attach the controllers. (f-box-main-image).
     4. Define a gallery container to append the gallery to.
     5. Set type (image or video) to each item.
+    6. Link the f-box.css stylesheet in the html page.
 */
 
 var fboxConfig = {
     "buildElementContainer": function(clickedElementID) {
+
+        // *** Styles are set in f-box.css
         var display = document.getElementById('fbox-display-container')
-
-        display.style.position = 'fixed';
-        display.height = 'auto';
-        display.style.opacity = 0;
         display.setAttribute('fbox-element-id', clickedElementID);
+        display.classList.add('active');
     },
-
     "manageListeners": function(removeListener) {
         if (!removeListener) {
             document.addEventListener('keydown', FBox.prototype.fBoxKeyControllerPress, false);
@@ -23,30 +22,32 @@ var fboxConfig = {
             document.removeEventListener('keydown', FBox.prototype.fBoxKeyControllerPress, false);
         }
     },
-
-    "fboxGalleryWrapper": function() {
+    "getFBoxGalleryWrapper": function() {
         return document.getElementById('footer');
     },
-
     // The element to contain the element once clicked on
     // This has to be created somewhere in the DOM
-    "display": function() {
-        return document.getElementById('fbox-display-container');
+    "display": document.getElementById('fbox-display-container'),
+    "screen": document.getElementById('fbox-screen'),
+    "getFBoxScreenElement": function() {
+        return document.getElementById('fbox-screen')
     },
-
-    "screen": function() {
-        return document.getElementById('fbox-screen');
+    "controllers": {
+        backController: "required/assets/flecha-anterior.png",
+        forwardController: "required/assets/flecha-siguiente.png",
+        closeButton: "required/assets/cerrar.png"
     },
-
-    "animationDuration": 500
+    "animationDuration": 500,
+    "isTikTok": true,
 };
 
 var FBox = function(fboxClickedElement) {
-    var self = this;
-
+    this.config = Object.assign({}, fboxConfig);
     this.isVideo = fboxClickedElement.getAttribute('type') === 'video';
     this.fboxClickedElement = fboxClickedElement;
     this.setElements();
+
+    var self = this;
 
     if (!this.isVideo) {
         this.config.fboxElement.addEventListener('load', function() {
@@ -56,7 +57,9 @@ var FBox = function(fboxClickedElement) {
         self.setImageDimensions();
     }
 
-    if (fboxClickedElement.classList.value.indexOf('f-box-main-image') === -1) {
+    var isSingleImage = fboxClickedElement.classList.value.indexOf('f-box-main-image') !== -1;
+
+    if (!isSingleImage && !this.config.isTikTok) {
         this.attachControllers();
     }
 
@@ -65,43 +68,44 @@ var FBox = function(fboxClickedElement) {
 };
 
 FBox.prototype.setElements = function() {
-    var self = this,
-        clickedElement = this.fboxClickedElement,
-        elementId = fboxConfig["elementId"];
 
-    this["baseMobileDeviceHeight"] = 420;
+    this.baseMobileDeviceHeight = 420;
 
-    this.config = {};
-    this.config["display"] = fboxConfig.display();
-
-    this.config["fboxElement"] = !this.isVideo ?
-        self.buildfboxClickedElement(clickedElement.href, elementId) :
+    this.config.fboxElement = !this.isVideo ?
+        this.buildfboxClickedElement(this.fboxClickedElement.href, fboxConfig.elementId) :
         // Enable for Vimeo
-        // self.buildVideoElement(clickedElement.getAttribute('video-src'), elementId);
-        self.buildTikTokVideoElement(clickedElement.getAttribute('video-src'), elementId);
+        // this.buildVideoElement(this.fboxClickedElement.getAttribute('video-src'), elementId);
+        this.buildTikTokVideoElement(this.fboxClickedElement.getAttribute('video-src'), fboxConfig.elementId);
 
-    this.config["bkScreen"] = self.buildWindowScreen();
-    this.config["closeButton"] = self.buidCloseElement();
-    this.config["imageFootnoteText"] = clickedElement.getAttribute('texto');
-    this.config["animationDuration"] = fboxConfig.animationDuration;
-    this.config["fboxGalleryWrapper"] = fboxConfig.fboxGalleryWrapper();
-    this.config["callBack"] = function() {
+    this.config.bkScreen = this.buildWindowScreen();
+    this.config.closeButton = this.getCloseButtonElement();
+    this.config.imageFootnoteText = this.fboxClickedElement.getAttribute('texto');
+    this.config.fboxGalleryWrapper = this.config.getFBoxGalleryWrapper();
+
+    var self = this;
+
+    this.config.callBack = function() {
         self.closeAndRemoveFBox(self.config);
     }
 };
 
 FBox.prototype.setImageDimensions = function() {
-    var el = this.config,
-        imageContainer = el.display,
-        image = el.fboxElement;
+    var config = this.config;
+    var isTiktok = true;
 
-    imageContainer.style.height = this.getElementDimension()['height'] + 'px';
-    imageContainer.style.width = this.getElementDimension()['width'] + 'px';
-    image.style.width = '100%';
+    if (!isTiktok) {
+        config.display.style.height = this.getElementDimension()['height'] + 'px';
+        config.display.style.width = this.getElementDimension()['width'] + 'px';
+        config.fboxElement.style.width = '100%';
 
-    this.centerImage(imageContainer, this.getElementDimension()['width'], this.getElementDimension()['height']);
+        this.centerImage(
+            config.display,
+            this.getElementDimension()['width'],
+            this.getElementDimension()['height']
+        );
+    }
 
-    if (el.fbox_texto) {
+    if (config.fbox_texto) {
         this.setTextDimensions();
     }
 };
@@ -125,7 +129,7 @@ FBox.prototype.appendFBoxElementsToDOM = function() {
 
     this.config.fboxGalleryWrapper.appendChild(this.config.bkScreen);
     this.config.display.appendChild(this.config.fboxElement);
-    // this.config.display.appendChild(this.config.closeButton);
+    this.config.display.appendChild(this.config.closeButton);
 
     if (this.config.imageFootnoteText) {
         fbox_texto = this.buildFotoTextElementContainer(this.config.imageFootnoteText);
@@ -142,13 +146,14 @@ FBox.prototype.appendFBoxElementsToDOM = function() {
 };
 
 FBox.prototype.openFBox = function() {
-    var el = this.config,
-        options = {opacity: 1},
-        callBack = el.callBack;
+    var config = this.config;
+    var options = {
+        opacity: 1
+    };
 
-    $(el.display).animate(options, el.animationDuration, function(){
-        el.closeButton.addEventListener('click', callBack, false);
-        el.bkScreen.addEventListener('click', callBack, false);
+    $(config.display).animate(options, config.animationDuration, function() {
+        config.closeButton.addEventListener('click', config.callBack, false);
+        config.bkScreen.addEventListener('click', config.callBack, false);
     });
 };
 
@@ -169,18 +174,22 @@ FBox.prototype.fBoxKeyControllerPress = function(event) {
 };
 
 FBox.prototype.closeAndRemoveFBox = function() {
-    var fboxGalleryWrapper = fboxConfig.fboxGalleryWrapper(),
-        display = fboxConfig.display(),
-        screen = fboxConfig.screen(),
-        duration = fboxConfig.animationDuration;
+    var config = this.config;
+
+    var fboxGalleryWrapper = config.fboxGalleryWrapper;
+    var display = config.display;
+    var screen = config.getFBoxScreenElement();
+    var duration = config.animationDuration;
 
     $(display).animate({opacity: 0}, duration, function() {
         display.innerHTML = '';
         display.removeAttribute('style');
         fboxGalleryWrapper.removeChild(screen);
 
+        // Remove Tik Tok things
         document.body.removeChild(document.getElementById('tiktok-script'));
         document.body.removeChild(document.getElementById('ttEmbedLibScript'));
+        display.classList.remove('active');
     });
 
     fboxConfig.manageListeners('removeListener');
@@ -285,26 +294,27 @@ FBox.prototype.attachControllers = function() {
     var i = 0,
         self = this;
 
-    // while (i < 2) {
-    //     var controller = document.createElement('DIV');
+    while (i < 2) {
+        var controller = document.createElement('DIV');
 
-    //     controller.id = i === 0 ? 'fbox-right-controller' : 'fbox-left-controller';
-    //     controller.style.backgroundColor = 'black';
-    //     controller.style.cursor = 'pointer';
-    //     controller.style.position = 'absolute';
-    //     controller.style.left = i === 0 ? '100%' : 0;
-    //     controller.style.backgroundImage = i === 0 ? 'url("imagenes/flecha-siguiente.png")' : 'url("imagenes/flecha-anterior.png")';
-    //     controller.style.backgroundSize = '100%';
-    //     controller.style.zIndex = i === 0 ? 2 : 3;
-    //     controller.style.opacity = 0.8;
+        controller.id = i === 0 ? 'fbox-right-controller' : 'fbox-left-controller';
+        controller.style.backgroundColor = 'black';
+        controller.style.cursor = 'pointer';
+        controller.style.position = 'absolute';
+        controller.style.left = i === 0 ? '100%' : 0;
+        controller.style.backgroundSize = '100%';
+        controller.style.zIndex = i === 0 ? 2 : 3;
+        controller.style.opacity = 0.8;
+        controller.style.backgroundImage = i === 0 ?
+            'url('+fboxConfig.controllers.forwardController+')' :
+            'url('+fboxConfig.controllers.backController+')';
 
-    //     self.setControllersDimensions(i, controller);
-    //     controller.addEventListener('click', self.changeElementSRC.bind(self));
+        self.setControllersDimensions(i, controller);
+        controller.addEventListener('click', self.changeElementSRC.bind(self));
+        self.config.display.appendChild(controller);
 
-    //     self.config.display.appendChild(controller);
-
-    //     i++;
-    // }
+        i++;
+    }
 };
 
 FBox.prototype.setControllersDimensions = function(i, controller) {
@@ -381,7 +391,7 @@ FBox.prototype.buildTikTokVideoElement = function(videoSRC, elementId) {
     fboxElement.className = 'tiktok-embed';
     fboxElement.setAttribute('cite', cite);
     fboxElement.setAttribute('data-video-id', videoSRC);
-    fboxElement.style = "max-width: 605px;min-width: 325px;";
+    fboxElement.style = "max-width: 605px; min-width: 300px; width: 90%;";
     fboxElement.appendChild(section);
 
     return fboxElement;
@@ -397,18 +407,11 @@ FBox.prototype.buildfboxClickedElement = function(imageSource) {
     return fboxElement;
 };
 
-FBox.prototype.buidCloseElement = function() {
-    var closeButton = document.createElement("div"),
-        isMobileDisplay = this.getIsMobileDisplay(),
-        baseDimention = isMobileDisplay ? 35 : 50;
+FBox.prototype.getCloseButtonElement = function() {
+    var closeButton = document.createElement("div");
 
-    closeButton.style.position = 'absolute';
-    closeButton.style.width = baseDimention + 'px';
-    closeButton.style.height = baseDimention + 'px';
-    closeButton.style.top = -(baseDimention + 5) + 'px';
-    closeButton.style.right = '0';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.backgroundImage = 'url("imagenes/cerrar.png")';
+    closeButton.className = 'fbox-close-button';
+    closeButton.style.backgroundImage = 'url(' + fboxConfig.controllers.closeButton + ')';
     closeButton.style.backgroundSize = '100%';
 
     return closeButton;
@@ -447,7 +450,7 @@ window.addEventListener('resize', function(){
 
     if (screen) {
         var display = document.getElementById('fbox-element-container');
-        var fboxGalleryWrapper = fboxConfig.fboxGalleryWrapper();
+        var fboxGalleryWrapper = fboxConfig.getFBoxGalleryWrapper();
 
         // document.removeChild(display);
         // fboxGalleryWrapper.removeChild(screen);

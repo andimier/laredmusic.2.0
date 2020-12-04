@@ -23,7 +23,8 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="estilos/noticias-gr.css"/>
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:650px)" href="estilos/noticias-md.css" />
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/noticias-pq.css" />
-		<link rel="stylesheet" type="text/css"  href="estilos/music-masters.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/f-box.css" />
 	</head>
 
 	<body>
