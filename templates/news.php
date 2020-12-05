@@ -1,17 +1,20 @@
+<h1 class="news-section-title">NOTICIAS</h1>
 <ul>
     <?php for ($i = 0; $i < count($noticias); $i++ ): ?>
-        <li class="cnt_noticias">
-            <a href="noticia.php?noticia=<?php echo $noticias[$i]['id']; ?>">
-                <div class="cnt_imgnoticia">
+        <li class="news-wrapper">
+            <div class="news-main-image">
+                <a href="noticia.php?noticia=<?php echo $noticias[$i]['id']; ?>">
                     <img src="cms/<?php echo $noticias[$i]['small_image']; ?>"  />
-                </div>
+                </a>
+            </div>
 
-                <div class="cnt_noticia">
+            <div class="news-text-wrapper">
+                <a href="noticia.php?noticia=<?php echo $noticias[$i]['id']; ?>">
                     <p><?php echo $noticias[$i]['date']; ?></p>
                     <h2><?php echo $noticias[$i]['title']; ?></h2>
                     <?php echo $noticias[$i]['html_tags']; ?>
-                </div>
-            </a>
+                </a>
+            </div>
         </li>
     <?php endfor; ?>
 </ul>

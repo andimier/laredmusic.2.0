@@ -25,9 +25,6 @@
 		<!--<div class="cambioidioma"><a href="english/news.php">SWITCH TO ENGLISH</a></div>-->
 		<div class="contenedor">
 			<?php require_once('cuerpo/logosredes.php'); ?>
-
-			<h1 class="titulo_noticia">NOTICIAS</h1>
-
 			<?php require_once('templates/news.php'); ?>
 		</div>
 

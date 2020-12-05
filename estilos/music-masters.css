@@ -11,3 +11,14 @@
 .music-masters .video-entry img {
     width: 100%;
 }
+
+.section-title {
+	border-bottom: 3px solid #000;
+	clear: both;
+	font-family: 'SteelfishEbRegular', AgencyFB, Arial;
+	font-size: 70px;	color:#000;
+	height: 70px;
+	margin: 0px 0 15px 0;
+	padding: 100px 0 15px 0;
+	width: 100%;
+}

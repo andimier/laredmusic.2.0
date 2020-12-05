@@ -1,3 +1,4 @@
+<h2 class="section-title">Tik Tok</h2>
 <ul class="video-entries-wrapper f-box-gallery">
     <?php forEach ($video_entries_group as $video_entry): ?>
         <li class="video-entry">

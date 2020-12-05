@@ -32,17 +32,19 @@
 		<!--<div class="cambioidioma"><a href="english/news.php">SWITCH TO ENGLISH</a></div>-->
 		<div class="contenedor music-masters">
 			<?php require_once('cuerpo/logosredes.php'); ?>
-			<h1 class="titulo_noticia">MUSIC MASTERS</h1>
+			<h1 class="section-title">MUSIC MASTERS</h1>
 
-			<section>
-				<h2 class="titulo_noticia">Tik Tok</h2>
-				<?php require_once('templates/video-entries.php'); ?>
-			</section>
+			<?php if (!empty($video_entries_group)): ?>
+				<section>
+					<?php require_once('templates/video-entries.php'); ?>
+				</section>
+			<?php endif; ?>
 
-			</section>
-				<h2 class="titulo_noticia">NOTICIAS</h2>
-				<?php require_once('templates/news.php'); ?>
-			</section>
+			<?php if (!empty($noticias)): ?>
+				</section>
+					<?php require_once('templates/news.php'); ?>
+				</section>
+			<?php endif; ?>
 		</div>
 
 		<?php require_once('footer.php'); ?>

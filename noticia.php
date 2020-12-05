@@ -27,25 +27,21 @@
 		<div class="contenedor">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
-			<div class="titulo_noticia">NOTICIAS</div>
+			<div class="news-section-title">NOTICIAS</div>
 
 			<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
-				<div class="contenedor_noticia">
-					<div class="titulonoticias">
-						<h1>
-							<?php echo $noticia['titulo']; ?>
-						</h1>
-					</div>
+				<div class="single-news-wrapper">
+					<p><?php echo $noticia['fecha']; ?></p>
+					<h2><?php echo $noticia['titulo']; ?></h2>
 
-					<div class="fechanoticia2">
-						<?php echo $noticia['fecha']; ?>
-					</div>
-
-					<div class="noticia">
-						<div class="imagennoticia">ß
+					<div class="noticia news-body">
+						<div class="imagennoticia">
 							<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
 						</div>
-						<?php echo $noticia['contenido']; ?>
+
+						<p>
+							<?php echo $noticia['contenido']; ?>
+						</p>
 					</div>
 				</div>
 			<?php endwhile; ?>

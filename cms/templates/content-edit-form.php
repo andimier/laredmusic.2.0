@@ -48,7 +48,7 @@
 	<?php if(isset($content_update_form_fields['text-area'])): ?>
 		<textarea
 			style="display:none;"
-			name="areadetexto"
+			name="text-area"
 			id="areadetexto"
 			cols="100"
 			rows="14">
