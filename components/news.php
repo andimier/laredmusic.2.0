@@ -11,7 +11,7 @@
         }
 
         private function getFilteredNews($news) {
-            $filtered_news = [];
+            $filtered_news = array();
 
             for ($i = 0; $i < count($news); $i++) {
                 $tags = !empty($news[$i]['tags']) ? explode(',', $news[$i]['tags']) : [];
@@ -25,7 +25,7 @@
         }
 
         private function parsedNews($news) {
-            $output = [];
+            $output = array();
             $apply_filter = $this->filter != null;
 
             while($n = phpMethods('fetch-array', $news)) {
