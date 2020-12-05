@@ -20,15 +20,18 @@
 	}
 
 	$content_creation_form_props = [
-		'input-text' => 'Crear nueva noticia',
-		'redirect-page' => 'noticias.php',
-		'required-fields' => ['titulo'],
-		'table' => 'noticias',
+		'input-text' => 'Inserta nuevo video',
+		'redirect-page' => 'edit-section.php',
+		'required-fields' => [
+			'title',
+			'video'
+		],
+		'table' => 'entries',
 	];
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
-	$news_list = EntriesReader::get_all_news_entries();
+	$entries_list = EntriesReader::get_all_entries();
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +44,7 @@
 		<div id="col2">
 			<div id='cnt_edicion'>
 				<h3>Noticias</h3>
-				<h4>Insertar nueva noticia</h4>
+				<h4>Insertar nueva entry</h4>
 
 				<?php require('templates/create-content-form.php'); ?>
 				<br>
@@ -54,10 +57,14 @@
 				<br />
 
 				<ul>
-					<?php while($noticia = phpMethods('fetch-array', $news_list)): ?>
+					<?php while($entry = phpMethods('fetch-array', $entries_list)): ?>
 						<li>
-							<a href="editar-noticia.php?noticia_id=<?php echo urlencode($noticia["id"]); ?> ">
-								<?php echo $noticia["fecha"] . '<br /> <strong>' . $noticia["titulo"] . '</strong>'; ?>
+							<a href="edit-entry.php?entry_id=<?php echo urlencode($entry["id"]); ?> ">
+								<p><?php echo $entry["creation_date"]; ?></p>
+								<h3>
+									<strong>Título:<?php echo $entry["title"]; ?></strong>
+								</h3>
+								<p>Video: <?php echo $entry['video']; ?></p>
 							</a>
 						</li>
 					<?php endwhile; ?>

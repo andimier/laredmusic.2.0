@@ -9,7 +9,7 @@
 	require_once("../utils/phpfunctions.php");
 
 	require_once('components/nav.php');
-	require_once('components/news.php');
+	require_once('components/entry.php');
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
@@ -25,7 +25,7 @@
 		<div id="col2">
 			<div id="cnt_edicion">
 				<h3>
-					<?php echo $selected_entry['titulo'];?>
+					<?php echo $selected_entry['title'];?>
 				</h3>
 				<br />
 
@@ -37,7 +37,6 @@
 					<br />
 				<?php endif; ?>
 
-				<?php require_once('templates/entry-image-form.php'); ?>
 				<?php require_once("templates/content-edit-form.php"); ?>
 				<br />
 				<br />

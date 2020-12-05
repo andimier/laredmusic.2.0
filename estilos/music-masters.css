@@ -1,0 +1,36 @@
+.music-masters .video-entries-wrapper * {
+    font-family: 'Arial';
+    font-size: 15px;
+}
+
+.music-masters .video-entries-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.music-masters .video-entry {
+    width: 46%;
+}
+
+.music-masters .video-entry img {
+    width: 100%;
+}
+
+.section-title {
+	border-bottom: 3px solid #000;
+	clear: both;
+	font-family: 'SteelfishEbRegular', AgencyFB, Arial;
+	font-size: 70px;	color:#000;
+	height: 70px;
+	margin: 0px 0 15px 0;
+	padding: 100px 0 15px 0;
+	width: 100%;
+}
+
+@media all and (min-width: 650px) {
+    .music-masters .video-entry {
+        width: 30%;
+    }
+}

@@ -1,0 +1,31 @@
+#fbox-display-container {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    top: 1px;
+    opacity: 1;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+}
+
+#fbox-display-container.active {
+    display: flex;
+}
+
+#fbox-display-container .tiktok-embed {
+    width: 90%;
+}
+
+#fbox-display-container .fbox-close-button {
+    /*
+    To set de close button dimensions
+    isMobileDisplay ? 35 : 50; */
+    position : absolute;
+    width : 40px;
+    height : 40px;
+    top : 20px;
+    right : 20px;
+    cursor : pointer;
+}

@@ -1,14 +1,14 @@
-body{
+body {
 	margin:0;
 	padding:0;
 }
 
-a{
+a {
 	text-decoration:none;
 }
 
 input[type=submit]{
-	
+
 	float:none;
 	padding:10px 20px 12px 20px;
 	border:0;
@@ -18,36 +18,26 @@ input[type=submit]{
 	cursor:pointer
 }
 
-
-
 input[type=checkbox]{
-	
-	float:none;
-	border:none;
-	background:none;
-	cursor:pointer;
-	
+	float: none;
+	border: none;
+	background: none;
+	cursor: pointer;
 }
 
-
-
-label{
+label {
 	font-family: "Courier New", Courier, monospace;
 	height:30px;
 }
 
-
 input[type=password]{
-	
-	float:none;
-	margin: 0px 0px 10px 0px;
-	border:none;
-	padding: 15px 15px 15px 15px;
+	border: none;
+	float: none;
 	font-family: "Courier New", Courier, monospace;
 	font-size: 15px;
-	
+	margin: 0px 0px 10px 0px;
+	padding: 15px 15px 15px 15px;
 }
-
 
 input[type="text"]{
 	float:none;
@@ -62,8 +52,6 @@ input[type="text"]:focus{
 	background-color:#eee;
 }
 
-
-
 textarea {
 	float:none;
 	max-width: 500px;
@@ -74,22 +62,20 @@ textarea {
 	border: 1px solid #ccc;
 	resize:none;
 	overflow:scroll;
-	
 }
 
 textarea:focus{
 	background-color:#eee;
 }
 
-ul{
+ul {
 	padding:0;
 	margin:15px 0 0 0;
 	list-style-type:none;
 }
 
-li{
+li {
 	padding:0;
-	
 }
 
 .fondo_azul{background-color:#3cb8f9}
@@ -114,27 +100,26 @@ li{
 .letra_celeste{color:#8cf9f0}
 .letra_blanca{color:#fff}
 
+.checkbox {
+	padding: 20px;
+}
 
 .borde_puntos{
 	border:1px dotted #666;
 }
 
-
-
 .nuevo_archivo{
-	
-	padding: 20px 10px 20px 10px;
-	border:none;
-	font-family: "Courier New", Courier, monospace;
 	border:none;
 	cursor:pointer;
-	
+	font-family: "Courier New", Courier, monospace;
+	padding: 20px 10px 20px 10px;
 }
 
-.nuevo_archivo:hover{color:#f00}
+.nuevo_archivo:hover {
+	color:#f00
+}
 
-
-.cnt_nuevo_archivo{
+.cnt_nuevo_archivo {
 	clear:both;
 	float:none;
 	max-width:450px;
@@ -142,21 +127,15 @@ li{
 	margin: 0 0 0 0;
 	padding:0 10px 10px 0;
 	font-family: "Courier New", Courier, monospace;
-	
-	
 }
 
-.cnt_nuevo_archivo2{
-	
+.cnt_nuevo_archivo2 {
 	max-width:500px;
 	height:auto;
 	margin: 0 0 0 0;
 	padding:0 10px 0 0;
 	font-family: "Courier New", Courier, monospace;
-	
 }
-
-
 
 #fileUpload {
 	position: relative;
@@ -164,34 +143,27 @@ li{
 	height:45px;
 	margin:20px 0 0 8px;
 	overflow: hidden;
-	
 }
 
-
 #fileUpload input.mascara{
-	position: absolute;
-	width:150px;
-	height:42px;
-	
-	top:0;
-	left:0;
-	
-	padding: 0 0 0 0;
-	cursor:pointer;
-	border:none;
 	background-color:#333840;
-	
+	background-image: url('../imagenes/ico3.png');
+	background-position: 0;
+	background-repeat: no-repeat;
+	background-size: 45px 45px;
+	border: none;
 	color:#fff;
-	font-weight:300;
+	cursor: pointer;
 	font-family: "Courier New", Courier, monospace;
-	font-size:12px;
+	font-size: 12px;
+	font-weight: 300;
+	height: 42px;
+	left:0;
+	padding: 0 0 0 0;
+	position: absolute;
 	text-align:center;
-	
-	
-	background-image:url('../imagenes/ico3.png');
-	background-size:45px 45px;
-	background-repeat:no-repeat;
-	background-position:0
+	top: 0;
+	width: 150px;
 }
 
 #fileUpload input.mascara:hover{
@@ -219,9 +191,7 @@ li{
 	left:10px;
 	padding:10px 0 0px 10px;
 	background-color:#ccc;
-	
 	color:#f00;
-	
 	border:1px solid #000;
 	opacity:.5;
 }
@@ -231,7 +201,6 @@ li{
 	height:10px;
 	background-color:#000
 }
-
 
 #bsubirimg{
 	clear:both;
@@ -248,13 +217,3 @@ li{
 #bsubirimg:hover{
 	background-color:#f00;
 }
-
-
-
-
-
-
-
-
-
-
