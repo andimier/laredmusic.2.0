@@ -22,7 +22,7 @@
 	$content_creation_form_props = array(
 		'input-text' => 'Crear nueva noticia',
 		'redirect-page' => 'noticias.php',
-		'required-fields' => ['titulo'],
+		'required-fields' => array('titulo'),
 		'table' => 'noticias',
 	);
 
