@@ -12,6 +12,7 @@
 			'hidden-fields' => array(
 				'id' => $selected_entry['id'],
 				'table' => 'entries',
+				'creation-date' => $selected_entry['creation_date'],
 			),
 			'inputs' => array(
                 'title' => $selected_entry['title'],

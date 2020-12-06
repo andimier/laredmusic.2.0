@@ -8,10 +8,23 @@
 
 	function checkErrors($post) {
 		$errors = array();
-		$required_fields = array(
-			'title',
-			'creation-date',
-		);
+
+		switch ($post['table']) {
+			case 'entries':
+				$required_fields = array(
+					'creation-date',
+					'title',
+					'video'
+				);
+				break;
+			case 'noticias':
+				$required_fields = array(
+					'creation-date',
+					'title',
+					'text-area'
+				);
+				break;
+		}
 
 		foreach($required_fields as $fieldname) {
 			if (!isset($post[$fieldname]) || (empty($post[$fieldname]) && is_numeric($post[$fieldname]))){
@@ -88,7 +101,7 @@
 
 	$errors = checkErrors($_POST);
 
-	if (!isset($_POST['text-area']) || !empty($errors)) {
+	if (!empty($errors)) {
 		throw new Exception('Hay errores presentes.');
 		exit();
 	}
