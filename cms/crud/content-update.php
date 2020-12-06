@@ -9,8 +9,8 @@
 	function checkErrors($post) {
 		$errors = array();
 		$required_fields = array(
-			'titulo',
-			'fecha',
+			'title',
+			'creation-date',
 		);
 
 		foreach($required_fields as $fieldname) {
