@@ -14,7 +14,7 @@
             $filtered_news = array();
 
             for ($i = 0; $i < count($news); $i++) {
-                $tags = !empty($news[$i]['tags']) ? explode(',', $news[$i]['tags']) : [];
+                $tags = !empty($news[$i]['tags']) ? explode(',', $news[$i]['tags']) : array();
 
                 if (!empty($tags) && in_array($this->filter, $tags)) {
                     array_push($filtered_news, $news[$i]);
@@ -31,14 +31,14 @@
             while($n = phpMethods('fetch-array', $news)) {
                 $tags = !empty($n['tags']) ? explode(',', $n['tags']) : '';
 
-                $nn = [
+                $nn = array(
                     'id' => $n['id'],
                     'date' => $n['fecha'],
                     'title' => $n['titulo'],
                     'tags' => $n['tags'],
                     'html_tags' => !empty($tags) ? $this->getTags($tags) : '',
                     'small_image' => $n['imagen1'],
-                ];
+                );
 
                 array_push($output, $nn);
             }
