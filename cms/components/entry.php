@@ -6,19 +6,19 @@
 	}
 
 	function get_content_update_form_fields($selected_entry) {
-		return [
+		return array(
 			'id' => $selected_entry['id'],
 			'table' => 'entries',
-			'hidden-fields' => [
+			'hidden-fields' => array(
 				'id' => $selected_entry['id'],
 				'table' => 'entries',
-			],
-			'inputs' => [
+			),
+			'inputs' => array(
                 'title' => $selected_entry['title'],
 				'video' => $selected_entry['video'],
-			],
+			),
 			'delete-entry-button-text' => "Eliminar Video",
-		];
+		);
 	}
 
 	function get_content_update_message() {

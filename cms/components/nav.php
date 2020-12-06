@@ -16,10 +16,10 @@
         }
 
         public function getSections() {
-            $this->sections = [
+            $this->sections = array(
                 'MM - videos tik tok',
                 'noticias'
-            ];
+            );
 
             return $this->getSectionsHtml();
         }

@@ -50,10 +50,10 @@
         $error_message .= 'El archivo ya existe, seleciona otro diferente o cambia el nombre. ';
     }
 
-    $valid_file_extensions = [
+    $valid_file_extensions = array(
         'jpg',
         'png'
-    ];
+    );
 
     if ($extension != $valid_file_extensions[0] && $extension != $valid_file_extensions[1]) {
         $error_message .= 'El tipo de archivos no es valido';
@@ -71,11 +71,11 @@
     $current_medium_file = "../imagenes/medianas/" . $file_for_deletion;
     $current_large_file = "../imagenes/grandes/"  . $file_for_deletion;
 
-    $default_files = [
+    $default_files = array(
         'photo.png',
         'photo2.png',
         'default-image.png'
-    ];
+    );
 
     if (!in_array($file_for_deletion, $default_files) && file_exists($current_small_file)) {
         unlink($current_small_file);

@@ -6,26 +6,26 @@
 	}
 
 	function get_content_update_form_fields($selected_entry) {
-		return [
+		return array(
 			'id' => $selected_entry['id'],
 			'table' => 'noticias',
-			'hidden-fields' => [
+			'hidden-fields' => array(
 				'id' => $selected_entry['id'],
 				'table' => 'noticias',
-			],
-			'inputs' => [
+			),
+			'inputs' => array(
 				'creation-date' => $selected_entry['fecha'],
 				'title' => $selected_entry['titulo'],
 				'alt' => $selected_entry['alt'],
-			],
+			),
 			'text-area' => $selected_entry['contenido'],
 			'image' => $selected_entry['imagen1'],
-			'active_tags' => [
+			'active_tags' => array(
 				'music-masters'
-			],
+			),
 			'selected_tags' => getTags($selected_entry),
 			'delete-entry-button-text' => "Eliminar",
-		];
+		);
 	}
 
 	function get_content_update_message() {

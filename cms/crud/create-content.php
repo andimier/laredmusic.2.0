@@ -34,7 +34,7 @@
 
 			$default_image = './iconos/default-image.png';
 
-			return [
+			return array(
                 'fecha' => "'" . $date . "'",
                 'titulo' => "'" . $post['titulo'] . "'",
                 'alt' => "''",
@@ -44,18 +44,18 @@
                 'imagen2' => "'{$default_image}'",
                 'imagen3' => "'{$default_image}'",
                 'video' => "''",
-            ];
+			);
 		}
 
 		private function getNewsEntrieSettings($post) {
 			date_default_timezone_set('America/Bogota');
 			$date = date("Y-m-d");
 
-			return [
+			return array(
                 'creation_date' => "'" . $date . "'",
                 'title' => "'" . $post['title'] . "'",
                 'video' => "'" . $post['video'] . "'",
-            ];
+			);
 		}
 
 		private function insertContent($post) {

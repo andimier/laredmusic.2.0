@@ -15,11 +15,11 @@
     $table = $_POST['table'];
 
     $can_delete_image = false;
-    $default_images = [
+    $default_images = array(
         '../iconos/photo2.png',
         './iconos/photo.png',
         './iconos/default-image.png'
-    ];
+    );
 
     if (isset($_POST['image']) &&
         !empty($_POST['image']) &&

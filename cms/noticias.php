@@ -19,12 +19,12 @@
 		$content_update_message_class = $_GET['contentCreated'] == 'true' ? "mensaje1" : "mensaje";
 	}
 
-	$content_creation_form_props = [
+	$content_creation_form_props = array(
 		'input-text' => 'Crear nueva noticia',
 		'redirect-page' => 'noticias.php',
 		'required-fields' => ['titulo'],
 		'table' => 'noticias',
-	];
+	);
 
 	$nav = new Nav;
 	$sections = $nav->getSections();

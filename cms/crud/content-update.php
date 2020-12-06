@@ -8,10 +8,10 @@
 
 	function checkErrors($post) {
 		$errors = array();
-		$required_fields = [
+		$required_fields = array(
 			'titulo',
 			'fecha',
-		];
+		);
 
 		foreach($required_fields as $fieldname) {
 			if (!isset($post[$fieldname]) || (empty($post[$fieldname]) && is_numeric($post[$fieldname]))){

@@ -19,15 +19,15 @@
 		$content_update_message_class = $_GET['contentCreated'] == 'true' ? "mensaje1" : "mensaje";
 	}
 
-	$content_creation_form_props = [
+	$content_creation_form_props = array(
 		'input-text' => 'Inserta nuevo video',
 		'redirect-page' => 'edit-section.php',
-		'required-fields' => [
+		'required-fields' => array(
 			'title',
 			'video'
-		],
+		),
 		'table' => 'entries',
-	];
+	);
 
 	$nav = new Nav;
 	$sections = $nav->getSections();
