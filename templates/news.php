@@ -1,4 +1,3 @@
-<h1 class="news-section-title">NOTICIAS</h1>
 <ul>
     <?php for ($i = 0; $i < count($noticias); $i++ ): ?>
         <li class="news-wrapper">

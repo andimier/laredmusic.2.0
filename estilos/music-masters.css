@@ -1,6 +1,27 @@
+.music-masters .section-title {
+    font-size: 50px;
+    padding: 20px 0 5px;
+}
+
 .music-masters .video-entries-wrapper * {
     font-family: 'Arial';
     font-size: 15px;
+}
+
+.music-masters .music-masters-logo-wrapper {
+    width: 150px;
+}
+
+.music-masters .music-masters-logo-wrapper img {
+    width: 100%;
+}
+
+.music-masters .music-masters-text {
+    font-family: 'Arial';
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    padding: 10px 0 40px;
 }
 
 .music-masters .video-entries-wrapper {
@@ -11,7 +32,7 @@
 }
 
 .music-masters .video-entry {
-    width: 46%;
+    width: 47%;
 }
 
 .music-masters .video-entry img {
@@ -42,6 +63,15 @@
 }
 
 @media all and (min-width: 650px) {
+    .music-masters .music-masters-logo-wrapper {
+        width: 250px;
+    }
+
+    .music-masters .section-title {
+        font-size: 70px;
+        padding: 40px 0;
+    }
+
     .music-masters .video-entry {
         width: 32%;
     }
