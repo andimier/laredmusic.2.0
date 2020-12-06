@@ -29,7 +29,8 @@
             $video_entries = array();
             $video_element_id = 0;
 
-            forEach ($r as $video_entry) {
+            // forEach ($r as $video_entry) {
+            while ($video_entry = phpMethods('fetch-array', $r)) {
                 $video_data = $this->getVideoData($video_entry['video']);
                 $data = json_decode($video_data);
 
