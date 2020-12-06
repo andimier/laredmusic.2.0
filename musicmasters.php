@@ -41,10 +41,16 @@
 				<h1 class="music-masters section-title ">MUSIC MASTERS</h1>
 
 				<nav>
-					<ul>
-						<li>Videos</li>
-						<li>Tik Tik</li>
-						<li>Noticias</li>
+					<ul class="music-masters-sub-nav">
+						<li class="music-masters-sub-nav-item" href="mm-videos">
+							<a href="#mm-videos"> Videos</a>
+						</li>
+						<li class="music-masters-sub-nav-item" href="mm-tik-tok">
+							<a href="#mm-tik-tok">Tik Tok</a>
+						</li>
+						<li class="music-masters-sub-nav-item" href="mm-noticias">
+							<a href="#mm-noticias">Noticias</a>
+						</li>
 					</ul>
 				</nav>
 
@@ -63,21 +69,21 @@
 					</p>
 				</section>
 
-				<section>
-				<h2 class="section-title">Videos</h2>
+				<section id="mm-videos">
+					<h2 class="section-title">Videos</h2>
 					<?php require_once('templates/music-masters-videos.php'); ?>
 				</section>
 
 				<?php if (!empty($video_entries_group)): ?>
-					<h2 class="section-title">Tik Tok</h2>
-					<section>
+					<section id="mm-tik-tok">
+						<h2 class="section-title">Tik Tok</h2>
 						<?php require_once('templates/video-entries.php'); ?>
 					</section>
 				<?php endif; ?>
 
 				<?php if (!empty($noticias)): ?>
-					<h2 class="section-title news-section-title">NOTICIAS</h2>
-					</section>
+					<section id="mm-noticias">
+						<h2 class="section-title news-section-title">NOTICIAS</h2>
 						<?php require_once('templates/news.php'); ?>
 					</section>
 				<?php endif; ?>
