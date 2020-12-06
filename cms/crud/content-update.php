@@ -88,8 +88,9 @@
 
 	$errors = checkErrors($_POST);
 
-	if (!isset($_POST['areadetexto']) || !empty($errors)) {
-		echo 'error';
+	if (!isset($_POST['text-area']) || !empty($errors)) {
+		throw new Exception('Hay errores presentes.');
+		exit();
 	}
 
 	try {
