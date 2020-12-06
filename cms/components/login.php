@@ -1,4 +1,6 @@
 <?php
+	clearstatcache();
+
 	if (!isset($_SESSION)) {
 		session_start();
 	}
