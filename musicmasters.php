@@ -34,6 +34,10 @@
 			<?php require_once('cuerpo/logosredes.php'); ?>
 			<h1 class="section-title">MUSIC MASTERS</h1>
 
+			<section>
+				<?php require_once('templates/music-masters-videos.php'); ?>
+			</section>
+
 			<?php if (!empty($video_entries_group)): ?>
 				<section>
 					<?php require_once('templates/video-entries.php'); ?>

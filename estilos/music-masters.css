@@ -29,8 +29,24 @@
 	width: 100%;
 }
 
+.music-masters-videos-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.music-masters-videos-wrapper .video {
+    margin: 0;
+    padding: 10px 0;
+    width: 45%;
+}
+
 @media all and (min-width: 650px) {
     .music-masters .video-entry {
-        width: 30%;
+        width: 32%;
+    }
+
+    .music-masters-videos-wrapper .video {
+        width: 32%;
     }
 }
