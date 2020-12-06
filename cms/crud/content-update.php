@@ -86,7 +86,9 @@
 		}
 	}
 
-	if (!isset($_POST['areadetexto']) || !empty(checkErrors($_POST))) {
+	$errors = checkErrors($_POST);
+
+	if (!isset($_POST['areadetexto']) || !empty($errors)) {
 		echo 'error';
 	}
 
