@@ -34,12 +34,12 @@
                 $data = json_decode($video_data);
 
                 if (!isset($data->{'status_msg'})) {
-                    array_push($video_entries, [
+                    array_push($video_entries, array(
                         'thumbnail_url' => $data->thumbnail_url,
                         'title' => $data->title,
                         'video_element_id' => $video_element_id,
                         'video_id' => $video_entry['video']
-                    ]);
+                    ));
 
                     $video_element_id += 1;
                 }
