@@ -1,7 +1,8 @@
 <?php
 	require_once('includes/connection.php');
+	require_once('utils/phpfunctions.php');
 	$query = "SELECT * FROM noticias ORDER BY fecha DESC LIMIT 6";
-	$noticias = mysql_query($query, $connection);
+	$noticias = phpMethods('query', $query);
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +48,8 @@
 					</h2>
 
 					<?php $i=0;?>
-					<?php while($noticia = mysql_fetch_array($noticias)): ?>
+					<!-- <?php // while($noticia = mysql_fetch_array($noticias)): ?> -->
+					<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
 						<div class="cnt-noticia-inicio <?php echo $i == 0 ? 'main-item': ''; ?>">
 							<div class="thumb-noticia-inicio">
 								<img src="cms/<?php echo $noticia['imagen1']; ?>"/>
