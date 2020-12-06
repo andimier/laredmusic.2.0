@@ -8,7 +8,7 @@
                 href="<?php echo $video_entry['thumbnail_url']; ?>"
             >
                 <img src="<?php echo $video_entry['thumbnail_url']; ?>" />
-                <p><?php echo $video_entry['title']; ?></p>
+                <p class="tik-tok-title"><?php echo $video_entry['title']; ?></p>
             </a>
         </li>
     <?php endforeach; ?>

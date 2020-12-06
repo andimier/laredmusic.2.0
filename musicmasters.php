@@ -61,8 +61,10 @@
 					de la Música en la facultad de Música, en la Universidad Javeriana; en el departamento de Educación Continua como
 					parte del facultad de Economía y Administración, en formato diplomado de 128 horas, como curso independiente
 					(en varias ediciones) y en la Universidad San Buenaventura en la especialización de Ingeniería de Sonido.
-					Actualmente @musicmasters2.0 se realiza en formato  VITUAL  con la Universidad Javeriana, en una intensidad de 60
+					Actualmente @musicmasters2.0 se realiza en formato VIRTUAL con la Universidad Javeriana, en una intensidad de 60
 					horas- Music Masters 2.0
+					<br />
+					<br />
 
 					Así mismo, Music Masters es la base de las asesorías personales que realizamos para músicos y actores de la industria
 					de la música de todas las categorías y en distintas escalas de su carrera, así como para las

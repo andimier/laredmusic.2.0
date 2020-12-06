@@ -105,6 +105,10 @@
     border-radius: 10px;
 }
 
+.music-masters .tik-tok-title {
+    padding-top: 10px;
+}
+
 @media all and (min-width: 650px) {
     .music-masters {
         padding: 0 0 60px;
@@ -132,7 +136,7 @@
 
     .music-masters .video-entry {
         font-size: 15px;
-        width: 32%;
+        width: 30%;
     }
 
     .music-masters .video-entry p {
