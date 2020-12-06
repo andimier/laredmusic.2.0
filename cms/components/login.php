@@ -62,8 +62,6 @@
 
 		$username = "";
 		$password = "";
-
-		return;
 	}
 
 	if (!empty(getErrors())) {
