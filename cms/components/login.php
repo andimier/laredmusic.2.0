@@ -57,7 +57,7 @@
 
 	if (!isset($_POST['submit'])) {
 		if (isset($_GET['logout']) && $_GET['logout'] == 1) {
-			$mensaje = "Has cerrado tu sesión. "	;
+			$mensaje = "Has cerrado tu sesión. ";
 		}
 
 		$username = "";
