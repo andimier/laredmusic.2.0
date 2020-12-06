@@ -26,10 +26,10 @@
 
 	function getErrors() {
 		$errors = array();
-		$required_fields = [
+		$required_fields = array(
 			'usuario',
 			'contrasena'
-		];
+		);
 
 		//$errors = array_merge($errors, $required_fields);
 		//$errors = array_merge($errors, check_required_fields($required_fields, $_POST));
