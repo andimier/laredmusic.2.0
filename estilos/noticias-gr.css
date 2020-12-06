@@ -54,7 +54,7 @@
 
 .news-text-wrapper p,
 .single-news-wrapper p  {
-	font-size: 30px;
+	font-size: 20px;
 }
 
 @media all and (min-width: 650px) {
