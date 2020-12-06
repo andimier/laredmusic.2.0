@@ -84,9 +84,9 @@
         }
 
         private function hasMissingData($post) {
-            return !isset($post['create-content']) ||
-                !empty(checkRequiredFields($post, ['titulo']));
+			$errors = checkRequiredFields($post, array('titulo'));
 
+            return !isset($post['create-content']) || !empty($errors);
         }
 
         public function tryCreateContent($post) {
