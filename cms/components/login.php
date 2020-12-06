@@ -1,6 +1,4 @@
 <?php
-	clearstatcache();
-
 	if (!isset($_SESSION)) {
 		session_start();
 	}
@@ -57,6 +55,13 @@
 		return sha1($password);
 	}
 
+
+
+
+
+
+
+
 	if (!isset($_POST['submit'])) {
 		if (isset($_GET['logout']) && $_GET['logout'] == 1) {
 			$mensaje = "Has cerrado tu sesión. ";
@@ -69,7 +74,7 @@
 	if (!empty(getErrors())) {
 		$mensaje2 = "Por favor ingresa los siguientes campos:<br />";
 
-		foreach($errors as $error) {
+		foreach ($errors as $error) {
 			$mensaje3 = " <li> " . $error . "</li><br/>";
 		}
 
