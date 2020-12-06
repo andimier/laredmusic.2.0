@@ -33,18 +33,19 @@
 		<div class="contenedor music-masters">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
-
 			<div class="music-masters-logo-wrapper">
 				<img src="diseno/clientes/music-masters.jpg" />
 			</div>
 
 			<h1 class="music-masters section-title ">MUSIC MASTERS</h1>
 
-			<ul>
-				<li>Videos</li>
-				<li>Tik Tik</li>
-				<li>Noticias</li>
-			</ul>
+			<nav>
+				<ul>
+					<li>Videos</li>
+					<li>Tik Tik</li>
+					<li>Noticias</li>
+				</ul>
+			</nav>
 
 			<section>
 				<p class="music-masters-text">
