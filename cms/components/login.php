@@ -73,29 +73,27 @@
 			$mensaje3 = " <li> " . $error . "</li><br/>";
 		}
 
-		if (count($errors) ==1) {
+		if (count($errors) == 1) {
 			$mensaje4 = "Hubo un error en el formulario.<br /><br />";
 		} else {
 			$mensaje4 = "Hubo " . count($errors) . " errors en el formulario.<br /><br />" ;
 		}
+	} else {
+		$username = trim(mysql_prep($_POST['usuario']));
+		$password = trim(mysql_prep($_POST['contrasena']));
+		$hashed_password = getHash($password);
+		$user = getUser($username, $hashed_password);
 
-		return;
+		if ($user == null) {
+			$mensaje1 = "El nombre de usuario o contraseña pueden estar errados.";
+		} else {
+			$usuario_encontrado = phpMethods('fetch-array',$user);
+			$_SESSION['user_id'] = $usuario_encontrado['id'];
+			$_SESSION['username'] = $usuario_encontrado['username'];
+
+			header("Location: noticias.php");
+			exit();
+		}
 	}
 
-	$username = trim(mysql_prep($_POST['usuario']));
-	$password = trim(mysql_prep($_POST['contrasena']));
-	$hashed_password = getHash($password);
-	$user = getUser($username, $hashed_password);
-
-	if ($user == null) {
-		$mensaje1 = "El nombre de usuario o contraseña pueden estar errados.";
-		return;
-	}
-
-	$usuario_encontrado = phpMethods('fetch-array',$user);
-	$_SESSION['user_id'] = $usuario_encontrado['id'];
-	$_SESSION['username'] = $usuario_encontrado['username'];
-
-	header("Location: noticias.php");
-	exit;
 ?>
