@@ -52,7 +52,7 @@
 		global $connection;
 
 		if (phpversion() < 6) {
-			return mysql_real_escape_string($value);
+			return $value;
 		}
 
 		return mysqli_real_escape_string($connection, $value);
