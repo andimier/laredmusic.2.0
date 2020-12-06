@@ -26,7 +26,7 @@
         public function get_video_entries() {
             $q = "SELECT * FROM entries";
             $r = phpMethods('query', $q);
-            $video_entries = [];
+            $video_entries = array();
             $video_element_id = 0;
 
             forEach ($r as $video_entry) {
