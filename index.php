@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>La Red Music Entertainment, Bogot? Colombia</title>
 		<meta name="description" content="La Red Music Entertainment es una empresa Colombo - Americana basada en Bogot?, Colombia y con afiliados en Estados Unidos, Puerto Rico y Sur Am?rica." />
 		<meta name="keywords" content="Sello, Discografico, 360, entretenimiento, enfocado, m?sica, artistas, nacionales, internacionales" />
@@ -43,7 +43,7 @@
 
 				<div class="noticias_inicio grid-item">
 					<h2 class="ultimasnoticias_inicio">
-						ÚLTIMAS NOTICIAS
+						ÃšLTIMAS NOTICIAS
 					</h2>
 
 					<?php $i=0;?>
@@ -62,7 +62,7 @@
 
 								<div class="titulonoticia_inicio">
 									<a href="noticias.php">
-										<!-- sex call la nueva cación de andee zeta -->
+										<!-- sex call la nueva caciï¿½n de andee zeta -->
 										<?php echo $noticia['titulo']; ?>
 									</a>
 								</div>
@@ -73,7 +73,7 @@
 					<?php endwhile; ?>
 
 					<div class="masnoticias_inicio">
-						<a href="noticias.php">MÁS NOTICIAS AQU? + </a>
+						<a href="noticias.php">MÃS NOTICIAS AQU? + </a>
 					</div>
 				</div>
 			</div>
@@ -117,7 +117,7 @@
 
 			<div id="cnt_servicios">
 				<div class="tt1 rojo padd2">servicios</div>
-				<div class="servicio">1. ASESOR?A A &amp; R (Artistas y repertorio) - Music Masters</div>
+				<div class="servicio">1. ASESORÃA A &amp; R (Artistas y repertorio) - Music Masters</div>
 				<div class="servicio">2. GERENCIA DE PROYECTOS MUSICALES</div>
 				<div class="servicio">3. ESTRATEGIAS DIGITALESS</div>
 				<div class="servicio">4. CONSULTOR?AS EMPRESARIALES EN ARTES Y ENTRETENIMIENTO</div>
