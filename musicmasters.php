@@ -70,20 +70,20 @@
 				</section>
 
 				<section id="mm-videos">
-					<h2 class="section-title">Videos</h2>
+					<h2 class="section-title sub-title">Videos</h2>
 					<?php require_once('templates/music-masters-videos.php'); ?>
 				</section>
 
 				<?php if (!empty($video_entries_group)): ?>
 					<section id="mm-tik-tok">
-						<h2 class="section-title">Tik Tok</h2>
+						<h2 class="section-title sub-title">Tik Tok</h2>
 						<?php require_once('templates/video-entries.php'); ?>
 					</section>
 				<?php endif; ?>
 
 				<?php if (!empty($noticias)): ?>
 					<section id="mm-noticias">
-						<h2 class="section-title news-section-title">NOTICIAS</h2>
+						<h2 class="section-title news-section-title sub-title">Noticias</h2>
 						<?php require_once('templates/news.php'); ?>
 					</section>
 				<?php endif; ?>
