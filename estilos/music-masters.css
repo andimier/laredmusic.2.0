@@ -150,3 +150,9 @@
         width: 32%;
     }
 }
+
+@media all and (min-width: 750px) {
+    .music-masters-videos-wrapper .video {
+        width: 49%;
+    }
+}
