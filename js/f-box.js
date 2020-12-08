@@ -139,10 +139,10 @@ FBox.prototype.appendFBoxElementsToDOM = function() {
     setTimeout(function() {
         var tiktokScript = document.createElement('SCRIPT');
         tiktokScript.id = 'tiktok-script';
-        tiktokScript.src = 'js/tiktok.js';
+        tiktokScript.src = 'https://www.tiktok.com/embed.js';
         document.body.appendChild(tiktokScript)
 
-    }, 5000);
+    }, 1000);
 };
 
 FBox.prototype.openFBox = function() {
