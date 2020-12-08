@@ -61,10 +61,11 @@
 }
 
 .music-masters .music-masters-text {
+    color: #666;
     font-family: 'Arial';
-    font-size: 15px;
+    font-size: 17px;
     letter-spacing: 1px;
-    line-height: 1.5em;
+    line-height: 1.7em;
     padding: 10px 0 40px;
 }
 
@@ -81,7 +82,10 @@
 }
 
 .music-masters .video-entry p {
+    color: #666;
     font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
 }
 
 .music-masters .video-entry a {
