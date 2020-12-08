@@ -1,6 +1,8 @@
 <?php
 	require_once('includes/connection.php');
 	require_once('utils/phpfunctions.php');
+	require_once('components/registro.php');
+
 	$query = "SELECT * FROM noticias ORDER BY fecha DESC LIMIT 6";
 	$noticias = phpMethods('query', $query);
 ?>
@@ -21,7 +23,6 @@
 	<body>
 		<?php require_once('cabezote.php'); ?>
 
-		<!--<div class="cambioidioma"><a href="english/">SWITCH TO ENGLISH</a></div>-->
 		<div class="contenedor">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
@@ -48,23 +49,19 @@
 					</h2>
 
 					<?php $i=0;?>
-					<!-- <?php // while($noticia = mysql_fetch_array($noticias)): ?> -->
 					<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
 						<div class="cnt-noticia-inicio <?php echo $i == 0 ? 'main-item': ''; ?>">
 							<div class="thumb-noticia-inicio">
 								<img src="cms/<?php echo $noticia['imagen1']; ?>"/>
-								<!-- <img src="http://www.laredmusic.com/cms/imagenes/pequenas/20ea7056-4804-4802-be9a-a012f6d5f7ee.jpg"/> -->
 							</div>
 
 							<div class="noticia_inicio">
 								<div class="fechanoticia_inicio">
-									<!-- 2020-06-20 -->
 									<?php echo $noticia['fecha']; ?>
 								</div>
 
 								<div class="titulonoticia_inicio">
 									<a href="noticias.php">
-										<!-- sex call la nueva caci�n de andee zeta -->
 										<?php echo $noticia['titulo']; ?>
 									</a>
 								</div>
@@ -75,7 +72,7 @@
 					<?php endwhile; ?>
 
 					<div class="masnoticias_inicio">
-						<a href="noticias.php">MÁS NOTICIAS AQU? + </a>
+						<a href="noticias.php">MÁS NOTICIAS AQUÍ + </a>
 					</div>
 				</div>
 			</div>
@@ -122,11 +119,14 @@
 				<div class="servicio">1. ASESORÍA A &amp; R (Artistas y repertorio) - Music Masters</div>
 				<div class="servicio">2. GERENCIA DE PROYECTOS MUSICALES</div>
 				<div class="servicio">3. ESTRATEGIAS DIGITALESS</div>
-				<div class="servicio">4. CONSULTOR?AS EMPRESARIALES EN ARTES Y ENTRETENIMIENTO</div>
-				<div class="masservicio"><a href="servicios.php">+ MAS SERVICIOS AQU?</a></div>
+				<div class="servicio">4. CONSULTORÍAS EMPRESARIALES EN ARTES Y ENTRETENIMIENTO</div>
+				<div class="masservicio"><a href="servicios.php">+ MAS SERVICIOS AQUÍ</a></div>
 			</div>
-			<?php require_once('cuerpo/formularioregistro.php'); ?>
+
+			<?php require_once('templates/formularioregistro.php'); ?>
+
 		</div>
+
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
 	</body>

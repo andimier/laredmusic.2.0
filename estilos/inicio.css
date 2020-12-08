@@ -15,12 +15,11 @@
 
 }
 
-ul{
+ul {
 	list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
-
 
 .idioma1 {
 	width:500px;
@@ -443,7 +442,7 @@ a {text-decoration:none;}
 	overflow:hidden;
 }
 
-.logo{
+.logo {
 	float:left;
 	height:auto;
 	padding:0.5%;
@@ -452,26 +451,27 @@ a {text-decoration:none;}
 	background-color:white;
 }
 
-.logo img {width:100%;}
+.logo img {
+	width:100%;
+}
 
+.logo ul li img {
+	width: 100%;
+}
 
-.logo ul li img {width:100%;}
+.logo:hover {
+	opacity: 0.7;
+}
 
-.logo:hover{opacity:.7}
-
-
-
-
-#cnt_servicios{
+#cnt_servicios {
 	float:left;
 	width:54%;
 	height:530px;
 	border-top: 1px solid #999999;
 	border-right: 1px solid #999999;
-	/*background-color:#ff0;*/
 }
 
-.servicio{
+.servicio {
 	width:80%;
 	height:auto;
 	padding:10px 15px 15px 30px;
@@ -484,21 +484,27 @@ a {text-decoration:none;}
 	color:#fff;
 }
 
-.masservicio{
-	width:80%;
-	height:30px;
-	padding:10px 15px 15px 30px;
-	margin:20px 0 0 0;
+.masservicio {
+	width: 80%;
+	height: 30px;
+	padding: 10px 15px 15px 0;
+	margin: 20px 0 0 0;
 	background-color:#fff;
-	font-family:'SteelfishEbRegular', AgencyFB, Arial;
-	font-size:25px;
-	font-weight:300;
-	text-align:left;
-	color:#f00;
+	font-family: 'SteelfishEbRegular', AgencyFB, Arial;
+	font-size: 25px;
+	font-weight: 300;
+	text-align: left;
+	color: #f00;
 }
 
-.masservicio a {color:#f00; text-decoration:none}
-.masservicio  a:hover{color:#000; }
+.masservicio a {
+	color: #f00;
+	text-decoration: none
+}
+
+.masservicio a:hover {
+	color:#000;
+}
 
 /*=====================================  FORMULARIO  =============================================*/
 
