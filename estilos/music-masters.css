@@ -88,12 +88,16 @@
     line-height: 1.5em;
 }
 
+.music-masters .video-entry p:hover {
+    color: black;
+}
+
 .music-masters .video-entry a {
     color: black
 }
 
 .music-masters .video-entry a:hover {
-    color: grey
+    color: black;
 }
 
 .music-masters .video-entry img {
