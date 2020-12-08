@@ -47,11 +47,19 @@
 	};
 
 	Listado.prototype.fijarrDatosDeVideosPorSeccion = function(videosJson) {
-		var self = this,
-            pathname = window.location.pathname;
+		var self = this;
+        var pathname = window.location.pathname;
+        var homePagePossiblePaths = [
+            "/",
+            "/index.php",
+            "/laredmusic/index.php",
+            "/laredmusic/dev/",
+            "/laredmusic/dev/index.php"
+        ];
+        var isHomePage = homePagePossiblePaths.includes(pathname);
 
 		videosJson.done(function(data) {
-            if (pathname === '/' || pathname === "/laredmusic/index.php") {
+            if (isHomePage) {
                 self.fijarVideosDelInicio(data);
             } else {
                 self.videos = data;
