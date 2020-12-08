@@ -6,16 +6,19 @@
     display: flex;
     font-family: 'SteelfishEbRegular', AgencyFB, Arial;
     font-size: 25px;
+    letter-spacing: 1px;
     padding-bottom: 20px;
 }
 
 .music-masters .music-masters-sub-nav a {
+    letter-spacing: 1px;
     text-decoration: none;
+    text-transform: uppercase;
     color: black
 }
 
 .music-masters .music-masters-sub-nav-item {
-    padding-right: 15px;
+    padding-right: 25px;
 }
 
 .music-masters .music-masters-sub-nav a:hover {
@@ -28,12 +31,16 @@
 	font-family: 'SteelfishEbRegular', AgencyFB, Arial;
     font-size: 50px;
     margin-bottom: 20px;
-    padding: 20px 0 5px;
+    margin-top: 0;
+    padding: 0 0 5px;
+    text-transform: uppercase;
 	width: 100%;
 }
 
 .music-masters .section-title.sub-title {
+    border: none;
     font-size: 40px;
+    padding-top: 40px;
 }
 
 .music-masters .news-section-title {
@@ -93,6 +100,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 40px;
 }
 
 .music-masters-videos-wrapper .video {
@@ -119,7 +127,6 @@
     .music-masters .music-masters-sub-nav {
         font-size: 35px;
         padding-bottom: 40px;
-        width: 30%;
     }
 
     .music-masters .music-masters-logo-wrapper {
@@ -129,11 +136,10 @@
     .music-masters .section-title {
         font-size: 70px;
         margin-bottom: 40px;
-        padding: 40px 0 5px;
     }
 
     .music-masters .section-title.sub-title {
-        font-size: 60px;
+        font-size: 50px;
         margin-bottom: 20px;
     }
 
