@@ -142,7 +142,7 @@ FBox.prototype.appendFBoxElementsToDOM = function() {
         tiktokScript.src = 'js/tiktok.js';
         document.body.appendChild(tiktokScript)
 
-    }, 1000);
+    }, 5000);
 };
 
 FBox.prototype.openFBox = function() {
