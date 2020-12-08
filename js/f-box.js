@@ -91,9 +91,8 @@ FBox.prototype.setElements = function() {
 
 FBox.prototype.setImageDimensions = function() {
     var config = this.config;
-    var isTiktok = true;
 
-    if (!isTiktok) {
+    if (!config.isTikTok) {
         config.display.style.height = this.getElementDimension()['height'] + 'px';
         config.display.style.width = this.getElementDimension()['width'] + 'px';
         config.fboxElement.style.width = '100%';
@@ -126,24 +125,37 @@ FBox.prototype.getElementDimension = function() {
 };
 
 FBox.prototype.appendFBoxElementsToDOM = function() {
+    var config = this.config;
 
-    this.config.fboxGalleryWrapper.appendChild(this.config.bkScreen);
-    this.config.display.appendChild(this.config.fboxElement);
-    this.config.display.appendChild(this.config.closeButton);
+    config.fboxGalleryWrapper.appendChild(this.config.bkScreen);
+    config.display.appendChild(config.fboxElement);
+    config.display.appendChild(config.closeButton);
 
     if (this.config.imageFootnoteText) {
-        fbox_texto = this.buildFotoTextElementContainer(this.config.imageFootnoteText);
-        this.config.display.appendChild(fbox_texto);
+        fbox_texto = this.buildFotoTextElementContainer(config.imageFootnoteText);
+        config.display.appendChild(fbox_texto);
     }
 
-    setTimeout(function() {
-        var tiktokScript = document.createElement('SCRIPT');
-        tiktokScript.id = 'tiktok-script';
-        tiktokScript.src = 'https://www.tiktok.com/embed.js';
-        document.body.appendChild(tiktokScript)
-
-    }, 1000);
+    if (config.isTikTok) {
+       this.appendTikTok();
+    }
 };
+
+FBox.prototype.appendTikTok = function() {
+    var tiktokScript = document.createElement('SCRIPT');
+    tiktokScript.id = 'tiktok-script';
+    tiktokScript.src = 'https://www.tiktok.com/embed.js';
+
+    var tiktokElementAppendInterval = setInterval(function() {
+        if (document.querySelector('.tiktok-embed')) {
+            document.body.appendChild(tiktokScript);
+
+            console.info('Carga del elemento de Tik Tok');
+
+            clearInterval(tiktokElementAppendInterval);
+        }
+    }, 500);
+}
 
 FBox.prototype.openFBox = function() {
     var config = this.config;
