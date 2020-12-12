@@ -52,6 +52,7 @@
 
         private function getNews() {
             $q = "SELECT * FROM noticias ORDER BY fecha DESC";
+
             $r = phpMethods('query', $q);
 
             if ($r == false) {
@@ -61,16 +62,34 @@
             return $r;
         }
 
-        public function getAllNews($filter) {
+        private function getReducedNewsSet($newsSet) {
+            $reduced_news = array();
+            $limiter = 5;
+
+            for ($i = 0; $i < count($newsSet); $i++) {
+                if ($i == $limiter) {
+                    break;
+                }
+
+                array_push($reduced_news, $newsSet[$i]);
+            }
+
+            return $reduced_news;
+        }
+
+        public function getAllNews($filter, $isFeaturedNews) {
             $this->filter = $filter;
+            $this->isFeaturedNews = $isFeaturedNews;
+
             $news = $this->getNews();
 
             if ($news == null) {
                 return 'error, no se pudieron recuperar las noticias';
             }
 
-            return $this->parsedNews($news);
+            $parsed_news = $this->parsedNews($news);
 
+            return $isFeaturedNews ? $this->getReducedNewsSet($parsed_news) : $parsed_news;
         }
 
         public function getSingleNews($get) {

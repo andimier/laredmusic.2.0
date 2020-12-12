@@ -61,7 +61,7 @@
 }
 
 .music-masters .music-masters-text {
-    color: #666;
+    color: #333;
     font-family: 'Arial';
     font-size: 17px;
     letter-spacing: 1px;
@@ -136,6 +136,50 @@
         font-size: 35px;
         padding-bottom: 40px;
     }
+
+    .music-masters .music-masters-main-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .music-masters .music-masters-main-content section {
+        width: 48%;
+    }
+
+    .music-masters .music-masters-main-content {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+
+    .music-masters .music-masters-main-content .music-masters-news,
+    .music-masters .music-masters-main-content .music-masters-introduction {
+        padding: 20px 0;
+    }
+
+    .music-masters .music-masters-main-content .section-title.sub-title {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .music-masters .music-masters-main-content .section-title.sub-title {
+        padding: 10px;
+        background-color: black;
+        font-size: 30px;
+        color: white;
+        letter-spacing: 1px;
+        width: 96%;
+    }
+
+    .music-masters .music-masters-main-content .music-masters-introduction {
+        border-right: 1px solid black;
+    }
+
+    .music-masters .music-masters-text {
+        font-size: 16px;
+        padding: 0 15px 0 0;
+        margin: 0;
+    }
+
 
     .music-masters .music-masters-logo-wrapper {
         width: 250px;

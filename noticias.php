@@ -5,7 +5,8 @@
 	require_once('contacto.php');
 
 	$news_group = new News;
-    $noticias = $news_group->getAllNews(null);
+	$isFeaturedNews = false;
+    $noticias = $news_group->getAllNews(null, $isFeaturedNews);
 ?>
 
 <!DOCTYPE html>

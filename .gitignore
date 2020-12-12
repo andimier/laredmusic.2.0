@@ -1,9 +1,12 @@
 diseno
 comunicados
+media
+gifs
+includes/upstream
+
 cms/cnx
 cms/imagenes
 includes/constants.php
-media
-gifs
+
 *.swp
 .vscode
