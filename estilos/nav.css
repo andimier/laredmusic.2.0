@@ -1,0 +1,59 @@
+.nav {
+    display: flex;
+    font-family: 'SteelfishEbRegular', AgencyFB, Arial;
+    letter-spacing: 1px;
+}
+
+.nav .nav-item {
+    border-right: 1px solid red;
+    color: #999;
+    font-size: 23px;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.nav .nav-item:first-child {
+    padding-left: 0;
+}
+
+.nav .nav-item:last-child {
+    border: none;
+}
+
+.nav .nav-item a {
+    color: #999;
+    text-decoration: none;
+}
+
+.nav .nav-item a:hover {
+    color: red;
+}
+
+/* .music-masters .music-masters-sub-nav a {
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black
+}
+
+.music-masters .music-masters-sub-nav-item {
+    padding-right: 25px;
+}
+
+.music-masters .music-masters-sub-nav a:hover {
+    color: grey;
+    text-decoration: underline;
+} */
+
+/* @media all and (min-width: 650px) {
+    .music-masters .music-masters-sub-nav {
+        font-size: 35px;
+        padding-bottom: 40px;
+    }
+} */
+
+@media all and (min-width: 650px) {
+    .nav {
+
+    }
+}

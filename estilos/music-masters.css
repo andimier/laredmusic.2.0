@@ -2,28 +2,10 @@
     padding: 0 20px 40px;
 }
 
-.music-masters .music-masters-sub-nav {
+.music-masters header {
+    align-items: center;
     display: flex;
-    font-family: 'SteelfishEbRegular', AgencyFB, Arial;
-    font-size: 25px;
-    letter-spacing: 1px;
-    padding-bottom: 20px;
-}
-
-.music-masters .music-masters-sub-nav a {
-    letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black
-}
-
-.music-masters .music-masters-sub-nav-item {
-    padding-right: 25px;
-}
-
-.music-masters .music-masters-sub-nav a:hover {
-    color: grey;
-    text-decoration: underline;
+    padding: 60px 0;
 }
 
 .music-masters .section-title {
@@ -40,6 +22,7 @@
 .music-masters .section-title.sub-title {
     border: none;
     font-size: 40px;
+    letter-spacing: 2px;
     padding-top: 40px;
 }
 
@@ -53,6 +36,7 @@
 }
 
 .music-masters .music-masters-logo-wrapper {
+    padding-right: 40px;
     width: 150px;
 }
 
@@ -132,11 +116,6 @@
         padding: 0 0 60px;
     }
 
-    .music-masters .music-masters-sub-nav {
-        font-size: 35px;
-        padding-bottom: 40px;
-    }
-
     .music-masters .music-masters-main-content {
         display: flex;
         justify-content: space-between;
@@ -161,14 +140,14 @@
         padding: 0;
     }
 
-    .music-masters .music-masters-main-content .section-title.sub-title {
+    /* .music-masters .music-masters-main-content .section-title.sub-title {
         padding: 10px;
         background-color: black;
         font-size: 30px;
         color: white;
         letter-spacing: 1px;
         width: 96%;
-    }
+    } */
 
     .music-masters .music-masters-main-content .music-masters-introduction {
         border-right: 1px solid black;
@@ -176,10 +155,9 @@
 
     .music-masters .music-masters-text {
         font-size: 16px;
-        padding: 0 15px 0 0;
+        padding: 15px 15px 0 0;
         margin: 0;
     }
-
 
     .music-masters .music-masters-logo-wrapper {
         width: 250px;
@@ -191,7 +169,7 @@
     }
 
     .music-masters .section-title.sub-title {
-        font-size: 50px;
+        font-size: 70px;
         margin-bottom: 20px;
     }
 

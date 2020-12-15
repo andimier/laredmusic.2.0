@@ -25,6 +25,7 @@
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:650px)" href="estilos/noticias-md.css" />
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/noticias-pq.css" />
 		<link rel="stylesheet" type="text/css" href="estilos/music-masters.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/nav.css" />
 		<link rel="stylesheet" type="text/css" href="estilos/f-box.css" />
 	</head>
 
@@ -35,28 +36,19 @@
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
 			<main class="music-masters">
-				<div class="music-masters-logo-wrapper">
-					<img src="diseno/clientes/music-masters.jpg" />
-				</div>
+				<header>
+					<div class="music-masters-logo-wrapper">
+						<img src="diseno/musicmasters-logo.png" />
+					</div>
+					<?php require_once('templates/nav.php'); ?>
+				</header>
 
 				<!-- <h1 class="music-masters section-title">MUSIC MASTERS</h1> -->
 
-				<nav>
-					<ul class="music-masters-sub-nav">
-						<li class="music-masters-sub-nav-item" href="mm-videos">
-							<a href="#mm-videos"> Videos</a>
-						</li>
-						<li class="music-masters-sub-nav-item" href="mm-tik-tok">
-							<a href="#mm-tik-tok">Tik Tok</a>
-						</li>
-						<li class="music-masters-sub-nav-item" href="mm-noticias">
-							<a href="#mm-noticias">Noticias</a>
-						</li>
-					</ul>
-				</nav>
-
 				<section class="music-masters-main-content">
 					<section class="music-masters-introduction">
+						<h2 class="section-title news-section-title sub-title">¿de qué se trata?</h2>
+
 						<p class="music-masters-text">
 						Music Masters, es el diplomado pionero en Colombia sobre el Music Business o Negocios de la Música en formato de
 						128 horas. Con 7 años en el mercado, ha sido dictado en la Universidad de los Andes; bajo el formato de Negocios
