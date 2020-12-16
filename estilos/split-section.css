@@ -1,0 +1,45 @@
+.split-section .news-section-title {
+    height: initial;
+}
+
+.split-section .split-section-text {
+    color: #333;
+    font-family: 'Arial';
+    font-size: 17px;
+    letter-spacing: 1px;
+    line-height: 1.7em;
+    padding: 10px 0 40px;
+}
+
+@media all and (min-width: 650px) {
+    .split-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .split-section .section-title.sub-title {
+        margin-bottom: 0;
+        padding: 0;
+	}
+
+    .split-section section {
+        width: 48%;
+    }
+
+    .split-section {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+
+    .split-section .split-section-news,
+    .split-section .split-section-text-wrapper{
+        padding: 20px 0;
+    }
+
+    .split-section .split-section-text-wrapper {
+        border-right: 1px solid black;
+        font-size: 16px;
+        padding: 15px 15px 0 0;
+        margin: 0;
+    }
+}

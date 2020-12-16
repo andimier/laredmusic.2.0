@@ -49,7 +49,14 @@ div.lineasuperior  {
 	margin:auto;
 	width:960px;
 	height:140px;
+}
 
+.grid-display {
+	display: flex;
+}
+
+.grid-item {
+	width: 50%;
 }
 
 #logo {
@@ -61,7 +68,29 @@ div.lineasuperior  {
 }
 
 #logo img {
-	width:100%;
+	width: 100%;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.section-title {
+    border-bottom: 2px solid #000;
+	font-family: 'SteelfishEbRegular', AgencyFB, Arial;
+    font-size: 50px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    padding: 0 0 5px;
+    text-transform: uppercase;
+	width: 100%;
+}
+
+.section-title.sub-title {
+    border: none;
+    font-size: 40px;
+    letter-spacing: 2px;
+    padding-top: 40px;
 }
 
 #contenedormenu {
@@ -157,39 +186,6 @@ div.google{
 
 .cambioidioma a {text-decoration: none; color:#FFF;}
 .cambioidioma a:hover { color:#999;}
-
-.music-masters-link-wrapper {
-	border-bottom: 1px solid black;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 30px 0;
-}
-
-.music-masters-link-wrapper p {
-	color: #333;
-	font-size: 16px;
-	letter-spacing: 1px;
-	line-height: 1.2em;
-	margin-top: 0;
-}
-
-.music-masters-link-wrapper a {
-	color: black;
-	font-family: SteelfishBold;
-	font-size: 22px;
-	letter-spacing: 1px;
-	text-decoration: underline;
-	text-transform: uppercase;
-}
-
-.music-masters-link-wrapper a:hover {
-	color: red;
-}
-
-.music-masters-link-wrapper .music-masters-logo-wrapper {
-	box-shadow: none;
-	padding: 0 20px 0 0;
-	width: 250px;
-}
 
 /*========================================================*/
 
@@ -318,26 +314,16 @@ position:relative;
 .titulonoticia a {color:#666;}
 .titulonoticia a:hover {color:#000;}
 
-
-
-
-
-
-/*==================================== QUIENES SOMOS ==========================================*/
-
 div#quienessomos {
 	float:left;
 	width:510px;
 	clear:both;
-
 	padding-top:40px;
 	padding-bottom:30px;
 	border-right: 1px solid #999999;
-
 	background-color:#ff0
-
-
 }
+
 .numero1  {
 	position:relative;
 	float:left;
@@ -350,6 +336,7 @@ div#quienessomos {
 	font-size:80px;
 	color:#FFF
 }
+
 .caja_numero {
 	position:absolute;
 	margin-left:25px;
@@ -358,6 +345,7 @@ div#quienessomos {
 	font-size:60px;
 	color:#FFF
 }
+
 .tituloquienessomos {
 	float:left;
 	margin-top:2px;
@@ -374,22 +362,23 @@ div#quienessomos {
 	height:auto;
 	margin-left:0px;
 	margin-top:20px;
-
 	padding-top:20px;
 	padding-left:15px;
 	padding-right:15px;
 	padding-bottom:35px;
-
 	background-color: #000;
 }
+
 .foto {
-float:left;
-width:250px;
-height:350px; padding:10px; margin-right:20px; background-color:#FFF;}
+	float:left;
+	width:250px;
+	height:350px;
+	padding:10px;
+	margin-right:20px;
+	background-color:#FFF;
+}
 
 
-
-/*==========================*/
 .video       {margin-top: 0px; margin-bottom:30px; margin-top: 50px;}
 .imagenesvideo {margin-left: 85px; height: auto; margin-bottom: 15px;}
 .contnumtitvideo {height:90px;}
@@ -398,10 +387,6 @@ height:350px; padding:10px; margin-right:20px; background-color:#FFF;}
 .textovideo  {float: left; width:440px; margin-left:85px; margin-top:220px; text-align:right; font-family: 'BebasNeueRegular'; color:#666; font-size:20px;}
 .titulovideo2 {float:left; margin-top: 77px;}
 .reel {float:left; margin-top:5px; margin-bottom:8px; margin-right:15px;}
-
-
-
-/*=====================================  Microfono   Muneco  =============================================*/
 
 div#micro{
 	clear:both;
@@ -423,20 +408,13 @@ div.masnoticias_inicio2{
 	color:#000;
 	letter-spacing:1px;
 }
-div.masnoticias_inicio2 a {color:#000;}
-div.masnoticias_inicio2 a:hover {color:#ff0000;}
+div.masnoticias_inicio2 a {
+	color:#000;
+}
 
-
-
-
-
-
-
-
-
-
-/*============================== PORTAFOLIO =====================================================*/
-
+div.masnoticias_inicio2 a:hover {
+	color:#ff0000;
+}
 
 .numero4  {
 	float:left;
@@ -492,9 +470,9 @@ div.masnoticias_inicio2 a:hover {color:#ff0000;}
 	padding:10px;
 	display:none;
 	color:#fff;
-	}
+}
 
-#preview2{
+#preview2 {
 	float:left;
 	position:absolute;
 	border:0px solid #ccc;
@@ -502,10 +480,7 @@ div.masnoticias_inicio2 a:hover {color:#ff0000;}
 	padding:10px;
 	display:none;
 	color:#fff;
-	}
-
-
-/*===================== FOOTER ==========================*/
+}
 
 div.corte{
 	clear:both;
@@ -520,7 +495,6 @@ div.corte2{
 	border-top:1px solid #999999;
 }
 
-
 div#footer {
 	clear:both;
 	width:100%;
@@ -530,11 +504,10 @@ div#footer {
 	background:#000000;
 }
 
-#menufooter{
+#menufooter {
 	margin:auto;
 	width:960px;
 	height:100px;
-	/*background-color:#666*/
 }
 
 div.linksfooter {
@@ -558,13 +531,11 @@ div.linksfooter a:hover {
 }
 
 div#logofooter {
-	float:left;
-	margin-top:25px;
+	float: left;
+	margin-top: 25px;
 }
 
-/*============= guias rojas secciones =================*/
-
-div#guiamenuinicio{
+div#guiamenuinicio {
 	position:absolute;
 	width:30px;
 	height:4px;
@@ -573,7 +544,7 @@ div#guiamenuinicio{
 	left:0px;
 }
 
-div#guiavideo{
+div#guiavideo {
 	position:absolute;
 	width:30px;
 	height:4px;
@@ -582,7 +553,7 @@ div#guiavideo{
 	left:0px;
 }
 
-div#guiaportafolio{
+div#guiaportafolio {
 	position:absolute; /*esta relativo a clientes, pero la linea de arriba es del video*/
 	width:30px;
 	height:4px;
@@ -591,8 +562,6 @@ div#guiaportafolio{
 	left:0px;
 }
 
-
-
 .tt1 {
 	width:100%;
 	font-family:'SteelfishEbRegular', AgencyFB, Arial;
@@ -600,17 +569,24 @@ div#guiaportafolio{
 	text-transform:uppercase;
 }
 
+.negro {
+	color:#000
+}
 
-.negro {color:#000}
-.negro a {color:#000}
-.negro a:hover {color:#f00}
+.negro a {
+	color:#000
+}
+
+.negro a:hover {
+	color:#f00
+}
 
 .rojo {color:#f00}
 .rojo a{color:#f00}
 .rojo a:hover{color:#000}
 
 
-.rec_rojo{
+.rec_rojo {
 	position:absolute;
 	width:50px;
 	height:5px;
@@ -619,19 +595,15 @@ div#guiaportafolio{
 	background-color:#f00;
 }
 
-.padd{
+.padd {
 	padding:0 0 20px 30px;
 }
 
-.padd2{
+.padd2 {
 	padding:30px 0 0 0;
 }
 
-
-/*//////////////// MENU MOVIL /////////////////////*/
-
-
-#menu_mv{
+#menu_mv {
 	position:fixed;
 	display:none;
 	width:100%;
@@ -643,15 +615,12 @@ div#guiaportafolio{
 	background-color:#fff;
 }
 
-#cnt_enlacesmv{
-
+#cnt_enlacesmv {
 	width:100%;
 	height:auto;
-
-
 }
 
-.enlaces_mv{
+.enlaces_mv {
 	display:block;
 	width:20%;
 	height:auto;
@@ -661,46 +630,31 @@ div#guiaportafolio{
 	font-size:30px;
 	text-align:center;
 	color:#999;
-
 	border-bottom:2px solid #f00;
-
-	/*background-color:#0ff;*/
 }
-
 
 .enlaces_mv:hover{
 	color:#000;
 }
 
-
-
-
-#boton_mv{
-	position:fixed;
-	display:none;
-	width:40px;
-	height:40px;
-
-	top:50px;
-	right:30px;
-	/*background-color:#f00;*/
-
-	background-image:url(../diseno/btn-mv1.png);
-	background-repeat:no-repeat;
-	background-size:100%;
-
-	cursor:pointer;
+#boton_mv {
+	position: fixed;
+	display: none;
+	width: 40px;
+	height: 40px;
+	top: 50px;
+	right: 30px;
+	background-image: url(../diseno/btn-mv1.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	cursor: pointer;
 }
 
-
-
-.remate{
+.remate {
 	clear:both;
 	width:100%;
 	height:40px;
 }
-
-
 
 .tt_servicios {
 	float:left;
@@ -708,19 +662,25 @@ div#guiaportafolio{
 	margin-left:opx;
 	font-family:'SteelfishEbRegular', AgencyFB, Arial;
 	font-size:80px;
-
 }
 
-
-
-.vacio{
+.vacio {
 	clear:both;
 	width:100%;
 	height:1px;
 }
 
+@media all and (min-width: 650px) {
+	.section-title {
+        font-size: 70px;
+        margin-bottom: 40px;
+    }
 
-
+    .section-title.sub-title {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+}
 
 
 

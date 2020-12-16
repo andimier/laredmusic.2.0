@@ -26,6 +26,7 @@
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/noticias-pq.css" />
 		<link rel="stylesheet" type="text/css" href="estilos/music-masters.css" />
 		<link rel="stylesheet" type="text/css" href="estilos/nav.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/split-section.css" />
 		<link rel="stylesheet" type="text/css" href="estilos/f-box.css" />
 	</head>
 
@@ -45,11 +46,11 @@
 
 				<!-- <h1 class="music-masters section-title">MUSIC MASTERS</h1> -->
 
-				<section class="music-masters-main-content">
-					<section class="music-masters-introduction">
+				<section class="split-section">
+					<section class="split-section-text-wrapper">
 						<h2 class="section-title news-section-title sub-title">¿de qué se trata?</h2>
 
-						<p class="music-masters-text">
+						<p class="split-section-text">
 						Music Masters, es el diplomado pionero en Colombia sobre el Music Business o Negocios de la Música en formato de
 						128 horas. Con 7 años en el mercado, ha sido dictado en la Universidad de los Andes; bajo el formato de Negocios
 						de la Música en la facultad de Música, en la Universidad Javeriana; en el departamento de Educación Continua como
@@ -66,7 +67,7 @@
 					</section>
 
 					<?php if (!empty($noticias)): ?>
-						<section class="music-masters-news">
+						<section class="split-section-news">
 							<h2 class="section-title news-section-title sub-title">Noticias</h2>
 							<?php require_once('templates/news.php'); ?>
 						</section>
