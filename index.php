@@ -1,10 +1,15 @@
 <?php
 	require_once('includes/connection.php');
 	require_once('utils/phpfunctions.php');
+	require_once('components/news.php');
 	require_once('components/registro.php');
 
 	$query = "SELECT * FROM noticias ORDER BY fecha DESC LIMIT 6";
 	$noticias = phpMethods('query', $query);
+
+	$news_group = new News;
+	$isFeaturedNews = true;
+	$noticias = $news_group->getAllNews(null, $isFeaturedNews);
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +22,10 @@
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/inicio.css"/>
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:800px)" href="estilos/inicio-md.css" />
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/inicio-pq.css" />
-		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 		<?php require_once('includes/requeridos.php'); ?>
+		<link rel="stylesheet" type="text/css" media="screen" href="estilos/noticias-gr.css"/>
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/split-section.css" />
 	</head>
 
 	<body>
@@ -39,46 +46,39 @@
 
 			<?php require_once('templates/music-masters-nav-section.php'); ?>
 
-			<div class="info-wrapper grid-display">
-				<div id="cnt_quienes" class="grid-item">
-					<div class="tt1 negro">QUIENES SOMOS</div>
-					<div class="textoquienessomos"></div>
-					<div class="vacio"></div>
-				</div>
+			<section class="split-section">
+				<section class="split-section-text-wrapper">
+					<h2 class="section-title news-section-title sub-title">¿QUIENES SOMOS?</h2>
 
-				<div class="noticias_inicio grid-item">
-					<h2 class="ultimasnoticias_inicio">
-						ÚLTIMAS NOTICIAS
-					</h2>
+					<p class="split-section-text">
+						La Red Music es una compañía Colombo-Americana basada en Bogotá, Colombia y con afiliados en Estados Unidos,
+						Puerto Rico y Sur Amárica.
+						<br>
+						<br>
+						Sus fundadores tienen más de 17 años de experiencia en la industria del entretenimiento/música .
+						Esto incluye áreas  como Gerencia de Proyectos, Marketing, Booking, Distribución, Publishing, Prensa &
+						Publicidad (radio, prensa y TV) RRSS, Asesorías en Industrias Musicales, planeación de conciertos y eventos
+						a gran escala, además de docencia en MUSIC BUSINESS.
+						<br>
+						<br>
+						Hemos trabajado con más de 30 artistas de la talla de Romeo Santos, Ricardo Arjona, Maná, JulietaVenegas, Diego Torres, Don Omar,
+						Luis Enrique, Yuri, Noel Schajris, Carlos Rivera, Illya Kuryaki & the Valderramas, Espinoza Paz, Bebe, Ricardo Montaner, Gustavo Cerati,
+						Reykon, Diamante Eléctrico, Mauricio&PalodeAgua, Ilona, Bako, Adriana Bottina, Caravanchela, Duina del Mar, Uschi, Andee Zeta, entre otros.
+						<br>
+						<br>
+						Además de marcas como Pontificia Universidad Javeriana, Teatro Colsubsidio, Sony / ATV, EMI Publishing, Cámara de Comercio
+						de Bogotá, Casa Editorial El Tiempo, Bogotá Music Market, Bogotá Audiovisual Market, Universidad San Buenaventura, Thomas
+						Gregg & Sons, Armando Records, Lipstick, entre muchos otros.
+					</p>
+				</section>
 
-					<?php $i=0;?>
-					<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
-						<div class="cnt-noticia-inicio <?php echo $i == 0 ? 'main-item': ''; ?>">
-							<div class="thumb-noticia-inicio">
-								<img src="cms/<?php echo $noticia['imagen1']; ?>"/>
-							</div>
-
-							<div class="noticia_inicio">
-								<div class="fechanoticia_inicio">
-									<?php echo $noticia['fecha']; ?>
-								</div>
-
-								<div class="titulonoticia_inicio">
-									<a href="noticias.php">
-										<?php echo $noticia['titulo']; ?>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						<?php $i++; ?>
-					<?php endwhile; ?>
-
-					<div class="masnoticias_inicio">
-						<a href="noticias.php">MÁS NOTICIAS AQUÍ + </a>
-					</div>
-				</div>
-			</div>
+				<?php if (!empty($noticias)): ?>
+					<section class="split-section-news">
+						<h2 class="section-title news-section-title sub-title">Noticias</h2>
+						<?php require_once('templates/news.php'); ?>
+					</section>
+				<?php endif; ?>
+			</section>
 
 
 			<div id="videoinicio">

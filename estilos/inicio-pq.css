@@ -1,8 +1,6 @@
-
-#playlist{
-	width:96%;
-	padding:0 0 0 4%;
-
+#playlist {
+	width: 96%;
+	padding: 0 0 0 4%;
 }
 
 #output{
@@ -10,30 +8,23 @@
 	width:60%;
 	margin:30px 0 0 10px;
 	padding:20pxpx 0 0 0;
-
 	font-size:20px;
-
 }
 
 #videoinicio {
-	float:none;
-	width:90%;
-	height:auto;
-	padding:30px 5% 0 5%;
-	margin:0;
+	float: none;
+	height: auto;
+	margin: 0;
 }
 
-#cnt_videos1{
-
-	margin:20px 0 0 0;
-	/*background-color:#f00;*/
+#cnt_videos1 {
+	margin: 20px 0 0 0;
 }
 
 .cuadrovideo {
 	float:none;
 	width:97%;
 	margin:0 auto 30px auto;
-
 }
 
 .videos{
@@ -49,9 +40,7 @@
 
 #noticia1 {
 	width:100%;
-
 	height:auto;
-	/*background-color:#f00;*/
 	padding:0;
 	margin:0 0 20px 0;
 	border-bottom:1px solid #999;
@@ -132,7 +121,6 @@
 }
 
 .info-wrapper {
-	width: 90%;
 	margin: auto;
 }
 
@@ -146,13 +134,10 @@
 	width:100%;
 }
 
-#cnt_portafolio{
+#cnt_portafolio {
 	float:none;
-	width:92%;
-	padding:30px 4% 40px 4%;
 	border-left:none;
 }
-
 
 .cnt_logos ul li{
 	display:inline;
