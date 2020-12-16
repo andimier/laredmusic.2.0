@@ -1,0 +1,33 @@
+
+.music-masters-link-wrapper {
+	border-bottom: 1px solid black;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 30px 0;
+}
+
+.music-masters-link-wrapper p {
+	color: #333;
+	font-size: 16px;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+	margin-top: 0;
+}
+
+.music-masters-link-wrapper a {
+	color: black;
+	font-family: SteelfishBold;
+	font-size: 22px;
+	letter-spacing: 1px;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+.music-masters-link-wrapper a:hover {
+	color: red;
+}
+
+.music-masters-link-wrapper .music-masters-logo-wrapper {
+	box-shadow: none;
+	padding: 0 20px 0 0;
+	width: 250px;
+}

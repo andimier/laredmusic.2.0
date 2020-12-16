@@ -17,6 +17,7 @@
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/inicio.css"/>
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:800px)" href="estilos/inicio-md.css" />
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/inicio-pq.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 		<?php require_once('includes/requeridos.php'); ?>
 	</head>
 
@@ -36,19 +37,7 @@
 				<div id="time-display"></div>
 			</div>
 
-			<section class="info-wrapper music-masters-link-wrapper grid-display">
-				<div class="logo music-masters-logo-wrapper">
-					<img src="diseno/musicmasters-logo.png" />
-				</div>
-
-				<div>
-					<p>
-					Music Masters, es el diplomado pionero en Colombia sobre el Music Business o Negocios de la Música en formato de
-					128 horas.
-					</p>
-					<a href="musicmasters.php">conoce más acá</a>
-				</div>
-			</section>
+			<?php require_once('templates/music-masters-nav-section.php'); ?>
 
 			<div class="info-wrapper grid-display">
 				<div id="cnt_quienes" class="grid-item">
