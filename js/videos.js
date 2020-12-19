@@ -16,7 +16,7 @@
 		nuevah = w_videos / ratio;
 
 		for (var i = 0; i < videos.length; i++) {
-			videos[i].style.height = nuevah + 'px';
+			// videos[i].style.height = nuevah + 'px';
 		}
 	}
 

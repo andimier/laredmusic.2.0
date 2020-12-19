@@ -1,17 +1,26 @@
-
-
-#cnt_videos{
-	clear:both;
-	width:95%;
-	height:auto;
-	padding:0 5% 50px 5% 0;
-	/*background-color:#ff0;*/
+#cnt_videos {
+	display: block;
+	padding: 0 5% 50px 5% 0;
 }
 
-.videoV{
-	float:left;
-	width:46%;
-	
-	padding:25px 2% 0 2%;
-	/*background-color:#f00;*/
+.videoV {
+	min-height: 300px;
+	padding: 25px 2% 0 2%;
+	width: 100%;
+}
+
+.videos-section-wrapper .tt_servicios {
+	float: none;
+}
+
+@media all and (min-width: 650px) {
+	#cnt_videos {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.videoV {
+		width: 49.5%;
+	}
 }

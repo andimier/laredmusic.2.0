@@ -1,4 +1,8 @@
-<?php require_once('contacto.php');?>
+<?php
+	require_once('contacto.php');
+	require_once('utils/phpfunctions.php');
+	require_once('components/featured-news-widget.php');
+?>
 
 <!DOCTYPE html">
 <html>
@@ -7,24 +11,26 @@
 		<title>Videos - La Red Music Entertainment</title>
 
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/videos-gr.css"/>
-		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/videos-pq.css" />
 		<?php require_once('includes/requeridos.php'); ?>
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 	</head>
 
 	<body>
 		<?php require_once('cabezote.php'); ?>
 
-		<!--<div class="cambioidioma"><a href="english/services.php">SWITCH TO ENGLISH</a></div>-->
+
 		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
-			<?php //require_once('cuerpo/menunoticias.php'); ?>
-			<br />
-            <br />
+			<?php require_once('templates/music-masters-nav-section.php'); ?>
+			<?php require_once('templates/featured-news-widget.php'); ?>
 
-			<div class="tt_servicios negro">Videos |</div>
-			<div id="cnt_videos"></div>
-			<div class="remate"></div>
+			<section class="videos-section-wrapper">
+				<div class="tt_servicios negro">Videos </div>
+				<div id="cnt_videos"></div>
+				<div class="remate"></div>
+			</section>
 		</main>
+
         <script src="js/videos.js"></script>
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
