@@ -1,7 +1,11 @@
-<?php require_once('contacto.php');?>
+<?php
+	require_once('utils/phpfunctions.php');
+	require_once('components/featured-news-widget.php');
+	require_once('contacto.php');
+?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<title>Portafolio Clientes - La Red Music</title>
@@ -11,17 +15,18 @@
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/portafolio-gr.css"/>
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:650px)" href="estilos/portafolio-md.css" />
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/portafolio-pq.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 	</head>
 
 	<body>
 		<?php require_once('cabezote.php'); ?>
 
-		<!--<div class="cambioidioma"><a href="english/portfolio.php">SWITCH TO ENGLISH</a></div>-->
-		<div class="contenedor">
+		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
+			<?php require_once('templates/music-masters-nav-section.php'); ?>
 
 			<div class="pagina">
-				<?php require_once('cuerpo/menunoticias.php'); ?>
+				<?php require_once('templates/featured-news-widget.php'); ?>
 
 				<div class="clientes">
 
@@ -58,7 +63,7 @@
 
 				<div class="corte"></div>
 		  </div>
-		</div>
+		</main>
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
 		<script src="js/portafolio.js"></script>

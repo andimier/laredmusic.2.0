@@ -23,7 +23,7 @@
 
 		<?php require_once('includes/requeridos.php'); ?>
 
-		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/servicios-gr.css"/>
+		<link rel="stylesheet" type="text/css"  media="screen" href="estilos/servicios-gr.css"/>
 		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 	</head>
 
