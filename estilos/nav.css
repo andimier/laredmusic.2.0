@@ -1,7 +1,7 @@
 .nav {
     display: flex;
-    font-family: 'SteelfishEbRegular', AgencyFB, Arial;
-    letter-spacing: 1px;
+    font-family: 'SteelfishBold', AgencyFB, Arial;
+    letter-spacing: 2px;
 }
 
 .nav .nav-item {

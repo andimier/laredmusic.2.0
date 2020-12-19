@@ -101,16 +101,23 @@ div.lineasuperior  {
 }
 
 .enlaces {
-	float:left;
-	font-family:'SteelfishBold', AgencyFB, Arial;
-	margin-left:0px;
-	margin-top:0px;
-	font-size:23px;
-	letter-spacing:1px;
-
+	float: left;
+	font-family: 'SteelfishBold', AgencyFB, Arial;
+	font-size: 23px;
+	margin-left: 0px;
+	margin-top: 0px;
+	letter-spacing: 2px;
 }
-.enlaces a {color:#999; text-decoration:none;}
-.enlaces a:hover {color:#F00; text-decoration:none;}
+
+.enlaces a {
+	color: #999;
+	text-decoration: none;
+}
+
+.enlaces a:hover {
+	color: #F00;
+	text-decoration: none;
+}
 
 div.separador-rojo{
 	float:left;
@@ -173,23 +180,6 @@ div.google{
 .lineadivisoria {clear:both; width:1000px; height:10px; padding-top:10px; padding-bottom:10px;  }
 
 
-
-/*===================== CAMBIO DE IDIOMA ====================================*/
-
-.cambioidioma   {
-	position:fixed; top:0%; left:100%; margin-top:0px; margin-left:-160px;
-	width:140px; height:30px; padding-left:20px;
-	background-color: #000; color:#FFF;
-	font-family:'SteelfishEbRegular', AgencyFB, Arial; font-size:25px;
-	z-index:101;
-	}
-
-.cambioidioma a {text-decoration: none; color:#FFF;}
-.cambioidioma a:hover { color:#999;}
-
-/*========================================================*/
-
-
 .contenedor {
 	position:relative;
 	clear:both;
@@ -214,12 +204,12 @@ div.submenus {
 }
 
 div.menuinicio {
-position:relative;
 	float:left;
-	width:620px;
 	height:50px;
 	margin-left:0px;
 	margin-top:30px;
+	position:relative;
+	width:620px;
 }
 
 .titulo2  {
@@ -234,7 +224,7 @@ position:relative;
 	font-size:40px;
 }
 
-.menu2  {
+.menu2 {
 	float:left;
 	width:310px;
 	height:30px;
@@ -244,19 +234,31 @@ position:relative;
 }
 
 .enlaces2 {
-	float:left;
-	margin-right:10px;
-	margin-top:0px;
-	font-family:'SteelfishBold', AgencyFB, Arial;
-	font-size:20px;
-	color:#999;
+	float: left;
+	margin-right: 10px;
+	margin-top: 0px;
+	font-family: 'SteelfishBold', AgencyFB, Arial;
+	font-size: 20px;
+	color: #999;
 }
 
-.enlaces2 a {color:#999; text-decoration:none;}
-.enlaces2 a:hover {color:#333; text-decoration:none;}
+.enlaces2 a {
+	color:#999;
+	text-decoration:none;
+}
 
+.enlaces2 a:hover {
+	color: #333;
+	 text-decoration: none;
+}
 
-.guia2 {float:left; width:24px; height:131px; margin-top:-8px; background-image:url(../../../../../../Users/catalina/Downloads/diseno/inicio/guia.jpg)}
+.guia2 {
+	float: left;
+	width: 24px;
+	height: 131px;
+	margin-top: -8px;
+	background-image: url(../../../../../../Users/catalina/Downloads/diseno/inicio/guia.jpg)
+}
 
 .lineamenu2 {
 	clear:both;
@@ -267,9 +269,6 @@ position:relative;
 	background-repeat: no-repeat;
 }
 
-
-/*==================== NOTICIAS ==============================================*/
-
 .noticias {
 	float:left;
 	width:400px;
@@ -279,7 +278,9 @@ position:relative;
 	margin-top:0px;
 
 }
-.noticias a {text-decoration: none;}
+.noticias a {
+	text-decoration: none;
+}
 
 .ultimasnoticias{
 	float:left;
