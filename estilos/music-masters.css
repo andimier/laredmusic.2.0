@@ -4,6 +4,8 @@
 
 .music-masters h1 {
     height: 0;
+    padding: 0;
+    margin: -2px 0 0;
     visibility: hidden;
 }
 
@@ -91,12 +93,16 @@
     .music-masters header {
         align-items: center;
         display: flex;
-        padding: 60px 0;
+        padding: 40px 0;
+    }
+
+    .music-masters-sub-nav {
+        padding-bottom: 0;
     }
 
     .music-masters .music-masters-logo-wrapper {
         padding: 0 40px 0 0;
-        width: 250px;
+        width: 225px;
     }
 
     .music-masters .video-entry {
