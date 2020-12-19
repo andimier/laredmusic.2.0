@@ -13,18 +13,18 @@
 
 	<body>
 		<?php require_once('cabezote.php'); ?>
-		
+
 		<!--<div class="cambioidioma"><a href="english/services.php">SWITCH TO ENGLISH</a></div>-->
-		<div class="contenedor">
+		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 			<?php //require_once('cuerpo/menunoticias.php'); ?>
 			<br />
             <br />
-			
+
 			<div class="tt_servicios negro">Videos |</div>
 			<div id="cnt_videos"></div>
 			<div class="remate"></div>
-		</div>
+		</main>
         <script src="js/videos.js"></script>
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>

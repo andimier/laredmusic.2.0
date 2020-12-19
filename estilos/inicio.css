@@ -1,4 +1,3 @@
-
 input[type=text]{
 	margin:none;
 	display:block;
@@ -138,37 +137,53 @@ ul {
 	width:100%;
 }
 
-#cnt_videos1{
-	width:100%;
-	height:auto;
-	margin:auto;
+.cuadrovideo,
+.videos {
+	padding-bottom: 20px;
 }
 
-#cnt_videos2{
-	clear:both;
-	width:100%;
-	height:auto;
-	margin:auto;
-	padding:0px 0 20px 0;
+.servicio {
+	background-color:#000;
+	color: #fff;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size: 25px;
+	font-weight: 300;
+	margin-bottom: 20px;
+	padding: 10px 20px;
+	text-align: left;
 }
 
-.cuadrovideo {
-	float:left;
-	width:442px;
-	height:261;
-	margin:0 5px 30px 5px;
-	border:6px solid #000;
-	background-color:#000
+@media all and (min-width: 650px) {
+	#cnt_videos1,
+	#cnt_videos2 {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#cnt_videos1 {
+		padding-bottom: 20px;
+	}
+
+	#cnt_videos2 {
+		padding: 0px 0 20px 0;
+	}
+
+	.cuadrovideo {
+		min-height: 250px;
+		width: 49.4%;
+	}
+
+	.videos {
+		width: 24%;
+	}
+
+	.servicio {
+		padding: 10px 15px 15px 30px;
+		margin: 20px 20px 0 0;
+	}
 }
 
-.videos{
-	float:left;
-	width:222px;
-	height:131px;
-	margin:20px 5px 0 5px;
-}
-
-#cnt_portafolio{
+#cnt_portafolio {
 	float:left;
 	width:100%;
 	padding:30px 0% 50px 0%;
@@ -215,19 +230,6 @@ ul {
 	height:530px;
 	border-top: 1px solid #999999;
 	border-right: 1px solid #999999;
-}
-
-.servicio {
-	width:80%;
-	height:auto;
-	padding:10px 15px 15px 30px;
-	margin:20px 0 0 0;
-	background-color:#000;
-	font-family:'SteelfishEbRegular', AgencyFB, Arial;
-	font-size:25px;
-	font-weight:300;
-	text-align:left;
-	color:#fff;
 }
 
 .masservicio {

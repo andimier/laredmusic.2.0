@@ -11,31 +11,12 @@
 	width: 55%;
 }
 
-
 #videoinicio {
 	float:none;
 	width:90%;
 	height:auto;
 	padding:30px 5% 0 5%;
 	margin:auto;
-}
-
-#cnt_videos1{
-	margin:20px 0 0 0;
-}
-
-.cuadrovideo {
-	float:none;
-	width:98%;
-	margin:0 0 40px 0;
-}
-
-.videos{
-	float:left;
-	width:46%;
-	margin:20px 0 0 0;
-	padding: 0 2% 0 2%;
-	/*background-color:#0ff;*/
 }
 
 #cnt_portafolio{

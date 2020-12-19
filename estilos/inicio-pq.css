@@ -17,23 +17,6 @@
 	margin: 0;
 }
 
-#cnt_videos1 {
-	margin: 20px 0 0 0;
-}
-
-.cuadrovideo {
-	float:none;
-	width:97%;
-	margin:0 auto 30px auto;
-}
-
-.videos {
-	float:none;
-	width:100%;
-	margin:20px 5% 0 0;
-}
-
-
 .grid-display {
 	display: block;
 }
@@ -70,13 +53,6 @@
 	height:440px;
 	padding:30px 4% 50px 4%;
 	border-right:none;
-}
-
-.servicio{
-	width:85%;
-	height:auto;
-	font-size:18px;
-	padding:12px 15px 10px 30px;
 }
 
 #registro {

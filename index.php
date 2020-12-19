@@ -31,7 +31,7 @@
 	<body>
 		<?php require_once('cabezote.php'); ?>
 
-		<div class="contenedor">
+		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
 			<div id="playlist">
@@ -128,7 +128,7 @@
 
 			<?php require_once('templates/formularioregistro.php'); ?>
 
-		</div>
+		</main>
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>

@@ -1,17 +1,37 @@
 #contenidoservicios {
 	clear:both;
 	height:auto;
-	max-width: 960px;
-
 }
 
-.tt_serviciosen{
-	float:left;
-	margin:30px 0 40px 20px;
-
+.tt_serviciosen,
+.tt_servicio {
 	font-family:'SteelfishEbRegular', AgencyFB, Arial;
-	font-size:50px;
-	color:#666
+}
+
+.tt_serviciosen {
+	color:#666;
+	float: none;
+	font-size: 25px;
+	margin: 0 0 40px 0px;
+}
+
+.tt_servicio {
+	background-color:#000;
+	clear:both;
+	color:#FFF;
+	cursor:pointer;
+	font-size: 25px;
+	font-weight:300;
+	margin-left: 0px;
+	padding: 13px;
+}
+
+div.descripcionservicio1 {
+	margin:2px 0 0 0;
+	padding:20px 20px 20px 20px;
+	background-color:#000;
+	font-family:Arial;
+	font-size:12px;
 }
 
 .serviciosenIng	 {
@@ -31,27 +51,13 @@
 
 }
 
-.tt_servicio  {
-
-	clear:both;
-	margin-left:0px;
-	padding:15px 0 15px 30px;
-
-
-	background-color:#000;
-	font-family:'SteelfishEbRegular', AgencyFB, Arial;
-	font-size:50px;
-	font-weight:300;
+.tituloservicio1 a {
 	color:#FFF;
-	cursor:pointer;
 }
 
-.tt_servicio:hover{
-	color:#666
+.tituloservicio1 a:hover {
+	color:#F00;
 }
-
-.tituloservicio1 a {color:#FFF; }
-.tituloservicio1 a:hover {color:#F00;}
 
 div.descripcionservicio1 {
 	display:none;
@@ -64,11 +70,7 @@ div.descripcionservicio1 {
 	font-size:15px;
 	line-height:20px;
 	color:#ccc;
-
-
 }
-
-/*================================= CLIENTES =====================================================*/
 
 .clientes {
 	position:relative;
@@ -77,9 +79,8 @@ div.descripcionservicio1 {
 	margin-top: 20px;
 	margin-bottom:20px;
 	padding-bottom:50px;
-
-
 }
+
 div#tituloclientes {
 	clear:both;
 	padding-left:0px;
@@ -91,6 +92,7 @@ div#tituloclientes {
 	font-family:'SteelfishEbRegular', AgencyFB, Arial;
 	font-size:85px;
 }
+
 div#tituloaliados {
 	clear:both;
 	padding-left:20px;
@@ -110,4 +112,21 @@ div#tituloaliados {
 
 .logo-wrapper img {
 	width: 100%;
+}
+
+@media all and (min-width: 650px) {
+	.tt_servicio  {
+		padding:15px 0 15px 30px;
+		font-size: 50px;
+	}
+
+	.tt_servicio:hover{
+		color:#666
+	}
+
+	.tt_serviciosen {
+		float: left;
+		margin: 30px 0 40px 20px;
+		font-size: 50px;
+	}
 }

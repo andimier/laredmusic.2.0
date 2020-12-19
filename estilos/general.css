@@ -30,7 +30,7 @@ li {
 	padding:0
 }
 
-div.lineasuperior  {
+div.lineasuperior {
 	width:100%;
 	height:5px;
 	background-color:#000;
@@ -41,14 +41,32 @@ div.lineasuperior  {
 	height:140px;
 	border-bottom:5px solid #000;
 	border-top:5px solid #000;
-
 }
 
 #contenido-cabezote{
 	position:relative;
-	margin:auto;
-	width:960px;
+	margin: auto;
 	height:140px;
+}
+
+.main-container {
+	position: relative;
+	clear: both;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+@media all and (min-width: 650px) {
+	#contenido-cabezote,
+	.main-container {
+		max-width: 1100px;
+	}
+
+	.main-container {
+		padding-bottom: 30px;
+	}
 }
 
 .grid-display {
@@ -94,10 +112,9 @@ div.lineasuperior  {
 }
 
 #contenedormenu {
-	float:left;
-	margin:55px 0 0 20px;
-	width:500px;
-	height:auto;
+	float: left;
+	margin: 55px 0 0 20px;
+	height: auto;
 }
 
 .enlaces {
@@ -173,21 +190,26 @@ div.google{
 	right:0;
 }
 
-.menuelementos  {width:100px; height:141px; position:absolute;}
+.menuelementos  {
+	width: 100px;
+	height: 141px;
+	position: absolute;
+}
 
-.guia    {float:left; width:24px; height:131px; margin-top:-5px; background-image:url(../../../../../../Users/catalina/diseno/inicio/guia.jpg)}
+.guia {
+	float:left;
+	width:24px;
+	height:131px;
+	margin-top:-5px;
+	background-image:url(../../../../../../Users/catalina/diseno/inicio/guia.jpg)
+}
 
-.lineadivisoria {clear:both; width:1000px; height:10px; padding-top:10px; padding-bottom:10px;  }
-
-
-.contenedor {
-	position:relative;
+.lineadivisoria {
 	clear:both;
-	width:930px;
-	height:auto;
-	margin:0 auto 0 auto;
-	padding-bottom:30px;
-
+	width: 1000px;
+	height: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 div.pagina  {
