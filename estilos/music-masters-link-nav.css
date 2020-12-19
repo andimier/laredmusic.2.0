@@ -3,6 +3,10 @@
 	font-family: SteelfishBold;
 }
 
+.music-masters-link-wrapper p {
+	font-family: 'BebasNeueRegular', 'SteelfishBold', 'Arial';
+}
+
 .music-masters-link-wrapper {
 	border-bottom: 1px solid black;
 	font-family: Arial, Helvetica, sans-serif;
