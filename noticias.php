@@ -19,15 +19,17 @@
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/noticias-gr.css"/>
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:650px)" href="estilos/noticias-md.css" />
 		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/noticias-pq.css" />
+		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 	</head>
 
 	<body>
 		<?php require_once('cabezote.php'); ?>
-		<!--<div class="cambioidioma"><a href="english/news.php">SWITCH TO ENGLISH</a></div>-->
-		<div class="contenedor">
+
+		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
+			<?php require_once('templates/music-masters-nav-section.php'); ?>
 			<?php require_once('templates/news.php'); ?>
-		</div>
+		</main>
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
