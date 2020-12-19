@@ -1,3 +1,7 @@
+.split-section {
+    border-bottom: 1px solid black;
+}
+
 .split-section .news-section-title {
     height: initial;
 }
@@ -9,6 +13,16 @@
     letter-spacing: 1px;
     line-height: 1.7em;
     padding: 10px 0 40px;
+}
+
+.split-section .split-section-news,
+.split-section .split-section-text-wrapper{
+    padding: 20px 0;
+}
+
+.split-section .split-section-text-wrapper {
+    border-bottom: 1px solid black;
+    padding-bottom: 0;
 }
 
 @media all and (min-width: 650px) {
@@ -26,17 +40,9 @@
         width: 48%;
     }
 
-    .split-section {
-        border-bottom: 1px solid black;
-    }
-
-    .split-section .split-section-news,
-    .split-section .split-section-text-wrapper{
-        padding: 20px 0;
-    }
-
     .split-section .split-section-text-wrapper {
         border-right: 1px solid black;
+        border-bottom: none;
         padding: 15px 15px 0 0;
         margin: 0;
     }
