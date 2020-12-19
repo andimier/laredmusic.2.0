@@ -4,8 +4,8 @@
 }
 
 .videoV {
-	min-height: 300px;
-	padding: 25px 2% 0 2%;
+	height: 250px;
+	padding-top: 25px;
 	width: 100%;
 }
 
@@ -21,6 +21,7 @@
 	}
 
 	.videoV {
-		width: 49.5%;
+		height: 300px;
+		width: 49%;
 	}
 }
