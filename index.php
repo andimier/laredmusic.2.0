@@ -10,6 +10,7 @@
 	$news_group = new News;
 	$isFeaturedNews = true;
 	$noticias = $news_group->getAllNews(null, $isFeaturedNews);
+	$news_section_link = 'noticias';
 ?>
 
 <!DOCTYPE html>

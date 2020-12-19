@@ -20,6 +20,6 @@
     </ul>
 
     <?php if ($isFeaturedNews): ?>
-        <a class="more-news-link" href="musicmasters-noticias.php">más noticias aquí +</a>
+        <a class="more-news-link" href="<?php echo $news_section_link; ?>.php">más noticias aquí +</a>
     <?php endif; ?>
 </div>

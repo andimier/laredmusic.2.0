@@ -8,6 +8,7 @@
     $news_group = new News;
 	$isFeaturedNews = true;
 	$noticias = $news_group->getAllNews('music-masters', $isFeaturedNews);
+	$news_section_link = 'musicmasters-noticias';
 
 	$video_entries = new VideoEntries;
 	$video_entries_group = $video_entries->get_video_entries();

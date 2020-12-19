@@ -5,21 +5,15 @@
 <link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:801px)" href="estilos/general-md.css" />
 <link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/general-pq.css" />
 
-
 <link rel="stylesheet" href="estilos/general2.css" type="text/css" media="screen" />
 <link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/general2-pq.css" />
-
 
 <link rel="stylesheet" href="estilos/contacto.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="estilos/fuentes.css" type="text/css" media="screen" />
 
-
-
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script src="js/general.js"></script>
 <script src="js/main.js"></script>
-
-
 <script type="text/javascript">
 
 	var _gaq = _gaq || [];
