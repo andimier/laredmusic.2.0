@@ -43,11 +43,7 @@
 }
 
 .news-main-image {
-	behavior: url(PIE.htc);
-	border-radius: 10px;
 	overflow: hidden;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 	width: 30%;
 }
 
