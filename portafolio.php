@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Portafolio Clientes - La Red Music</title>
 		<meta name="description" content="Gerenciamos tu proyecto musical igual que lo hará una disquera, con la diferencia de que tu música, sigue siendo tuya!">
 		<meta name="keywords" content="Nuestros clientes, nacionales, internacionales, américa latina, sello 360">

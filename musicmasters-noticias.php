@@ -13,7 +13,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Noticias - La Red Music</title>
+		<title>Music Masters Noticias - La Red Music</title>
 		<?php require_once('includes/requeridos.php'); ?>
 
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/noticias-gr.css"/>

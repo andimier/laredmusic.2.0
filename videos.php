@@ -7,7 +7,7 @@
 <!DOCTYPE html">
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Videos - La Red Music Entertainment</title>
 
 		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/videos-gr.css"/>

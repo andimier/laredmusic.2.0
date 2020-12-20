@@ -8,7 +8,7 @@
 <html>
 
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Servicios - La Red Music</title>
 
 		<meta name="description" content="Nuestro equipo hace un acompaíamiento y asesoramiento al artista desde la concepción de un proyecto
