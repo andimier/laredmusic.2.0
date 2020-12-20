@@ -42,10 +42,6 @@
 	border: none;
 }
 
-.single-news-wrapper {
-	padding-top: 40px;
-}
-
 .news-main-image {
 	behavior: url(PIE.htc);
 	border-radius: 10px;
@@ -74,8 +70,12 @@
 }
 
 .news-text-wrapper h2,
-.single-news-wrapper h2  {
+.single-news-wrapper h1  {
 	font-size: 25px;
+}
+
+.single-news-wrapper h1 {
+	padding-bottom: 40px;
 }
 
 .news-text-wrapper p,
@@ -89,7 +89,7 @@
 	}
 
 	.news-text-wrapper h2,
-	.single-news-wrapper h2  {
+	.single-news-wrapper h1 {
 		font-size: 45px;
 		letter-spacing: 1px;
 	}

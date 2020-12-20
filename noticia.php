@@ -23,29 +23,28 @@
 	<body>
 		<?php require_once('cabezote.php'); ?>
 
-		<!--<div class="cambioidioma"><a href="english/news.php">SWITCH TO ENGLISH</a></div>-->
-		<div class="contenedor">
+		<main class="main-container">
 			<?php require_once('cuerpo/logosredes.php'); ?>
 
-			<div class="news-section-title">NOTICIAS</div>
+			<section class="news-component-wrapper">
+				<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
+					<div class="single-news-wrapper">
+						<p><?php echo $noticia['fecha']; ?></p>
+						<h1><?php echo $noticia['titulo']; ?></h1>
 
-			<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
-				<div class="single-news-wrapper">
-					<p><?php echo $noticia['fecha']; ?></p>
-					<h2><?php echo $noticia['titulo']; ?></h2>
+						<div class="noticia news-body">
+							<div class="imagennoticia">
+								<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
+							</div>
 
-					<div class="noticia news-body">
-						<div class="imagennoticia">
-							<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
+							<p>
+								<?php echo $noticia['contenido']; ?>
+							</p>
 						</div>
-
-						<p>
-							<?php echo $noticia['contenido']; ?>
-						</p>
 					</div>
-				</div>
-			<?php endwhile; ?>
-		</div><!--CIERRRE CONTENEDOR-->
+				<?php endwhile; ?>
+			</section>
+		</main>
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
