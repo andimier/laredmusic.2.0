@@ -7,7 +7,7 @@
 		<nav>
 			<ul id="contenedormenu">
 				<li class="enlaces"><a href="index.php">INICIO</a></li>
-				<li class="enlaces"><a href="index.php">MUSIC MASTERS</a></li>
+				<li class="enlaces"><a href="musicmasters.php">MUSIC MASTERS</a></li>
 				<li class="enlaces"><a href="videos.php">VIDEOS</a></li>
 				<li class="enlaces"><a href="servicios.php">SERVICIOS</a></li>
 				<li class="enlaces"><a href="portafolio.php">PORTAFOLIO</a></li>
