@@ -38,10 +38,12 @@
 			<div id="playlist">
 				<div id="btn_mando" class="play"></div>
 				<div id="ff"></div>
+
 				<div id="output">
 					<div id="cancion"></div>
 					<div id="artista"></div>
 				</div>
+
 				<div id="time-display"></div>
 			</div>
 

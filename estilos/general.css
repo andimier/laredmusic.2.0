@@ -44,9 +44,10 @@ div.lineasuperior {
 }
 
 #contenido-cabezote{
-	position:relative;
+	display: flex;
+	height: 140px;
 	margin: auto;
-	height:140px;
+	position: relative;
 }
 
 .main-container {
@@ -112,18 +113,18 @@ div.lineasuperior {
 }
 
 #contenedormenu {
-	float: left;
+	display: flex;
 	margin: 55px 0 0 20px;
-	height: auto;
 }
 
 .enlaces {
-	float: left;
+	border-right: 1px solid red;
 	font-family: 'SteelfishBold', AgencyFB, Arial;
 	font-size: 23px;
 	margin-left: 0px;
 	margin-top: 0px;
 	letter-spacing: 2px;
+	padding: 0 10px;
 }
 
 .enlaces a {
@@ -136,30 +137,9 @@ div.lineasuperior {
 	text-decoration: none;
 }
 
-div.separador-rojo{
-	float:left;
-	width:2px;
-	height:25px;
-	margin-top:0px;
-	margin-left:10px;
-	margin-right:10px;
-	background:#FF0000;
-}
-
-div.separador-blanco{
-	float:left;
-	width:2px;
-	height:25px;
-	margin-top:34px;
-	margin-left:10px;
-	margin-right:10px;
-	background:#FFFFFF;
-}
-
 .titulomenu {
 	width:500px;  height:69px; margin-top:5px; margin-left:85px; margin-bottom:-10px;
 	font-family:'SteelfishBold', AgencyFB, Arial; font-size: 40px; color:#F00;
-
 }
 
 .logosredes 	{
