@@ -12,9 +12,7 @@
 		<meta name="description" content="Gerenciamos tu proyecto musical igual que lo hará una disquera, con la diferencia de que tu música, sigue siendo tuya!">
 		<meta name="keywords" content="Nuestros clientes, nacionales, internacionales, américa latina, sello 360">
 		<?php require_once('includes/requeridos.php'); ?>
-		<link rel="stylesheet" type="text/css"  media="screen"   href="estilos/portafolio-gr.css"/>
-		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:481px) and (max-width:650px)" href="estilos/portafolio-md.css" />
-		<link rel="stylesheet" type="text/css"  media="only screen and (min-width:50px) and (max-width:480px)" href="estilos/portafolio-pq.css" />
+		<link rel="stylesheet" type="text/css"  media="screen" href="estilos/portafolio-gr.css"/>
 		<link rel="stylesheet" type="text/css" href="estilos/music-masters-link-nav.css" />
 	</head>
 

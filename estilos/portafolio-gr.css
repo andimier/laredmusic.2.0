@@ -1,39 +1,33 @@
 
 .clientes{
-	
+
 }
+
 .contenedorlogos {
-	clear:both; 
-	max-width:930px; 
-	min-height:200px; 
-	margin-left:0px; 
-	padding-bottom:0px;
-	/*background-color:#0ff;*/
-	
+	clear: both;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	max-width: 1100px;
+	min-height: 200px;
+	padding-bottom: 0px;
 }
 
-.cuadrologo1{
-	float:left; 
-	width: 217px; 
-	height: 217px; 
-	padding:5px; 
-	margin-right:5px; 
-	margin-bottom:10px; 
-	background-color: #666;
-}
-
-
-.cuadrologo 	 {
-	float:left; 
-	width: 18%; 
-	height:auto;
-	padding:.5%; 
-	margin:1% 1% 0 0; 
-	border-radius:0px;
-	box-shadow:4px 4px 10px #666666;
-	overflow:hidden;
+.cuadrologo {
+	border-radius: 0px;
+	box-shadow: 4px 4px 10px #666666;
+	margin: 1% 1% 0 0;
+	padding: 1%;
+	width: 47%;
 }
 
 .cuadrologo img{
 	width:100%;
+}
+
+@media all and (min-width: 650px) {
+	.cuadrologo {
+		padding: 0.5%;
+		width: 18%;
+	}
 }
