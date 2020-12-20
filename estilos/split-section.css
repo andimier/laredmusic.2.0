@@ -25,6 +25,10 @@
     padding-bottom: 0;
 }
 
+.split-section .news-component-wrapper {
+    padding-top: 0;
+}
+
 @media all and (min-width: 650px) {
     .split-section {
         display: flex;
