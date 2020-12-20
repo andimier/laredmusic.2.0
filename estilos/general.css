@@ -685,6 +685,16 @@ div#guiaportafolio {
     }
 }
 
+@media all and (max-width: 1020px) {
+	#contenedormenu {
+		display: none;
+	}
+
+	#boton_mv{
+		display:block;
+	}
+}
+
 
 
 

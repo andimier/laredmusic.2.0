@@ -26,11 +26,11 @@
 	function InicioMenu(){
 		$('#menu_mv').css('height', '100%');
 
-		if (abierto == true && $(window).width() > 801) {
+		if (abierto == true && $(window).width() > 1021) {
 			$('#menu_mv').css('display', 'none');
 			abierto = true;
 
-		} else if (abierto == true && $(window).width() < 800 ){
+		} else if (abierto == true && $(window).width() < 1020){
 			$('#menu_mv').css('display', 'block');
 			abierto = true;
 		}
