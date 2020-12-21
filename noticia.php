@@ -29,15 +29,24 @@
 			<section class="news-component-wrapper">
 				<?php while($noticia = phpMethods('fetch-array', $noticias)): ?>
 					<div class="single-news-wrapper">
-						<p><?php echo $noticia['fecha']; ?></p>
-						<h1><?php echo $noticia['titulo']; ?></h1>
+						<p class="single-news-date"><?php echo $noticia['fecha']; ?></p>
+						<h1 class="single-news-title" ><?php echo $noticia['titulo']; ?></h1>
 
 						<div class="noticia news-body">
 							<div class="imagennoticia">
 								<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
 							</div>
 
-							<p>
+							<div class="single-news-mail-image">
+								<a class="single-news-mail-image-link" href="" target="_blank">
+									<img class="yt-icon" src="diseno/yt_icon_rgb.png">
+									<img src="cms/<?php echo $noticia['imagen3']; ?>" alt="<?php echo $noticia['alt']; ?>" />
+								</a>
+							</div>
+
+							<div class="single-news-text-heading"></div>
+
+							<p class="single-news-body-text">
 								<?php echo $noticia['contenido']; ?>
 							</p>
 						</div>
@@ -48,5 +57,7 @@
 
 		<?php require_once('footer.php'); ?>
 		<?php require_once('cuerpo/menu-mv.php'); ?>
+
+		<script src="js/news-elements-reset.js"></script>
 	</body>
 </html>
