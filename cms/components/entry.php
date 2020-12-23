@@ -15,8 +15,14 @@
 				'creation-date' => $selected_entry['creation_date'],
 			),
 			'inputs' => array(
-                'title' => $selected_entry['title'],
-				'video' => $selected_entry['video'],
+                'title' => array(
+					'input-value' => $selected_entry['title'],
+					'input-text' => 'Título'
+				),
+				'video' => array(
+					'input-value' => $selected_entry['video'],
+					'input-text' => 'Video'
+				)
 			),
 			'delete-entry-button-text' => "Eliminar Video",
 		);

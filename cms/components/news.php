@@ -14,9 +14,18 @@
 				'table' => 'noticias',
 			),
 			'inputs' => array(
-				'creation-date' => $selected_entry['fecha'],
-				'title' => $selected_entry['titulo'],
-				'alt' => $selected_entry['alt'],
+				'creation-date' => array(
+					'input-value' => $selected_entry['fecha'],
+					'input-text' => 'Fecha de creación'
+				),
+				'title' => array(
+					'input-value' => $selected_entry['titulo'],
+					'input-text' => 'Título'
+				),
+				'alt' => array(
+					'input-value' => $selected_entry['alt'],
+					'input-text' => 'Texto de la imagen'
+				)
 			),
 			'text-area' => $selected_entry['contenido'],
 			'image' => $selected_entry['imagen1'],

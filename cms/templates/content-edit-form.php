@@ -12,7 +12,8 @@
 	<?php endforeach; ?>
 
 	<?php foreach($content_update_form_fields['inputs'] as $key => $val): ?>
-		<input name="<?php echo $key; ?>" type="text" id="titulo" value="<?php echo $val; ?>" />
+		<div><?php echo $val['input-text']; ?></div>
+		<input name="<?php echo $key; ?>" type="text" id="titulo" value="<?php echo $val['input-value']; ?>" />
 	<?php endforeach; ?>
 
 	<?php if (isset($content_update_form_fields['active_tags'])): ?>
