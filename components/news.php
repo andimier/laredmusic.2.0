@@ -10,13 +10,17 @@
             return $tags_html . '</div>';
         }
 
-        private function getFilteredNews($news) {
+        private function getFilteredNewsByTag($apply_filter, $news) {
             $filtered_news = array();
 
             for ($i = 0; $i < count($news); $i++) {
                 $tags = !empty($news[$i]['tags']) ? explode(',', $news[$i]['tags']) : array();
 
-                if (!empty($tags) && in_array($this->filter, $tags)) {
+                if (!$apply_filter && empty($tags)) {
+                    array_push($filtered_news, $news[$i]);
+                }
+
+                if ($apply_filter && !empty($tags) && in_array($this->filter, $tags)) {
                     array_push($filtered_news, $news[$i]);
                 }
             }
@@ -43,11 +47,9 @@
                 array_push($output, $nn);
             }
 
-            if ($apply_filter) {
-                return $this->getFilteredNews($output);
-            }
 
-            return $output;
+            return $this->getFilteredNewsByTag($apply_filter, $output);
+
         }
 
         private function getNews() {
