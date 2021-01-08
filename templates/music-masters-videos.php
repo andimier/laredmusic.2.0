@@ -12,16 +12,16 @@
         <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/x4ZdQ5OgYAQ"
+            src="https://www.youtube.com/embed/2r25NAlZpVk"
             frameborder="0"
             allowfullscreen>
         </iframe>
     </div>
     <div class="video">
         <iframe
-            src="https://www.youtube.com/embed/oKyFFdB2b6s"
             width="100%"
             height="100%"
+            src="https://www.youtube.com/embed/x4ZdQ5OgYAQ"
             frameborder="0"
             allowfullscreen>
         </iframe>
@@ -37,9 +37,9 @@
     </div>
     <div class="video">
         <iframe
+            src="https://www.youtube.com/embed/oKyFFdB2b6s"
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/2r25NAlZpVk"
             frameborder="0"
             allowfullscreen>
         </iframe>
