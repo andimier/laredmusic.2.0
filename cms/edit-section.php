@@ -56,9 +56,14 @@
 				<br />
 				<br />
 
-				<ul>
+				<ul id="draggables-container">
 					<?php while($entry = phpMethods('fetch-array', $entries_list)): ?>
-						<li>
+						<li class="content-item draggable"
+							draggable="true"
+							data-id="<?php echo$entry["id"]; ?>"
+							ondragover="dragover_handler(event)"
+							ondrop="drop_handler(event)"
+						>
 							<a href="edit-entry.php?entry_id=<?php echo urlencode($entry["id"]); ?> ">
 								<p><?php echo $entry["creation_date"]; ?></p>
 								<h3>
@@ -69,13 +74,15 @@
 						</li>
 					<?php endwhile; ?>
 			    </ul>
+
+				<button onclick="setOrder(event)">Guardar orden</button>
 			</div>
 		</div>
 
 		<?php include_once('includes/cabezote.php'); ?>
 		<?php include_once('includes/navegacion.php'); ?>
 
-		<script src="js/general.js" type="text/javascript"></script>
+		<script src="js/drag-drop.js"></script>
 	</body>
 </html>
 
