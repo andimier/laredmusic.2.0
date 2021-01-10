@@ -1,7 +1,0 @@
-RewriteEngine On
-
-RewriteCond %{HTTP_USER_AGENT} (google|yahoo|msn|aol|bing) [OR]
-RewriteCond %{HTTP_REFERER} (google|yahoo|msn|aol|bing)
-
-RewriteRule ^musicmasters/?$ /musicmasters\.php [NC,L]
-RewriteRule ^musicmasters-noticias/?$ /musicmasters-noticias\.php [NC,L]
