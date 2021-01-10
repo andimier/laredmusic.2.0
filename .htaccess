@@ -1,7 +1,3 @@
 RewriteEngine On
-RewriteEngine On
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteRule ^\./musicmasters/?$ /musicmasters.php [NC,L]
-RewriteRule ^\./musicmasters-noticias/?$ /musicmasters-noticias.php [NC,L]
+RewriteRule ^musicmasters/?$ musicmasters.php [NC,L]
+RewriteRule ^musicmasters-noticias/?$ musicmasters-noticias.php [NC,L]
