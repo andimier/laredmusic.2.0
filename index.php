@@ -86,7 +86,12 @@
 
 
 			<div id="videoinicio">
-				<div class="tt1 rojo "><a href="videos.php">videos</a></div>
+
+				<a href="videos.php">
+					<h2 class="section-title sub-title">videos</h2>
+				</a>
+
+
 				<div id="cnt_videos1">
 					<div class="cuadrovideo">
 						<iframe width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>

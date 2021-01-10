@@ -1,6 +1,6 @@
-<div class="tt1 negro">
-	<a href="portafolio.php">PORTAFOLIO</a>
-</div>
+<a href="portafolio.php">
+    <h2 class="section-title sub-title">PORTAFOLIO<h2>
+</a>
 
 <div class="cnt_logos">
     <ul id="list-portafolio">
