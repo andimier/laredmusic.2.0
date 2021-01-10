@@ -94,7 +94,7 @@ function loadData() {
 
 var initi = (function() {
 	// Inicio();
-	loadData();
+	// loadData();
 
 	window.addEventListener('resize', Ajustar, false);
 

@@ -3,6 +3,7 @@
 	require_once('utils/phpfunctions.php');
 	require_once('components/news.php');
 	require_once('components/registro.php');
+	require_once('components/home-page.php');
 
 	$query = "SELECT * FROM noticias ORDER BY fecha DESC LIMIT 6";
 	$noticias = phpMethods('query', $query);
@@ -112,12 +113,7 @@
 			</div>
 
 			<div id="cnt_portafolio">
-				<div class="tt1 negro"><a href="portafolio.php">PORTAFOLIO</a></div>
-
-				<div class="cnt_logos">
-					<ul id="list-portafolio"></ul>
-				</div>
-				<div class="vacio"></div>
+				<?php require_once('templates/home-page-portfolio.php'); ?>
 			</div>
 
 			<div id="cnt_servicios">
@@ -140,6 +136,6 @@
 	<script src="js/inicio.js"></script>
 	<script src="js/playlist.js"></script>
     <script src="js/videos.js"></script>
-	<script src="js/portafolio-inicio.js"></script>
+
 </html>
 

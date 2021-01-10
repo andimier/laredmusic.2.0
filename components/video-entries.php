@@ -32,9 +32,12 @@
             if ($r) {
                 while ($video_entry = phpMethods('fetch-array', $r)) {
                     $video_data = $this->getVideoData($video_entry['video']);
-                    $data = json_decode($video_data);
 
-                    if (!isset($data->{'status_msg'})) {
+                    if (isset($video_data)) {
+                        $data = json_decode($video_data);
+                    }
+
+                    if (isset($data) && !isset($data->{'status_msg'})) {
                         array_push($video_entries, array(
                             'thumbnail_url' => $data->thumbnail_url,
                             'title' => $data->title,
