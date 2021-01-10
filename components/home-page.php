@@ -91,4 +91,5 @@
 			"alt"=>"Pontificia Universidad Javeriana",
 			"src"=> "diseno/clientes/universidad-javeriana.jpg"
 		),
-);
+	);
+?>
