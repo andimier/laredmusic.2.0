@@ -4,12 +4,12 @@
 
 <div class="cnt_logos">
     <ul id="list-portafolio">
-        <?php for ($pf = 0; $pf < count($portfolio_data); $pf++): ?>
-            <li class="artist-album-image" data-artist="<?php echo $portfolio_data[$pf]['cliente']; ?>">
+        <?php for ($pf = 0; $pf < count($pf_data); $pf++): ?>
+            <li class="artist-album-image" data-artist="<?php echo $pf_data[$pf]->{'cliente'} ?>">
                 <a href="portafolio.php">
                     <img
-                        src="<?php echo $portfolio_data[$pf]['src']; ?>"
-                        alt="<?php echo $portfolio_data[$pf]['alt']; ?>"
+                        src="<?php echo $pf_data[$pf]->{'src'}; ?>"
+                        alt="<?php echo $pf_data[$pf]->{'alt'}; ?>"
                     />
                 </a>
             </li>
