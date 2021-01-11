@@ -26,26 +26,6 @@
 	border-left:none;
 }
 
-.cnt_logos {
-	width:100%;
-	padding:0px;
-	height:250px;
-	margin:20px 0 0 0;
-}
-
-.cnt_logos ul li{
-	display:inline;
-	width:23%;
-	height:auto;
-	overflow:hidden;
-}
-
-.logo {
-	width: 47%;
-	padding:0.5%;
-	margin:1% 1% 0 0;
-}
-
 #cnt_servicios{
 	float:left;
 	width:92%;
