@@ -1,5 +1,7 @@
 RewriteEngine On
-#RewriteCond %{HTTP_HOST} ^laredmusic.com [NC]
+
+#RewriteCond %{HTTP_HOST} !^www\.laredmusic\.com$ [NC]
+
 RewriteRule ^musicmasters/?$ musicmasters.php [NC,L]
 RewriteRule ^musicmasters-noticias/?$ musicmasters-noticias.php [NC,L]
 
