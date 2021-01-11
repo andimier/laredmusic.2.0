@@ -1,137 +1,137 @@
-	var cntVideos = document.getElementById('cnt_videos'),
-		videos,
-		w_videos,
-		ratio = 1.65,
-		nuevah = w_videos / ratio,
-		seccion = 'videos',
-		listado;
+var cntVideos = document.getElementById('cnt_videos'),
+    videos,
+    w_videos,
+    ratio = 1.65,
+    nuevah = w_videos / ratio,
+    seccion = 'videos',
+    listado;
 
-	function AjustarContenedoresVideosOnResize(){
-		ajustarDimensionesContenedoresVideos();
-	}
+function AjustarContenedoresVideosOnResize(){
+    ajustarDimensionesContenedoresVideos();
+}
 
-	function ajustarDimensionesContenedoresVideos() {
-		videos = document.getElementsByClassName('videoV');
-		w_videos = videos[0].offsetWidth;
-		nuevah = w_videos / ratio;
+function ajustarDimensionesContenedoresVideos() {
+    videos = document.getElementsByClassName('videoV');
+    w_videos = videos[0].offsetWidth;
+    nuevah = w_videos / ratio;
 
-		for (var i = 0; i < videos.length; i++) {
-			// videos[i].style.height = nuevah + 'px';
-		}
-	}
-
-    function fijarAtributos(elemento, opciones) {
-        $.each(opciones, function(key, value) {
-           elemento.setAttribute(key, value);
-        });
+    for (var i = 0; i < videos.length; i++) {
+        // videos[i].style.height = nuevah + 'px';
     }
+}
 
-	function obtenerJson() {
-		return $.ajax({
-			dataType: "json",
-			type: "GET",
-			url: "js/videos.json",
-			error: function(jqXHR, textStatus, error){
-				console.log(textStatus);
-				console.log(error);
-			}
-		});
-	}
+function fijarAtributos(elemento, opciones) {
+    $.each(opciones, function(key, value) {
+        elemento.setAttribute(key, value);
+    });
+}
 
-	var Listado = function(seccion, contenedor) {
-		var videosJson = obtenerJson();
+function obtenerJson() {
+    return $.ajax({
+        dataType: "json",
+        type: "GET",
+        url: "js/videos.json",
+        error: function(jqXHR, textStatus, error){
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
+}
 
-		this.seccion = seccion;
-		this.contenedor = contenedor;
-		this.fijarrDatosDeVideosPorSeccion(videosJson);
-	};
+var Listado = function(seccion, contenedor) {
+    var videosJson = obtenerJson();
 
-	Listado.prototype.fijarrDatosDeVideosPorSeccion = function(videosJson) {
-		var self = this;
-        var pathname = window.location.pathname;
-        var homePagePossiblePaths = [
-            "/",
-            "/index.php",
-            "/laredmusic/index.php",
-            "/laredmusic/dev/",
-            "/laredmusic/dev/index.php"
-        ];
-        var isHomePage = homePagePossiblePaths.includes(pathname);
+    this.seccion = seccion;
+    this.contenedor = contenedor;
+    this.fijarrDatosDeVideosPorSeccion(videosJson);
+};
 
-		videosJson.done(function(data) {
-            if (isHomePage) {
-                self.fijarVideosDelInicio(data);
-            } else {
-                self.videos = data;
-                self.crearVideos();
-                window.addEventListener('resize', AjustarContenedoresVideosOnResize, false);
-            }
-		});
-	}
+Listado.prototype.fijarrDatosDeVideosPorSeccion = function(videosJson) {
+    var self = this;
+    var pathname = window.location.pathname;
+    var homePagePossiblePaths = [
+        "/",
+        "/index.php",
+        "/laredmusic/index.php",
+        "/laredmusic/dev/",
+        "/laredmusic/dev/index.php"
+    ];
+    var isHomePage = homePagePossiblePaths.includes(pathname);
 
-    Listado.prototype.fijarVideosDelInicio = function(data) {
-        var videosInicio = [];
+    videosJson.done(function(data) {
+        if (isHomePage) {
+            self.fijarVideosDelInicio(data);
+        } else {
+            self.videos = data;
+            self.crearVideos();
+            window.addEventListener('resize', AjustarContenedoresVideosOnResize, false);
+        }
+    });
+}
 
-        $.each(data, function(i, value) {
-            if (value.seccion && value.seccion === 'inicio') {
-                videosInicio.push(value);
-            }
-        });
+Listado.prototype.fijarVideosDelInicio = function(data) {
+    var videosInicio = [];
 
-        this.crearVideosInicio(videosInicio);
-    };
+    $.each(data, function(i, value) {
+        if (value.seccion && value.seccion === 'inicio') {
+            videosInicio.push(value);
+        }
+    });
 
-    Listado.prototype.crearVideosInicio = function(videosInicio) {
-        var contenedorVideos = $('#videoinicio');
+    this.crearVideosInicio(videosInicio);
+};
 
-        $.each(videosInicio, function(index, item) {
-            contenedorVideos.find('iframe').eq(index).attr('src', 'https://www.youtube.com/embed/' + item.video);
-        });
-    };
+Listado.prototype.crearVideosInicio = function(videosInicio) {
+    var contenedorVideos = $('#videoinicio');
 
-	Listado.prototype.crearVideos = function(obj) {
-		var self = this,
-            listadoVideos = this.videos;
+    $.each(videosInicio, function(index, item) {
+        contenedorVideos.find('iframe').eq(index).attr('src', 'https://www.youtube.com/embed/' + item.video);
+    });
+};
 
-		$.each(listadoVideos, function(i, value){
-			var div,
-                iFrame;
+Listado.prototype.crearVideos = function(obj) {
+    var self = this,
+        listadoVideos = this.videos;
 
-            div = self.crearContenedorDelVideo(value);
-            iFrame = self.crearIframeVideo(value.video);
-			div.appendChild(iFrame);
-			self.contenedor.appendChild(div);
-		});
+    $.each(listadoVideos, function(i, value){
+        var div,
+            iFrame;
 
-		ajustarDimensionesContenedoresVideos();
-	}
+        div = self.crearContenedorDelVideo(value);
+        iFrame = self.crearIframeVideo(value.video);
+        div.appendChild(iFrame);
+        self.contenedor.appendChild(div);
+    });
 
-    Listado.prototype.crearContenedorDelVideo = function(value) {
-        var div = document.createElement('DIV'),
-            opciones = {
-                'class': 'videoV',
-                'artista': value.artista,
-                'titulo-video': value.titulo
-            };
+    ajustarDimensionesContenedoresVideos();
+}
 
-        fijarAtributos(div, opciones);
+Listado.prototype.crearContenedorDelVideo = function(value) {
+    var div = document.createElement('DIV'),
+        opciones = {
+            'class': 'videoV',
+            'artista': value.artista,
+            'titulo-video': value.titulo
+        };
 
-        return div;
-    };
+    fijarAtributos(div, opciones);
 
-    Listado.prototype.crearIframeVideo = function(videoKey) {
-        var iFrame = document.createElement('IFRAME'),
-            opciones = {
-                'width': '100%',
-                'height': '100%',
-                'src': 'https://www.youtube.com/embed/' + videoKey,
-                'frameborder': 0
-            };
+    return div;
+};
 
-        fijarAtributos(iFrame, opciones);
+Listado.prototype.crearIframeVideo = function(videoKey) {
+    var iFrame = document.createElement('IFRAME'),
+        opciones = {
+            'width': '100%',
+            'height': '100%',
+            'src': 'https://www.youtube.com/embed/' + videoKey,
+            'frameborder': 0
+        };
 
-        return iFrame;
-    };
+    fijarAtributos(iFrame, opciones);
 
-	listado = new Listado(seccion, cntVideos);
+    return iFrame;
+};
+
+listado = new Listado(seccion, cntVideos);
 

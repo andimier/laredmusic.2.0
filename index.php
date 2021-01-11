@@ -138,7 +138,6 @@
 		<?php require_once('cuerpo/menu-mv.php'); ?>
 	</body>
 	<script src="js/home-data.js"></script>
-	<script src="js/inicio.js"></script>
 	<script src="js/playlist.js"></script>
     <script src="js/videos.js"></script>
 

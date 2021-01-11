@@ -304,17 +304,42 @@ div.menuinicio {
 	margin-top:12px;
 	font-family:'SteelfishBold',AgencyFB, Arial; font-size:18px;
 }
-.masnoticias a {color:#000;}
 
-.fechanoticia  {clear:both;  font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:17px; margin-top: 0px;}
-.fechanoticia2  {clear:both;  font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:22px; margin-top: -20px; margin-left:90px; margin-bottom:15px;}
-.titulonoticia {
-	width:300px; font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:17px;
-	text-transform:capitalize; color: #666
+.masnoticias a {
+	color:#000;
 }
 
-.titulonoticia a {color:#666;}
-.titulonoticia a:hover {color:#000;}
+.fechanoticia  {
+	clear:both;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:17px;
+	margin-top: 0px;
+}
+
+.fechanoticia2  {
+	clear:both;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:22px;
+	margin-top: -20px;
+	margin-left:90px;
+	margin-bottom:15px;
+}
+
+.titulonoticia {
+	width:300px;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:17px;
+	text-transform:capitalize;
+	color: #666
+}
+
+.titulonoticia a {
+	color:#666;
+}
+
+.titulonoticia a:hover {
+	color:#000;
+}
 
 div#quienessomos {
 	float:left;
@@ -380,22 +405,67 @@ div#quienessomos {
 	background-color:#FFF;
 }
 
+.video {
+	margin-top: 0px;
+	margin-bottom:30px;
+	margin-top: 50px;
+}
 
-.video       {margin-top: 0px; margin-bottom:30px; margin-top: 50px;}
-.imagenesvideo {margin-left: 85px; height: auto; margin-bottom: 15px;}
-.contnumtitvideo {height:90px;}
-.titulovideo {float:right; font-family:'SteelfishEbRegular', AgencyFB, Arial; font-size:70px;}
-.numero2     {float:right; margin-left:20px; width:65px; height:65px; margin-right:0px; margin-top:10px; margin-bottom:10px; background-color: #F00; }
-.textovideo  {float: left; width:440px; margin-left:85px; margin-top:220px; text-align:right; font-family: 'BebasNeueRegular'; color:#666; font-size:20px;}
-.titulovideo2 {float:left; margin-top: 77px;}
-.reel {float:left; margin-top:5px; margin-bottom:8px; margin-right:15px;}
+.imagenesvideo {
+	margin-left: 85px;
+	height: auto;
+	margin-bottom: 15px;
+}
+
+.contnumtitvideo {
+	height:90px;
+}
+
+.titulovideo {
+	float:right;
+	font-family:'SteelfishEbRegular', AgencyFB, Arial;
+	font-size:70px;
+}
+
+.numero2 {
+	float:right;
+	margin-left:20px;
+	width:65px;
+	height:65px;
+	margin-right:0px;
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color: #F00;
+}
+
+.textovideo {
+	float: left;
+	width:440px;
+	margin-left:85px;
+	margin-top:220px;
+	text-align:right;
+	font-family: 'BebasNeueRegular';
+	color:#666;
+	font-size:20px;
+}
+
+.titulovideo2 {
+	float:left;
+	margin-top: 77px;
+}
+
+.reel {
+	float:left;
+	margin-top:5px;
+	margin-bottom:8px;
+	margin-right:15px;
+}
 
 div#micro{
 	clear:both;
 	margin-left:140px;
 	width:197px;
 	height:199px;
-
 }
 
 div.masnoticias_inicio2{
@@ -440,14 +510,12 @@ div.masnoticias_inicio2 a:hover {
 	/*background-image: url(../diseno/inicio/fondoportafolio.png);*/
 }
 
-
 #portafolio {
 
 	clear:both;
 	margin-bottom: 30px;
 	color:#ff0000;
 }
-
 
 #fondorojotituloportafolio {
 	position:absolute;
@@ -459,11 +527,40 @@ div.masnoticias_inicio2 a:hover {
 	z-index:-1;
 }
 
-.contenedorimagenes {clear:both; width:1000px; margin-left:0px; margin-bottom: 30px;}
-.cuadroimagen 	{float:left; width:155px; height: 255px; padding: 5px;  margin-right:3px; margin-top: 3px; background-color:#000;}
-.imagen			{width:160px; height:255px; }
-.cuadrotextoimagen 	{width:160px; height:15px;  background-color:#000;}
-.textoimagen 		{color:#FFF; padding:5px; font-family:'BebasNeueRegular',AgencyFB, Arial; font-size:10px;}
+.contenedorimagenes {
+	clear:both;
+	width:1000px;
+	margin-left:0px;
+	margin-bottom: 30px;
+}
+
+.cuadroimagen 	{
+	float:left;
+	width:155px;
+	height: 255px;
+	padding: 5px;
+	margin-right:3px;
+	margin-top: 3px;
+	background-color:#000;
+}
+
+.imagen	{
+	width:160px;
+	height:255px;
+}
+
+.cuadrotextoimagen {
+	width:160px;
+	height:15px;
+	background-color:#000;
+}
+
+.textoimagen {
+	color:#FFF;
+	padding:5px;
+	font-family:'BebasNeueRegular',AgencyFB, Arial;
+	font-size:10px;
+}
 
 #preview{
 	position:absolute;

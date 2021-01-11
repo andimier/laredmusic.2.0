@@ -147,7 +147,12 @@ ul {
 
 .cuadrovideo,
 .videos {
+	height: 250px;
 	padding-bottom: 20px;
+}
+
+.cuadrovideo {
+	min-height: 250px;
 }
 
 .servicio {
@@ -195,8 +200,12 @@ ul {
 		padding: 0px 0 20px 0;
 	}
 
+	.cuadrovideo,
+	.videos {
+		height: initial;
+	}
+
 	.cuadrovideo {
-		min-height: 250px;
 		width: 49.4%;
 	}
 
