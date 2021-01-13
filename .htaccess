@@ -1,4 +1,4 @@
-RewriteEngine On
+#RewriteEngine On
 
 #RewriteCond %{HTTP_HOST} !^www\.laredmusic\.com$ [NC]
 
