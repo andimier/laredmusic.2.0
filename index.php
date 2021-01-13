@@ -13,7 +13,7 @@
 	$noticias = $news_group->getAllNews(null, $isFeaturedNews);
 	$news_section_link = 'noticias';
 
-	echo 'server = ' . $_SERVER['REQUEST_URI'];
+	echo 'server = ' . $_SERVER['REQUEST_URI'] . '--';
 
 	if ($_SERVER['REQUEST_URI'] == '/mm') {
 		header('Location: ./musicmasters.php');
