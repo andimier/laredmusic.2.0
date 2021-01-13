@@ -14,6 +14,10 @@
 	$news_section_link = 'noticias';
 
 	echo 'server = ' . $_SERVER['REQUEST_URI'];
+
+	if ($_SERVER['REQUEST_URI'] == '/mm') {
+		header('Location: ./musicmasters.php');
+	}
 ?>
 
 <!DOCTYPE html>
