@@ -12,6 +12,8 @@
 	$isFeaturedNews = true;
 	$noticias = $news_group->getAllNews(null, $isFeaturedNews);
 	$news_section_link = 'noticias';
+
+	echo 'server = ' . $_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
