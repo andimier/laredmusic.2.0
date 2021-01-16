@@ -1,3 +1,4 @@
+Options +MultiViews
 RewriteEngine On
 RewriteRule ^musicmasters/?$ musicmasters.php [NC,L]
 RewriteRule ^musicmasters-noticias/?$ musicmasters-noticias.php [NC,L]
