@@ -1,11 +1,4 @@
-
-#RewriteCond %{HTTP_HOST} !^www\.laredmusic\.com$ [NC]
-#RewriteCond %{REQUEST_FILENAME} !-f
-#RewriteCond %{REQUEST_FILENAME} !-d
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^musicmasters/?$ musicmasters.php [NC,L]
-    RewriteRule ^musicmasters-noticias/?$ musicmasters-noticias.php [NC,L]
-    RewriteRule ^tester$ tester.php [NC,L]
-</IfModule>
+RewriteEngine On
+RewriteRule ^musicmasters/?$ musicmasters.php [NC,L]
+RewriteRule ^musicmasters-noticias/?$ musicmasters-noticias.php [NC,L]
+RewriteRule ^tester$ tester.php [NC,L]
